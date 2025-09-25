@@ -1,5 +1,5 @@
 {
-  "generated": "2025-09-25T16:46:18.273Z",
+  "generated": "2025-09-25T16:59:05.950Z",
   "games": [
     "08800-space-organizer",
     "0xdead",
@@ -2379,10 +2379,10 @@
   ],
   "nova": [
     "escape-car",
+    "flappy-bird",
     "love-tester",
     "moto-x3m",
     "sprunki",
-    "stunt-simulator-2",
     "watermelon-suika"
   ]
 }
