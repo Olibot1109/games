@@ -1,0 +1,27 @@
+{
+    "c2array": true,
+    "size": [
+        1,
+        5,
+        1
+    ],
+    "data": [
+        [
+            [
+                "This tower features a soldier who uses a sniper rifle to take down targets from a great distance.\nIt has the longest range but the slowest rate of fire.\nThe sniper is effective against both ground and flying enemies."
+            ],
+            [
+                "The sniper shots inflict 22% more damage."
+            ],
+            [
+                "The sniper shots inflict 44% more damage."
+            ],
+            [
+                "The sniper can fire two bullets simultaneously."
+            ],
+            [
+                "The sniper shots inflict 150% more damage, capable of destroying some enemies with one shot."
+            ]
+        ]
+    ]
+}

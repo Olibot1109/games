@@ -1,0 +1,27 @@
+{
+    "c2array": true,
+    "size": [
+        1,
+        5,
+        1
+    ],
+    "data": [
+        [
+            [
+                "This tower launches a magical ball that creates a significant impact.\nThe magic tower has a high range and can inflict great damage from a long distance.\nThis tower is effective against both ground and aerial enemies."
+            ],
+            [
+                "The magic balls inflict 33% more damage."
+            ],
+            [
+                "The magic tower generates an additional ball, causing more damage."
+            ],
+            [
+                "The magic tower generates an extra ball, causing more damage, both magic balls have a 20% damage increase."
+            ],
+            [
+                "The magic tower generates a ball with 15% more damage, and upon hitting an enemy, it stops them for 1 second, slowing down their progress."
+            ]
+        ]
+    ]
+}

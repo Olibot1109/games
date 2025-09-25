@@ -1,0 +1,27 @@
+{
+    "c2array": true,
+    "size": [
+        1,
+        5,
+        1
+    ],
+    "data": [
+        [
+            [
+                "This tower is equipped with a precise archer who fires sharp arrows at the invading enemies.\nIts shooting speed and accuracy are unmatched.\nIt doesn't have a long range, but it is effective against both ground and flying enemies."
+            ],
+            [
+                "The arrows inflict 25% more damage."
+            ],
+            [
+                "The arrows create a shockwave upon impact, causing additional damage."
+            ],
+            [
+                "The arrows inflict  25% more damage and create a shockwave upon impact, causing additional damage."
+            ],
+            [
+                "The archer fires an additional arrow, causing more damage."
+            ]
+        ]
+    ]
+}
