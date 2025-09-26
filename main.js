@@ -1,6 +1,7 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const https = require('https');
 
 const app = express();
 const PORT = 3000;
@@ -41,17 +42,13 @@ app.use(express.static(path.join(__dirname, ''), {
   }
 }));
 
-
 app.get('/ping', (req, res) => {
   res.send('Pong!');
 });
 
-
-
 setInterval(() => {
-  require('http').get(`https://games-mht0.onrender.com/ping`);
-}, 20 * 1000); // every 20 seconds
-
+  https.get('https://games-mht0.onrender.com');
+}, 20 * 1000); // every 20s
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
