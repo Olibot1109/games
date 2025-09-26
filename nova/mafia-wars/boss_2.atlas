@@ -1,0 +1,111 @@
+
+boss_2.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 2, 32
+  size: 194, 211
+  orig: 194, 211
+  offset: 0, 0
+  index: -1
+Hand-B1
+  rotate: false
+  xy: 264, 49
+  size: 65, 41
+  orig: 65, 41
+  offset: 0, 0
+  index: -1
+Hand-B2
+  rotate: false
+  xy: 701, 189
+  size: 61, 54
+  orig: 61, 54
+  offset: 0, 0
+  index: -1
+Hand-F1
+  rotate: true
+  xy: 198, 36
+  size: 54, 64
+  orig: 54, 64
+  offset: 0, 0
+  index: -1
+HandF2
+  rotate: false
+  xy: 632, 135
+  size: 67, 108
+  orig: 67, 108
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 198, 92
+  size: 137, 151
+  orig: 137, 151
+  offset: 0, 0
+  index: -1
+Head-2
+  rotate: false
+  xy: 337, 100
+  size: 137, 143
+  orig: 137, 143
+  offset: 0, 0
+  index: -1
+Leg-B1
+  rotate: true
+  xy: 476, 103
+  size: 16, 30
+  orig: 16, 30
+  offset: 0, 0
+  index: -1
+Leg-B2
+  rotate: false
+  xy: 701, 156
+  size: 17, 31
+  orig: 17, 31
+  offset: 0, 0
+  index: -1
+Leg-B3
+  rotate: false
+  xy: 476, 121
+  size: 42, 11
+  orig: 42, 11
+  offset: 0, 0
+  index: -1
+Leg-F1
+  rotate: false
+  xy: 720, 157
+  size: 16, 30
+  orig: 16, 30
+  offset: 0, 0
+  index: -1
+Leg-F2
+  rotate: false
+  xy: 764, 212
+  size: 17, 31
+  orig: 17, 31
+  offset: 0, 0
+  index: -1
+Leg-F3
+  rotate: false
+  xy: 2, 2
+  size: 42, 11
+  orig: 42, 11
+  offset: 0, 0
+  index: -1
+Shadow
+  rotate: false
+  xy: 2, 15
+  size: 178, 15
+  orig: 178, 15
+  offset: 0, 0
+  index: -1
+Weapon
+  rotate: false
+  xy: 476, 134
+  size: 154, 109
+  orig: 154, 109
+  offset: 0, 0
+  index: -1

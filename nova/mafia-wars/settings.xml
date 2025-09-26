@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<content>
+	<enemies>
+		<enemy id="enemy_0">
+			<health>425</health>
+			<scale>1</scale>
+			<width>280.64</width>
+			<height>261.41</height>
+			<damage>25</damage>
+			<moveSpeed>130</moveSpeed>
+			<moveAnimSpeed>0.9</moveAnimSpeed>
+			<infoOY>300</infoOY>
+			<groundOY>10</groundOY>
+			<hpBarWidth>180</hpBarWidth>
+			<resistance>0.65</resistance>
+			<coinValue>6</coinValue>
+			<coinProb>70</coinProb>
+			<spawnTime>4</spawnTime>
+			<weapon>
+				<type>MELEE</type>
+				<range>120</range>
+				<speed>4</speed>
+				<deltatime>0.525</deltatime>
+				<shots>1</shots>
+				<movement>BULLET</movement>
+				<projectileSpeed>1000</projectileSpeed>
+				<gravity>500</gravity>
+			</weapon>
+		</enemy>
+
+		<enemy id="enemy_1">
+			<health>350</health>
+			<scale>1</scale>
+			<width>222.55</width>
+			<height>267.75</height>
+			<damage>20</damage>
+			<moveSpeed>150</moveSpeed>
+			<moveAnimSpeed>0.9</moveAnimSpeed>
+			<infoOY>325</infoOY>
+			<groundOY>27</groundOY>
+			<hpBarWidth>180</hpBarWidth>
+			<resistance>0.65</resistance>
+			<coinValue>5</coinValue>
+			<coinProb>70</coinProb>
+			<spawnTime>5.5</spawnTime>
+			<weapon>
+				<type>MELEE</type>
+				<range>140</range>
+				<speed>4</speed>
+				<deltatime>0.65</deltatime>
+				<shots>1</shots>
+				<movement>BULLET</movement>
+				<projectileSpeed>1000</projectileSpeed>
+				<gravity>500</gravity>
+			</weapon>
+		</enemy>
+
+		<enemy id="enemy_2">
+			<health>400</health>
+			<scale>1</scale>
+			<width>242.95</width>
+			<height>261.37</height>
+			<damage>25</damage>
+			<moveSpeed>125</moveSpeed>
+			<moveAnimSpeed>0.9</moveAnimSpeed>
+			<infoOY>300</infoOY>
+			<groundOY>10</groundOY>
+			<hpBarWidth>175</hpBarWidth>
+			<resistance>0.65</resistance>
+			<coinValue>5</coinValue>
+			<coinProb>70</coinProb>
+			<spawnTime>6</spawnTime>
+			<weapon>
+				<type>MELEE</type>
+				<range>140</range>
+				<speed>4</speed>
+				<deltatime>0.45</deltatime>
+				<shots>1</shots>
+				<movement>PROJECTILE</movement>
+				<projectileSpeed>1000</projectileSpeed>
+				<gravity>2000</gravity>
+			</weapon>
+		</enemy>
+
+		<enemy id="enemy_3">
+			<health>275</health>
+			<scale>1</scale>
+			<width>221.08</width>
+			<height>251.6</height>
+			<damage>12</damage>
+			<moveSpeed>125</moveSpeed>
+			<moveAnimSpeed>0.9</moveAnimSpeed>
+			<infoOY>310</infoOY>
+			<groundOY>27</groundOY>
+			<hpBarWidth>175</hpBarWidth>
+			<resistance>0.6</resistance>
+			<coinValue>4</coinValue>
+			<coinProb>70</coinProb>
+			<spawnTime>5</spawnTime>
+			<weapon>
+				<type>MELEE</type>
+				<range>150</range>
+				<speed>4</speed>
+				<deltatime>0.72</deltatime>
+				<shots>1</shots>
+				<movement>BULLET</movement>
+				<projectileSpeed>1000</projectileSpeed>
+				<gravity>500</gravity>
+			</weapon>
+		</enemy>
+
+		<enemy id="enemy_4">
+			<health>600</health>
+			<scale>1</scale>
+			<width>276.81</width>
+			<height>293.06</height>
+			<damage>20</damage>
+			<moveSpeed>100</moveSpeed>
+			<moveAnimSpeed>0.9</moveAnimSpeed>
+			<infoOY>310</infoOY>
+			<groundOY>-14</groundOY>
+			<hpBarWidth>175</hpBarWidth>
+			<resistance>0.8</resistance>
+			<coinValue>6</coinValue>
+			<coinProb>100</coinProb>
+			<spawnTime>7</spawnTime>
+			<weapon>
+				<type>RANGE</type>
+				<range>650</range>
+				<speed>4</speed>
+				<deltatime>0.05</deltatime>
+				<shots>2</shots>
+				<movement>BULLET</movement>
+				<projectileSpeed>1200</projectileSpeed>
+				<gravity>500</gravity>
+			</weapon>
+		</enemy>
+
+		<enemy id="enemy_5">
+			<health>115</health>
+			<scale>1</scale>
+			<width>212.03</width>
+			<height>230.51</height>
+			<damage>7</damage>
+			<moveSpeed>155</moveSpeed>
+			<moveAnimSpeed>1.1</moveAnimSpeed>
+			<infoOY>225</infoOY>
+			<groundOY>-30</groundOY>
+			<hpBarWidth>160</hpBarWidth>
+			<resistance>0.5</resistance>
+			<coinValue>3</coinValue>
+			<coinProb>65</coinProb>
+			<spawnTime>4</spawnTime>
+			<weapon>
+				<type>MELEE</type>
+				<range>130</range>
+				<speed>4</speed>
+				<deltatime>0.55</deltatime>
+				<shots>1</shots>
+				<movement>BULLET</movement>
+				<projectileSpeed>1000</projectileSpeed>
+				<gravity>500</gravity>
+			</weapon>
+		</enemy>
+
+		<enemy id="enemy_6">
+			<health>250</health>
+			<scale>1</scale>
+			<width>182.82</width>
+			<height>232.51</height>
+			<damage>5</damage>
+			<moveSpeed>125</moveSpeed>
+			<moveAnimSpeed>1</moveAnimSpeed>
+			<infoOY>225</infoOY>
+			<groundOY>-30</groundOY>
+			<hpBarWidth>170</hpBarWidth>
+			<resistance>0.5</resistance>
+			<coinValue>3</coinValue>
+			<coinProb>50</coinProb>
+			<spawnTime>5</spawnTime>
+			<weapon>
+				<type>MELEE</type>
+				<range>130</range>
+				<speed>4</speed>
+				<deltatime>0.425</deltatime>
+				<shots>1</shots>
+				<movement>BULLET</movement>
+				<projectileSpeed>1000</projectileSpeed>
+				<gravity>500</gravity>
+			</weapon>
+		</enemy>
+
+		<enemy id="enemy_7">
+			<health>100</health>
+			<scale>1</scale>
+			<width>209.48</width>
+			<height>226.01</height>
+			<damage>5</damage>
+			<moveSpeed>150</moveSpeed>
+			<moveAnimSpeed>1.2</moveAnimSpeed>
+			<infoOY>220</infoOY>
+			<groundOY>-30</groundOY>
+			<hpBarWidth>150</hpBarWidth>
+			<resistance>0.35</resistance>
+			<coinValue>2</coinValue>
+			<coinProb>60</coinProb>
+			<spawnTime>4</spawnTime>
+			<weapon>
+				<type>MELEE</type>
+				<range>150</range>
+				<speed>4</speed>
+				<deltatime>0.425</deltatime>
+				<shots>1</shots>
+				<movement>BULLET</movement>
+				<projectileSpeed>1000</projectileSpeed>
+				<gravity>500</gravity>
+			</weapon>
+		</enemy>
+
+		<enemy id="enemy_8">
+			<health>85</health>
+			<scale>1</scale>
+			<width>159.89</width>
+			<height>226.02</height>
+			<damage>4</damage>
+			<moveSpeed>150</moveSpeed>
+			<moveAnimSpeed>1.2</moveAnimSpeed>
+			<infoOY>220</infoOY>
+			<groundOY>-30</groundOY>
+			<hpBarWidth>150</hpBarWidth>
+			<resistance>0.3</resistance>
+			<coinValue>2</coinValue>
+			<coinProb>60</coinProb>
+			<spawnTime>4</spawnTime>
+			<weapon>
+				<type>RANGE</type>
+				<range>500</range>
+				<speed>4</speed>
+				<deltatime>0.75</deltatime>
+				<shots>1</shots>
+				<movement>PROJECTILE</movement>
+				<projectileSpeed>1000</projectileSpeed>
+				<gravity>2000</gravity>
+			</weapon>
+		</enemy>
+
+
+		<enemy id="enemy_9">
+			<health>70</health>
+			<scale>1</scale>
+			<width>189.32</width>
+			<height>238.51</height>
+			<damage>3</damage>
+			<moveSpeed>150</moveSpeed>
+			<moveAnimSpeed>1.2</moveAnimSpeed>
+			<infoOY>230</infoOY>
+			<groundOY>-30</groundOY>
+			<hpBarWidth>150</hpBarWidth>
+			<resistance>0.3</resistance>
+			<coinValue>2</coinValue>
+			<coinProb>60</coinProb>
+			<spawnTime>3</spawnTime>
+			<weapon>
+				<type>RANGE</type>
+				<range>700</range>
+				<speed>4</speed>
+				<deltatime>0.2</deltatime>
+				<shots>1</shots>
+				<movement>BULLET</movement>
+				<projectileSpeed>1750</projectileSpeed>
+				<gravity>0</gravity>
+			</weapon>
+		</enemy>
+
+
+		<enemy id="boss_0">
+			<health>1500</health>
+			<scale>1</scale>
+			<width>412.48</width>
+			<height>362.5</height>
+			<damage>7</damage>
+			<moveSpeed>80</moveSpeed>
+			<moveAnimSpeed>0.9</moveAnimSpeed>
+			<infoOY>395</infoOY>
+			<groundOY>0</groundOY>
+			<hpBarWidth>250</hpBarWidth>
+			<resistance>0.9</resistance>
+			<coinValue>100</coinValue>
+			<coinProb>100</coinProb>
+			<spawnTime>20</spawnTime>
+			<weapon>
+				<type>MELEE</type>
+				<range>275</range>
+				<speed>4</speed>
+				<deltatime>0.5</deltatime>
+				<shots>2</shots>
+				<movement>BULLET</movement>
+				<projectileSpeed>1000</projectileSpeed>
+				<gravity>500</gravity>
+			</weapon>
+		</enemy>
+
+		<enemy id="boss_1">
+			<health>10000</health>
+			<scale>1</scale>
+			<width>467.78</width>
+			<height>364.56</height>
+			<damage>75</damage>
+			<moveSpeed>100</moveSpeed>
+			<moveAnimSpeed>0.85</moveAnimSpeed>
+			<infoOY>400</infoOY>
+			<groundOY>6</groundOY>
+			<hpBarWidth>250</hpBarWidth>
+			<resistance>0.9</resistance>
+			<coinValue>500</coinValue>
+			<coinProb>100</coinProb>
+			<spawnTime>25</spawnTime>
+			<weapon>
+				<type>MELEE</type>
+				<range>275</range>
+				<speed>4</speed>
+				<deltatime>0.5</deltatime>
+				<shots>1</shots>
+				<movement>PROJECTILE</movement>
+				<projectileSpeed>1000</projectileSpeed>
+				<gravity>2000</gravity>
+			</weapon>
+		</enemy>
+
+		<enemy id="boss_2">
+			<health>6000</health>
+			<scale>1</scale>
+			<width>429.31</width>
+			<height>376.76</height>
+			<damage>30</damage>
+			<moveSpeed>90</moveSpeed>
+			<moveAnimSpeed>0.85</moveAnimSpeed>
+			<infoOY>400</infoOY>
+			<groundOY>6</groundOY>
+			<hpBarWidth>250</hpBarWidth>
+			<resistance>0.9</resistance>
+			<coinValue>300</coinValue>
+			<coinProb>100</coinProb>
+			<spawnTime>20</spawnTime>
+			<weapon>
+				<type>RANGE</type>
+				<range>800</range>
+				<speed>8</speed>
+				<deltatime>0.12</deltatime>
+				<shots>2</shots>
+				<movement>BULLET</movement>
+				<projectileSpeed>1400</projectileSpeed>
+				<gravity>500</gravity>
+			</weapon>
+		</enemy>
+
+		<enemy id="boss_3">
+			<health>4000</health>
+			<scale>1</scale>
+			<width>387.48</width>
+			<height>344.15</height>
+			<damage>15</damage>
+			<moveSpeed>80</moveSpeed>
+			<moveAnimSpeed>0.8</moveAnimSpeed>
+			<infoOY>300</infoOY>
+			<groundOY>-52</groundOY>
+			<hpBarWidth>200</hpBarWidth>
+			<resistance>0.9</resistance>
+			<coinValue>150</coinValue>
+			<coinProb>100</coinProb>
+			<spawnTime>15</spawnTime>
+			<weapon>
+				<type>RANGE</type>
+				<range>700</range>
+				<speed>4</speed>
+				<deltatime>0.67</deltatime>
+				<shots>2</shots>
+				<movement>PROJECTILE</movement>
+				<projectileSpeed>1300</projectileSpeed>
+				<gravity>2000</gravity>
+			</weapon>
+		</enemy>
+
+		<enemy id="boss_4">
+			<health>6000</health>
+			<scale>1</scale>
+			<width>455.5</width>
+			<height>369</height>
+			<damage>50</damage>
+			<moveSpeed>100</moveSpeed>
+			<moveAnimSpeed>0.8</moveAnimSpeed>
+			<infoOY>350</infoOY>
+			<groundOY>-35</groundOY>
+			<hpBarWidth>300</hpBarWidth>
+			<resistance>0.9</resistance>
+			<coinValue>225</coinValue>
+			<coinProb>100</coinProb>
+			<spawnTime>18</spawnTime>
+			<weapon>
+				<type>MELEE</type>
+				<range>300</range>
+				<speed>4</speed>
+				<deltatime>0.65</deltatime>
+				<shots>1</shots>
+				<movement>BULLET</movement>
+				<projectileSpeed>1000</projectileSpeed>
+				<gravity>500</gravity>
+			</weapon>
+		</enemy>
+	</enemies>
+
+	<!-- LEVELS -->
+	<levels>
+
+		<level id="level_0">
+			<header>Shotgun Practise</header>
+			<note>Take the precise shots with shotgun by aiming a little bit closer</note>
+			<name>First Blood</name>
+			<spawnTimeDeduction>0</spawnTimeDeduction>
+			<addHealthPerEnemy>0</addHealthPerEnemy>
+			<addDamagePerEnemy>0</addDamagePerEnemy>
+			<addCoinPerEnemey>1</addCoinPerEnemey>
+			<bg>0</bg>
+			<coinReward>100</coinReward>
+			<card>0</card>
+
+			<enemies>
+				<enemy><id>enemy_7</id><count>5</count></enemy>
+				<enemy><id>enemy_8</id><count>5</count></enemy>
+				<enemy><id>enemy_9</id><count>5</count></enemy>
+			</enemies>
+
+		</level>
+
+
+		<level id="level_1">
+			<note>Kill the enemies around the chain saw first to take reduce damage</note>
+			<name>Chain Saw</name>
+			<spawnTimeDeduction>0.25</spawnTimeDeduction>
+			<addHealthPerEnemy>25</addHealthPerEnemy>
+			<addDamagePerEnemy>2</addDamagePerEnemy>
+			<addCoinPerEnemey>1</addCoinPerEnemey>
+			<bg>1</bg>
+			<coinReward>150</coinReward>
+			<card>0</card>
+
+			<enemies>
+				<enemy><id>enemy_7</id><count>8</count></enemy>
+				<enemy><id>enemy_8</id><count>8</count></enemy>
+				<enemy><id>enemy_9</id><count>8</count></enemy>
+			</enemies>
+		</level>
+
+
+		
+
+		<level id="level_2">
+			<note>Sniper is extremely good against the mob</note>
+			<name>Get Ready Sniper</name>
+			<spawnTimeDeduction>0.75</spawnTimeDeduction>
+			<addHealthPerEnemy>50</addHealthPerEnemy>
+			<addDamagePerEnemy>2</addDamagePerEnemy>
+			<addCoinPerEnemey>2</addCoinPerEnemey>
+			<coinReward>200</coinReward>
+			<bg>2</bg>
+			<card>5</card>
+			<enemies>
+				<enemy><id>enemy_7</id><count>10</count></enemy>
+				<enemy><id>enemy_8</id><count>10</count></enemy>
+				<enemy><id>enemy_0</id><count>2</count></enemy>
+				<enemy><id>enemy_9</id><count>10</count></enemy>
+			</enemies>
+		</level>
+
+
+		<level id="level_3">
+			<note>You will need auto rifles to clear this level</note>
+			<name>Gunpowder Revenge</name>
+			<spawnTimeDeduction>1</spawnTimeDeduction>
+			<addHealthPerEnemy>100</addHealthPerEnemy>
+			<addDamagePerEnemy>5</addDamagePerEnemy>
+			<addCoinPerEnemey>4</addCoinPerEnemey>
+			<coinReward>250</coinReward>
+			<bg>3</bg>
+			<card>2</card>
+
+			<enemies>
+				<enemy><id>enemy_8</id><count>12</count></enemy>
+				<enemy><id>enemy_6</id><count>5</count></enemy>
+				<enemy><id>enemy_9</id><count>12</count></enemy>
+			</enemies>
+
+		</level>
+
+		<level id="level_4">
+			<note>Weapon Upgrades are necessary for killing tougher enemies</note>
+			<name>War against Mafia</name>
+			<spawnTimeDeduction>1.2</spawnTimeDeduction>
+			<addHealthPerEnemy>125</addHealthPerEnemy>
+			<addDamagePerEnemy>7</addDamagePerEnemy>
+			<addCoinPerEnemey>5</addCoinPerEnemey>
+			<coinReward>300</coinReward>
+			<bg>4</bg>
+			<card>5</card>
+
+			<enemies>
+				<enemy><id>enemy_8</id><count>15</count></enemy>
+				<enemy><id>enemy_0</id><count>4</count></enemy>
+				<enemy><id>enemy_9</id><count>15</count></enemy>
+			</enemies>
+
+		</level>
+
+		<level id="level_5">
+			<note>ReFill all of your weapons, you will need them badly</note>
+			<name>End of DON</name>
+			<spawnTimeDeduction>1.5</spawnTimeDeduction>
+			<addHealthPerEnemy>130</addHealthPerEnemy>
+			<addDamagePerEnemy>12</addDamagePerEnemy>
+			<addCoinPerEnemey>6</addCoinPerEnemey>
+			<coinReward>350</coinReward>
+			<bg>5</bg>
+			<card>1</card>
+
+			<enemies>
+				<enemy><id>boss_0</id><count>1</count></enemy>
+				<enemy><id>enemy_6</id><count>6</count></enemy>
+				<enemy><id>enemy_9</id><count>10</count></enemy>
+				<enemy><id>enemy_8</id><count>10</count></enemy>
+			</enemies>
+		</level>
+
+		<level id="level_6">
+			<note>Molotov Cocktail is extremely efficient in taking down the mob</note>
+			<spawnTimeDeduction>1.6</spawnTimeDeduction>
+			<addHealthPerEnemy>140</addHealthPerEnemy>
+			<addDamagePerEnemy>15</addDamagePerEnemy>
+			<addCoinPerEnemey>7</addCoinPerEnemey>
+			<name>Blood Money</name>
+			<bg>6</bg>
+			<coinReward>400</coinReward>
+			<card>4</card>
+
+			<enemies>
+				<enemy><id>enemy_5</id><count>8</count></enemy>
+				<enemy><id>enemy_0</id><count>5</count></enemy>
+				<enemy><id>enemy_9</id><count>15</count></enemy>
+			</enemies>
+		</level>
+
+		<level id="level_7">
+			<note>Ranged enemies will damage you from a distance before melee ones</note>
+			<spawnTimeDeduction>2</spawnTimeDeduction>
+			<addHealthPerEnemy>200</addHealthPerEnemy>
+			<addDamagePerEnemy>20</addDamagePerEnemy>
+			<addCoinPerEnemey>8</addCoinPerEnemey>
+			<name>Gun Justice</name>
+			<bg>3</bg>
+			<coinReward>450</coinReward>
+			<card>2</card>
+			<enemies>
+				<enemy><id>enemy_5</id><count>10</count></enemy>
+				<enemy><id>enemy_6</id><count>6</count></enemy>
+				<enemy><id>enemy_8</id><count>10</count></enemy>
+				<enemy><id>enemy_9</id><count>10</count></enemy>
+			</enemies>
+		</level>
+
+
+		<level id="level_8">
+			<note>Unlock the powerful brricades from store to hold longer</note>
+			<name>Root of Evil</name>
+			<spawnTimeDeduction>1.8</spawnTimeDeduction>
+			<addHealthPerEnemy>225</addHealthPerEnemy>
+			<addDamagePerEnemy>20</addDamagePerEnemy>
+			<addCoinPerEnemey>9</addCoinPerEnemey>
+			<bg>0</bg>
+			<coinReward>500</coinReward>
+			<card>5</card>
+
+			<enemies>
+				<enemy><id>enemy_0</id><count>10</count></enemy>
+				<enemy><id>enemy_2</id><count>5</count></enemy>
+				<enemy><id>enemy_5</id><count>10</count></enemy>
+			</enemies>
+		</level>
+
+		
+		<level id="level_9">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>D-Day</name>
+			<bg>1</bg>
+			<spawnTimeDeduction>1.8</spawnTimeDeduction>
+			<addHealthPerEnemy>250</addHealthPerEnemy>
+			<addDamagePerEnemy>25</addDamagePerEnemy>
+			<addCoinPerEnemey>10</addCoinPerEnemey>
+			<coinReward>550</coinReward>
+			<card>3</card>
+
+			<enemies>
+				<enemy><id>enemy_5</id><count>10</count></enemy>
+				<enemy><id>enemy_6</id><count>10</count></enemy>
+				<enemy><id>enemy_8</id><count>20</count></enemy>
+				<enemy><id>boss_3</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+
+
+		<level id="level_10">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Rampage</name>
+			<bg>4</bg>
+			<spawnTimeDeduction>2</spawnTimeDeduction>
+			<addHealthPerEnemy>300</addHealthPerEnemy>
+			<addDamagePerEnemy>25</addDamagePerEnemy>
+			<addCoinPerEnemey>12</addCoinPerEnemey>
+			<coinReward>600</coinReward>
+			<card>0</card>
+
+			<enemies>
+				<enemy><id>enemy_8</id><count>20</count></enemy>
+				<enemy><id>enemy_9</id><count>20</count></enemy>
+			</enemies>
+		</level>
+
+		<level id="level_11">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Rampage</name>
+			<bg>2</bg>
+			<spawnTimeDeduction>2</spawnTimeDeduction>
+			<addHealthPerEnemy>325</addHealthPerEnemy>
+			<addDamagePerEnemy>30</addDamagePerEnemy>
+			<addCoinPerEnemey>14</addCoinPerEnemey>
+			<coinReward>650</coinReward>
+			<card>1</card>
+
+			<enemies>
+				<enemy><id>enemy_5</id><count>5</count></enemy>
+				<enemy><id>enemy_0</id><count>5</count></enemy>
+				<enemy><id>enemy_8</id><count>5</count></enemy>
+				<enemy><id>enemy_9</id><count>5</count></enemy>
+				<enemy><id>boss_0</id><count>1</count></enemy>
+				<enemy><id>enemy_7</id><count>5</count></enemy>
+				<enemy><id>enemy_6</id><count>5</count></enemy>
+			</enemies>
+		</level>
+
+
+
+		<level id="level_12">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>1</bg>
+			<spawnTimeDeduction>1.8</spawnTimeDeduction>
+			<addHealthPerEnemy>350</addHealthPerEnemy>
+			<addDamagePerEnemy>35</addDamagePerEnemy>
+			<addCoinPerEnemey>16</addCoinPerEnemey>
+			<coinReward>700</coinReward>
+			<card>1</card>
+			<enemies>
+				<enemy><id>enemy_2</id><count>10</count></enemy>
+				<enemy><id>enemy_0</id><count>10</count></enemy>
+				<enemy><id>enemy_9</id><count>12</count></enemy>
+				<enemy><id>enemy_9</id><count>9</count></enemy>
+				<enemy><id>boss_3</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+
+
+		<level id="level_13">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>3</bg>
+			<spawnTimeDeduction>2.25</spawnTimeDeduction>
+			<addHealthPerEnemy>450</addHealthPerEnemy>
+			<addDamagePerEnemy>40</addDamagePerEnemy>
+			<addCoinPerEnemey>18</addCoinPerEnemey>
+			<coinReward>750</coinReward>
+			<card>5</card>
+			<enemies>
+				<enemy><id>enemy_0</id><count>15</count></enemy>
+				<enemy><id>enemy_2</id><count>15</count></enemy>
+			</enemies>
+		</level>
+
+		<level id="level_14">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>2</bg>
+			<spawnTimeDeduction>2</spawnTimeDeduction>
+			<addHealthPerEnemy>500</addHealthPerEnemy>
+			<addDamagePerEnemy>45</addDamagePerEnemy>
+			<addCoinPerEnemey>20</addCoinPerEnemey>
+			<coinReward>800</coinReward>
+			<card>8</card>
+			<enemies>
+				<enemy><id>enemy_9</id><count>15</count></enemy>
+				<enemy><id>enemy_6</id><count>15</count></enemy>
+				<enemy><id>enemy_8</id><count>15</count></enemy>
+				<enemy><id>boss_2</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+
+		<level id="level_15">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>0</bg>
+			<spawnTimeDeduction>3</spawnTimeDeduction>
+			<addHealthPerEnemy>550</addHealthPerEnemy>
+			<addDamagePerEnemy>48</addDamagePerEnemy>
+			<addCoinPerEnemey>22</addCoinPerEnemey>
+			<coinReward>550</coinReward>
+			<card>6</card>
+			<enemies>
+				<enemy><id>enemy_0</id><count>12</count></enemy>
+				<enemy><id>enemy_1</id><count>12</count></enemy>
+				<enemy><id>enemy_2</id><count>12</count></enemy>
+			</enemies>
+		</level>
+
+
+		<level id="level_16">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>2</bg>
+			<spawnTimeDeduction>2.25</spawnTimeDeduction>
+			<addHealthPerEnemy>600</addHealthPerEnemy>
+			<addDamagePerEnemy>50</addDamagePerEnemy>
+			<addCoinPerEnemey>24</addCoinPerEnemey>
+			<coinReward>600</coinReward>
+			<card>3</card>
+			<enemies>
+				<enemy><id>enemy_7</id><count>15</count></enemy>
+				<enemy><id>enemy_8</id><count>15</count></enemy>
+				<enemy><id>boss_3</id><count>1</count></enemy>
+				<enemy><id>boss_0</id><count>1</count></enemy>
+				<enemy><id>enemy_9</id><count>15</count></enemy>
+			</enemies>
+		</level>
+
+
+		<level id="level_17">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>5</bg>
+			<spawnTimeDeduction>3.5</spawnTimeDeduction>
+			<addHealthPerEnemy>700</addHealthPerEnemy>
+			<addDamagePerEnemy>52</addDamagePerEnemy>
+			<addCoinPerEnemey>26</addCoinPerEnemey>
+			<coinReward>650</coinReward>
+			<card>6</card>
+			<enemies>
+				<enemy><id>enemy_1</id><count>15</count></enemy>
+				<enemy><id>enemy_3</id><count>15</count></enemy>
+				<enemy><id>boss_2</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+		<level id="level_18">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>1</bg>
+			<spawnTimeDeduction>2.5</spawnTimeDeduction>
+			<addHealthPerEnemy>700</addHealthPerEnemy>
+			<addDamagePerEnemy>55</addDamagePerEnemy>
+			<addCoinPerEnemey>28</addCoinPerEnemey>
+			<coinReward>750</coinReward>
+			<card>6</card>
+			<enemies>
+				<enemy><id>enemy_7</id><count>15</count></enemy>
+				<enemy><id>enemy_8</id><count>15</count></enemy>
+				<enemy><id>boss_3</id><count>1</count></enemy>
+				<enemy><id>boss_2</id><count>1</count></enemy>
+				<enemy><id>boss_0</id><count>1</count></enemy>
+				<enemy><id>enemy_9</id><count>15</count></enemy>
+			</enemies>
+		</level>
+
+
+		<level id="level_19">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>3</bg>
+			<spawnTimeDeduction>3.75</spawnTimeDeduction>
+			<addHealthPerEnemy>850</addHealthPerEnemy>
+			<addDamagePerEnemy>55</addDamagePerEnemy>
+			<addCoinPerEnemey>30</addCoinPerEnemey>
+			<coinReward>800</coinReward>
+			<card>8</card>
+			<enemies>
+				<enemy><id>enemy_1</id><count>15</count></enemy>
+				<enemy><id>enemy_3</id><count>15</count></enemy>
+				<enemy><id>boss_4</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+		<level id="level_20">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>4</bg>
+			<spawnTimeDeduction>3.75</spawnTimeDeduction>
+			<addHealthPerEnemy>900</addHealthPerEnemy>
+			<addDamagePerEnemy>60</addDamagePerEnemy>
+			<addCoinPerEnemey>32</addCoinPerEnemey>
+			<coinReward>850</coinReward>
+			<card>2</card>
+			<enemies>
+				<enemy><id>enemy_1</id><count>10</count></enemy>
+				<enemy><id>enemy_3</id><count>10</count></enemy>
+				<enemy><id>boss_3</id><count>1</count></enemy>
+				<enemy><id>boss_2</id><count>1</count></enemy>
+				<enemy><id>boss_0</id><count>1</count></enemy>
+				<enemy><id>enemy_2</id><count>10</count></enemy>
+			</enemies>
+		</level>
+
+
+		<level id="level_21">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>2</bg>
+			<spawnTimeDeduction>2.75</spawnTimeDeduction>
+			<addHealthPerEnemy>900</addHealthPerEnemy>
+			<addDamagePerEnemy>60</addDamagePerEnemy>
+			<addCoinPerEnemey>34</addCoinPerEnemey>
+			<coinReward>900</coinReward>
+			<card>0</card>
+			<enemies>
+				<enemy><id>enemy_6</id><count>15</count></enemy>
+				<enemy><id>enemy_7</id><count>15</count></enemy>
+				<enemy><id>enemy_8</id><count>15</count></enemy>
+				<enemy><id>enemy_9</id><count>15</count></enemy>
+			</enemies>
+		</level>
+
+		<level id="level_22">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>4</bg>
+			<spawnTimeDeduction>4</spawnTimeDeduction>
+			<addHealthPerEnemy>1500</addHealthPerEnemy>
+			<addDamagePerEnemy>65</addDamagePerEnemy>
+			<addCoinPerEnemey>45</addCoinPerEnemey>
+			<coinReward>1000</coinReward>
+			<card>8</card>
+			<enemies>
+				<enemy><id>enemy_1</id><count>10</count></enemy>
+				<enemy><id>enemy_4</id><count>10</count></enemy>
+			</enemies>
+		</level>
+
+		<level id="level_23">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>2</bg>
+			<spawnTimeDeduction>3.75</spawnTimeDeduction>
+			<addHealthPerEnemy>1250</addHealthPerEnemy>
+			<addDamagePerEnemy>60</addDamagePerEnemy>
+			<addCoinPerEnemey>45</addCoinPerEnemey>
+			<coinReward>1100</coinReward>
+			<card>3</card>
+			<enemies>
+				<enemy><id>enemy_1</id><count>8</count></enemy>
+				<enemy><id>enemy_4</id><count>8</count></enemy>
+				<enemy><id>boss_3</id><count>1</count></enemy>
+				<enemy><id>enemy_3</id><count>8</count></enemy>
+				<enemy><id>boss_2</id><count>1</count></enemy>
+				<enemy><id>boss_0</id><count>1</count></enemy>
+				<enemy><id>boss_4</id><count>1</count></enemy>
+				<enemy><id>enemy_2</id><count>8</count></enemy>
+			</enemies>
+		</level>
+
+
+
+		<level id="level_24">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>2</bg>
+			<spawnTimeDeduction>3.5</spawnTimeDeduction>
+			<addHealthPerEnemy>1500</addHealthPerEnemy>
+			<addDamagePerEnemy>50</addDamagePerEnemy>
+			<addCoinPerEnemey>48</addCoinPerEnemey>
+			<coinReward>1200</coinReward>
+			<card>9</card>
+			<enemies>
+				<enemy><id>enemy_0</id><count>8</count></enemy>
+				<enemy><id>enemy_1</id><count>8</count></enemy>
+				<enemy><id>enemy_2</id><count>8</count></enemy>
+				<enemy><id>enemy_3</id><count>8</count></enemy>
+				<enemy><id>enemy_4</id><count>8</count></enemy>
+				<enemy><id>boss_1</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+
+		<level id="level_25">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>0</bg>
+			<spawnTimeDeduction>3</spawnTimeDeduction>
+			<addHealthPerEnemy>1500</addHealthPerEnemy>
+			<addDamagePerEnemy>40</addDamagePerEnemy>
+			<addCoinPerEnemey>55</addCoinPerEnemey>
+			<coinReward>1250</coinReward>
+			<card>1</card>
+			<enemies>
+				<enemy><id>boss_0</id><count>1</count></enemy>
+				<enemy><id>enemy_5</id><count>8</count></enemy>
+				<enemy><id>enemy_6</id><count>8</count></enemy>
+				<enemy><id>enemy_4</id><count>8</count></enemy>
+				<enemy><id>boss_4</id><count>1</count></enemy>
+				<enemy><id>enemy_0</id><count>8</count></enemy>
+				<enemy><id>enemy_7</id><count>8</count></enemy>
+				<enemy><id>boss_1</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+		<level id="level_26">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>3</bg>
+			<spawnTimeDeduction>2</spawnTimeDeduction>
+			<addHealthPerEnemy>1520</addHealthPerEnemy>
+			<addDamagePerEnemy>50</addDamagePerEnemy>
+			<addCoinPerEnemey>60</addCoinPerEnemey>
+			<coinReward>1300</coinReward>
+			<card>4</card>
+			<enemies>
+				<enemy><id>boss_4</id><count>1</count></enemy>
+				<enemy><id>enemy_5</id><count>12</count></enemy>
+				<enemy><id>enemy_6</id><count>15</count></enemy>
+				<enemy><id>enemy_8</id><count>8</count></enemy>
+				<enemy><id>boss_2</id><count>1</count></enemy>
+				<enemy><id>enemy_3</id><count>8</count></enemy>
+				<enemy><id>enemy_7</id><count>15</count></enemy>
+				<enemy><id>boss_3</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+
+
+		<level id="level_27">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>5</bg>
+			<spawnTimeDeduction>3</spawnTimeDeduction>
+			<addHealthPerEnemy>1550</addHealthPerEnemy>
+			<addDamagePerEnemy>50</addDamagePerEnemy>
+			<addCoinPerEnemey>65</addCoinPerEnemey>
+			<coinReward>1300</coinReward>
+			<card>1</card>
+			<enemies>
+				<enemy><id>enemy_0</id><count>8</count></enemy>
+				<enemy><id>enemy_1</id><count>10</count></enemy>
+				<enemy><id>enemy_4</id><count>4</count></enemy>
+				<enemy><id>boss_0</id><count>1</count></enemy>
+				<enemy><id>enemy_5</id><count>12</count></enemy>
+				<enemy><id>enemy_2</id><count>6</count></enemy>
+				<enemy><id>boss_4</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+
+		<level id="level_28">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>4</bg>
+			<spawnTimeDeduction>3</spawnTimeDeduction>
+			<addHealthPerEnemy>1400</addHealthPerEnemy>
+			<addDamagePerEnemy>30</addDamagePerEnemy>
+			<addCoinPerEnemey>70</addCoinPerEnemey>
+			<coinReward>1350</coinReward>
+			<card>3</card>
+			<enemies>
+				<enemy><id>boss_0</id><count>1</count></enemy>
+				<enemy><id>boss_1</id><count>1</count></enemy>
+				<enemy><id>enemy_8</id><count>15</count></enemy>
+				<enemy><id>enemy_1</id><count>8</count></enemy>
+				<enemy><id>enemy_4</id><count>6</count></enemy>
+				<enemy><id>enemy_5</id><count>12</count></enemy>
+				<enemy><id>enemy_7</id><count>12</count></enemy>
+				<enemy><id>enemy_2</id><count>8</count></enemy>
+				<enemy><id>boss_4</id><count>1</count></enemy>
+				<enemy><id>boss_2</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+
+		<level id="level_29">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>3</bg>
+			<spawnTimeDeduction>3.5</spawnTimeDeduction>
+			<addHealthPerEnemy>1750</addHealthPerEnemy>
+			<addDamagePerEnemy>65</addDamagePerEnemy>
+			<addCoinPerEnemey>80</addCoinPerEnemey>
+			<coinReward>14000</coinReward>
+			<card>9</card>
+			<enemies>
+				<enemy><id>boss_0</id><count>1</count></enemy>
+				<enemy><id>enemy_8</id><count>15</count></enemy>
+				<enemy><id>enemy_3</id><count>8</count></enemy>
+				<enemy><id>enemy_4</id><count>6</count></enemy>
+				<enemy><id>enemy_2</id><count>12</count></enemy>
+				<enemy><id>enemy_5</id><count>12</count></enemy>
+				<enemy><id>boss_3</id><count>1</count></enemy>
+				<enemy><id>boss_1</id><count>1</count></enemy>
+				<enemy><id>enemy_7</id><count>12</count></enemy>
+				<enemy><id>enemy_9</id><count>8</count></enemy>
+				<enemy><id>boss_2</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<level id="level_25">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>1</bg>
+			<spawnTimeDeduction>1.8</spawnTimeDeduction>
+			<addHealthPerEnemy>410</addHealthPerEnemy>
+			<addDamagePerEnemy>80</addDamagePerEnemy>
+			<addCoinPerEnemey>400</addCoinPerEnemey>
+			<coinReward>8500</coinReward>
+			<enemies>
+				<enemy><id>enemy_0</id><count>6</count></enemy>
+				<enemy><id>enemy_5</id><count>6</count></enemy>
+				<enemy><id>enemy_3</id><count>6</count></enemy>
+				<enemy><id>enemy_4</id><count>6</count></enemy>
+				<enemy><id>enemy_5</id><count>6</count></enemy>
+				<enemy><id>enemy_6</id><count>6</count></enemy>
+				<enemy><id>enemy_7</id><count>6</count></enemy>
+				<enemy><id>enemy_8</id><count>6</count></enemy>
+				<enemy><id>enemy_9</id><count>6</count></enemy>
+				<enemy><id>enemy_1</id><count>6</count></enemy>
+				<enemy><id>boss_1</id><count>1</count></enemy>
+				<enemy><id>boss_4</id><count>1</count></enemy>
+				<enemy><id>boss_3</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+		<level id="level_26">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>1</bg>
+			<spawnTimeDeduction>1.8</spawnTimeDeduction>
+			<addHealthPerEnemy>410</addHealthPerEnemy>
+			<addDamagePerEnemy>80</addDamagePerEnemy>
+			<addCoinPerEnemey>400</addCoinPerEnemey>
+			<coinReward>8500</coinReward>
+			<enemies>
+				<enemy><id>enemy_0</id><count>6</count></enemy>
+				<enemy><id>enemy_5</id><count>6</count></enemy>
+				<enemy><id>enemy_3</id><count>6</count></enemy>
+				<enemy><id>enemy_4</id><count>6</count></enemy>
+				<enemy><id>enemy_5</id><count>6</count></enemy>
+				<enemy><id>enemy_6</id><count>6</count></enemy>
+				<enemy><id>enemy_7</id><count>6</count></enemy>
+				<enemy><id>enemy_8</id><count>6</count></enemy>
+				<enemy><id>enemy_9</id><count>6</count></enemy>
+				<enemy><id>enemy_1</id><count>6</count></enemy>
+				<enemy><id>boss_1</id><count>1</count></enemy>
+				<enemy><id>boss_4</id><count>1</count></enemy>
+				<enemy><id>boss_3</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+		<level id="level_27">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>1</bg>
+			<spawnTimeDeduction>1.8</spawnTimeDeduction>
+			<addHealthPerEnemy>410</addHealthPerEnemy>
+			<addDamagePerEnemy>80</addDamagePerEnemy>
+			<addCoinPerEnemey>400</addCoinPerEnemey>
+			<coinReward>8500</coinReward>
+			<enemies>
+				<enemy><id>enemy_0</id><count>6</count></enemy>
+				<enemy><id>enemy_5</id><count>6</count></enemy>
+				<enemy><id>enemy_3</id><count>6</count></enemy>
+				<enemy><id>enemy_4</id><count>6</count></enemy>
+				<enemy><id>enemy_5</id><count>6</count></enemy>
+				<enemy><id>enemy_6</id><count>6</count></enemy>
+				<enemy><id>enemy_7</id><count>6</count></enemy>
+				<enemy><id>enemy_8</id><count>6</count></enemy>
+				<enemy><id>enemy_9</id><count>6</count></enemy>
+				<enemy><id>enemy_1</id><count>6</count></enemy>
+				<enemy><id>boss_1</id><count>1</count></enemy>
+				<enemy><id>boss_4</id><count>1</count></enemy>
+				<enemy><id>boss_3</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+		<level id="level_28">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>1</bg>
+			<spawnTimeDeduction>1.8</spawnTimeDeduction>
+			<addHealthPerEnemy>410</addHealthPerEnemy>
+			<addDamagePerEnemy>80</addDamagePerEnemy>
+			<addCoinPerEnemey>400</addCoinPerEnemey>
+			<coinReward>8500</coinReward>
+			<enemies>
+				<enemy><id>enemy_0</id><count>6</count></enemy>
+				<enemy><id>enemy_5</id><count>6</count></enemy>
+				<enemy><id>enemy_3</id><count>6</count></enemy>
+				<enemy><id>enemy_4</id><count>6</count></enemy>
+				<enemy><id>enemy_5</id><count>6</count></enemy>
+				<enemy><id>enemy_6</id><count>6</count></enemy>
+				<enemy><id>enemy_7</id><count>6</count></enemy>
+				<enemy><id>enemy_8</id><count>6</count></enemy>
+				<enemy><id>enemy_9</id><count>6</count></enemy>
+				<enemy><id>enemy_1</id><count>6</count></enemy>
+				<enemy><id>boss_1</id><count>1</count></enemy>
+				<enemy><id>boss_4</id><count>1</count></enemy>
+				<enemy><id>boss_3</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+		<level id="level_29">
+			<note>It will be more tougher than you can imagine. Upgrade Everything</note>
+			<name>Pasco</name>
+			<bg>1</bg>
+			<spawnTimeDeduction>1.8</spawnTimeDeduction>
+			<addHealthPerEnemy>410</addHealthPerEnemy>
+			<addDamagePerEnemy>80</addDamagePerEnemy>
+			<addCoinPerEnemey>400</addCoinPerEnemey>
+			<coinReward>8500</coinReward>
+			<enemies>
+				<enemy><id>enemy_0</id><count>6</count></enemy>
+				<enemy><id>enemy_5</id><count>6</count></enemy>
+				<enemy><id>enemy_3</id><count>6</count></enemy>
+				<enemy><id>enemy_4</id><count>6</count></enemy>
+				<enemy><id>enemy_5</id><count>6</count></enemy>
+				<enemy><id>enemy_6</id><count>6</count></enemy>
+				<enemy><id>enemy_7</id><count>6</count></enemy>
+				<enemy><id>enemy_8</id><count>6</count></enemy>
+				<enemy><id>enemy_9</id><count>6</count></enemy>
+				<enemy><id>enemy_1</id><count>6</count></enemy>
+				<enemy><id>boss_1</id><count>1</count></enemy>
+				<enemy><id>boss_4</id><count>1</count></enemy>
+				<enemy><id>boss_3</id><count>1</count></enemy>
+			</enemies>
+		</level>
+
+	</levels>
+
+</content>
