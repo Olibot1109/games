@@ -47,7 +47,7 @@ app.get('/ping', (req, res) => {
 });
 
 setInterval(() => {
-  https.get('https://games-mht0.onrender.com');
+  https.get('https://games-mht0.onrender.com/ping');
 }, 20 * 1000); // every 20s
 
 app.listen(PORT, () => {
