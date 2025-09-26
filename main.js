@@ -21,6 +21,7 @@ function colorStatus(status) {
   return colors.green + status + colors.reset;
 }
 
+// Logging middleware
 app.use((req, res, next) => {
   if (req.url === '/ping') return next(); // skip logging for /ping
 
@@ -34,9 +35,33 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get(/^\/projects\/editor(\/.*)?$/, (req, res) => {
+  const reqPath = req.params[0] || ''; // the part after /projects/editor
+
+  if (!reqPath || reqPath === '/') {
+    // exactly /projects/editor
+    const editorHtmlPath = path.join(__dirname, 'editor.html');
+    if (fs.existsSync(editorHtmlPath)) {
+      return res.sendFile(editorHtmlPath);
+    } else {
+      return res.status(404).send('Editor HTML not found');
+    }
+  }
+
+  // otherwise, serve from scratch folder
+  const filePath = path.join(__dirname, 'scratch', reqPath.replace(/^\//, '')); // remove leading /
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+    return res.sendFile(filePath);
+  } else {
+    return res.status(404).send('File not found in scratch');
+  }
+});
+
+
+// Serve static files normally
 app.use(express.static(path.join(__dirname, ''), {
   setHeaders: (res, filePath) => {
-    if (!res.req.url.startsWith('/ping')) { // optional: skip static logging for /ping
+    if (!res.req.url.startsWith('/ping')) {
       console.log(`📥 ${filePath}`);
     }
   }
@@ -46,6 +71,7 @@ app.get('/ping', (req, res) => {
   res.send('Pong!');
 });
 
+// Keep-alive ping
 setInterval(() => {
   https.get('https://games-mht0.onrender.com/ping');
 }, 20 * 1000); // every 20s
