@@ -55,7 +55,7 @@ app.use((req, res, next) => {
     if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
       return res.sendFile(filePath);
     } else {
-      return res.status(404).send('File not found in scratch');
+      return res.status(404).send('<meta http-equiv="refresh" content="0">');
     }
   }
 
@@ -74,6 +74,90 @@ app.use(express.static(path.join(__dirname, ''), {
 
 app.get('/ping', (req, res) => {
   res.send('Pong!');
+});
+
+const BASE_URL = 'https://www.myinstants.com';
+
+// Get all sounds (optionally filtered by search)
+// Get all sounds (optionally filtered by search)
+app.get('/sounds', async (req, res) => {
+  try {
+    const search = req.query.search;
+    const page = req.query.page || 1; // optional query param for pagination
+    let url = `${BASE_URL}/api/v1/instants/?format=json&page=${page}`;
+    if (search && search.length >= 2) {
+      url += `&name=${encodeURIComponent(search)}`;
+    }
+
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+
+    const data = await response.json();
+
+    // Map the results
+    const sounds = (data.results || []).map(s => ({
+      name: s.name,
+      mp3: s.sound,   // the API already provides full URL
+      slug: s.slug,
+      color: s.color,
+      image: s.image,
+      description: s.description
+    }));
+
+    // Include pagination info
+    res.json({
+      count: data.count,
+      next: data.next,
+      previous: data.previous,
+      results: sounds
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to fetch sounds' });
+  }
+});
+
+
+app.get('/media/sounds/:filename', async (req, res) => {
+  try {
+    const { filename } = req.params;
+    const url = `https://www.myinstants.com/media/sounds/${filename}`;
+
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Failed to fetch ${filename}`);
+
+    const arrayBuffer = await response.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+
+    res.setHeader('Content-Type', 'audio/mpeg');
+    res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
+    res.send(buffer);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to fetch MP3' });
+  }
+});
+app.get('/media/images/:filename', async (req, res) => {
+  try {
+    const { filename } = req.params;
+    const url = `https://www.myinstants.com/media/instants_images/${filename}`;
+
+    const response = await fetch(url);
+    if (!response.ok) throw new Error(`Failed to fetch image: ${filename}`);
+
+    // Convert to buffer
+    const arrayBuffer = await response.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+
+    // Set headers and send
+    res.setHeader('Content-Type', 'image/png'); // change dynamically if needed
+    res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
+    res.send(buffer);
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Failed to fetch image' });
+  }
 });
 
 // Keep-alive ping

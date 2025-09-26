@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sound Board</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; margin: 0; }
+    h1 { text-align: center; margin-bottom: 20px; }
+    #search { width: 100%; padding: 10px; margin-bottom: 20px; font-size: 16px; box-sizing: border-box; }
+    .sound-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
+    .sound-card { background: #fff; border-radius: 10px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; transition: transform 0.1s; }
+    .sound-card:hover { transform: scale(1.05); }
+    .sound-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: fill;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .play-btn { padding: 10px 15px; border: none; border-radius: 5px; color: white; cursor: pointer; font-weight: bold; }
+    .play-btn:hover { filter: brightness(1.2); }
+    .description { font-size: 12px; margin-top: 5px; color: #555; }
+    .loading { text-align: center; margin: 20px 0; font-weight: bold; }
+    .highlight { background-color: yellow; font-weight: bold; }
+
+    /* Fixed Stop All button */
+    #stopAllBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 50px;
+      background-color: #ff4d4f;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+    #stopAllBtn:hover { filter: brightness(1.2); }
+  </style>
+</head>
+<body>
+
+  <h1>Sound Board</h1>
+  <input type="text" id="search" placeholder="Search sounds (min 2 letters)" />
+
+  <div class="sound-list" id="soundList"></div>
+  <div id="loading" class="loading" style="display:none;">Loading...</div>
+
+  <button id="stopAllBtn">■ Stop All Sounds</button>
+
+  <script>
+    const soundListEl = document.getElementById('soundList');
+    const searchInput = document.getElementById('search');
+    const loadingEl = document.getElementById('loading');
+    const stopAllBtn = document.getElementById('stopAllBtn');
+
+    let currentPage = 1;
+    let totalCount = 0;
+    let isLoading = false;
+    let currentQuery = '';
+    let audioPlayers = [];
+    const DEFAULT_IMAGE = 'assets/no-img.jpeg';
+
+    async function fetchSounds(query = '', page = 1) {
+      const url = `/sounds${query ? '?search=' + encodeURIComponent(query) + '&page=' + page : '?page=' + page}`;
+      const res = await fetch(url);
+      const data = await res.json();
+      totalCount = data.count;
+      return data.results;
+    }
+
+    function highlightText(text, query) {
+      if (!query) return text;
+      const regex = new RegExp(`(${query})`, 'gi');
+      if (!regex.test(text)) return null; // skip if no match
+      return text.replace(regex, '<span class="highlight">$1</span>');
+    }
+
+function createSoundCard(sound, query) {
+  const highlightedTitle = highlightText(sound.name, query);
+  const highlightedDesc = sound.description ? highlightText(sound.description, query) : null;
+
+  if (!highlightedTitle && !highlightedDesc) return null;
+
+  const card = document.createElement('div');
+  card.className = 'sound-card';
+
+  const img = document.createElement('img');
+  img.src = sound.image ? `/media/images/${sound.image.split('/').pop()}` : DEFAULT_IMAGE;
+  card.appendChild(img);
+
+  if (highlightedTitle) {
+    const title = document.createElement('h3');
+    title.innerHTML = highlightedTitle;
+    card.appendChild(title);
+  }
+
+  const btn = document.createElement('button');
+  btn.className = 'play-btn';
+  const bgColor = '#' + (sound.color || '007bff');
+  btn.style.backgroundColor = bgColor;
+
+  // Set text color for best contrast
+  btn.style.color = getContrastYIQ(bgColor);
+  btn.textContent = '▶ Play';
+
+  const audio = new Audio(`/media/sounds/${sound.mp3.split('/').pop()}`);
+  audio.addEventListener('loadedmetadata', () => {
+    const duration = formatDuration(audio.duration);
+    btn.textContent = `▶ Play (${duration})`;
+  });
+
+  btn.addEventListener('click', () => {
+  const audio = new Audio(`/media/sounds/${sound.mp3.split('/').pop()}`);
+  audio.play();
+  audioPlayers.push(audio);
+});
+  card.appendChild(btn);
+
+  if (highlightedDesc) {
+    const desc = document.createElement('p');
+    desc.className = 'description';
+    const shortDesc = highlightedDesc.length > 60 ? highlightedDesc.slice(0, 60) + '…' : highlightedDesc;
+    desc.innerHTML = shortDesc;
+    card.appendChild(desc);
+  }
+
+  return card;
+}
+
+// Helper: format seconds into mm:ss
+function formatDuration(seconds) {
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${mins}:${secs.toString().padStart(2, '0')}`;
+}
+
+// Helper: determine black or white text for contrast
+function getContrastYIQ(hexcolor) {
+  hexcolor = hexcolor.replace('#', '');
+  const r = parseInt(hexcolor.substr(0,2),16);
+  const g = parseInt(hexcolor.substr(2,2),16);
+  const b = parseInt(hexcolor.substr(4,2),16);
+  const yiq = ((r*299)+(g*587)+(b*114))/1000;
+  return (yiq >= 128) ? 'black' : 'white';
+}
+
+
+
+    async function loadSounds(reset = false, pages = 2) {
+      if (isLoading) return;
+      isLoading = true;
+      loadingEl.style.display = 'block';
+
+      if (reset) {
+        soundListEl.innerHTML = '';
+        currentPage = 1;
+      }
+
+      try {
+        for (let i = 0; i < pages; i++) {
+          const sounds = await fetchSounds(currentQuery, currentPage);
+          sounds.forEach(sound => {
+            const card = createSoundCard(sound, currentQuery);
+            if (card) soundListEl.appendChild(card);
+          });
+          currentPage++;
+          if (soundListEl.children.length >= totalCount) break;
+        }
+      } catch (err) {
+        console.error('Failed to load sounds', err);
+      } finally {
+        isLoading = false;
+        loadingEl.style.display = 'none';
+      }
+    }
+
+    // Stop all sounds
+    stopAllBtn.addEventListener('click', () => {
+      audioPlayers.forEach(audio => {
+        audio.pause();
+        audio.currentTime = 0;
+      });
+      audioPlayers = [];
+    });
+
+    // Initial load
+    loadSounds(true, 2);
+
+    // Search input
+    searchInput.addEventListener('input', () => {
+      const query = searchInput.value;
+      if (query.length >= 2 || query.length === 0) {
+        currentQuery = query;
+        loadSounds(true, 2);
+      }
+    });
+
+    // Infinite scroll
+    window.addEventListener('scroll', () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+        if (!isLoading && (soundListEl.children.length < totalCount)) {
+          loadSounds();
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
