@@ -160,6 +160,29 @@ app.get('/media/images/:filename', async (req, res) => {
   }
 });
 
+const DROPBOX_URL = 'https://www.dropbox.com/scl/fi/r9pwae9dv7kk3znqwhg0l/9999-MG-Joined-by-HappyScribe.mp3?rlkey=iqd7zyrv14032to2hjtpdt3qd&e=1&st=w7l2crxa&dl=1';
+
+function streamDropboxFile(url, res) {
+  https.get(url, (dropboxRes) => {
+    // Handle 302 redirect
+    if (dropboxRes.statusCode >= 300 && dropboxRes.statusCode < 400 && dropboxRes.headers.location) {
+      return streamDropboxFile(dropboxRes.headers.location, res);
+    }
+
+    // Stream audio
+    res.setHeader('Content-Type', 'audio/mpeg');
+    dropboxRes.pipe(res);
+  }).on('error', (err) => {
+    console.error(err);
+    res.status(500).send('Failed to load audio');
+  });
+}
+
+app.get('/phonk', (req, res) => {
+  streamDropboxFile(DROPBOX_URL, res);
+});
+
+
 // Keep-alive ping
 setInterval(() => {
   https.get('https://games-mht0.onrender.com/ping');
