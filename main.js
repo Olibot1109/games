@@ -21,6 +21,8 @@ function colorStatus(status) {
 }
 
 app.use((req, res, next) => {
+  if (req.url === '/ping') return next(); // skip logging for /ping
+
   const start = Date.now();
 
   res.on('finish', () => {
@@ -33,9 +35,12 @@ app.use((req, res, next) => {
 
 app.use(express.static(path.join(__dirname, ''), {
   setHeaders: (res, filePath) => {
-    console.log(`📥 ${filePath}`);
+    if (!res.req.url.startsWith('/ping')) { // optional: skip static logging for /ping
+      console.log(`📥 ${filePath}`);
+    }
   }
 }));
+
 
 app.get('/ping', (req, res) => {
   res.send('Pong!');
@@ -44,8 +49,9 @@ app.get('/ping', (req, res) => {
 
 
 setInterval(() => {
-  require('http').get(`https://games-mht0.onrender.com`);
-}, 5 * 60 * 1000);
+  require('http').get(`https://games-mht0.onrender.com/ping`);
+}, 20 * 1000); // every 20 seconds
+
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);

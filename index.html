@@ -179,13 +179,6 @@ canvas{margin-top:20px;}
     </ul>
   </div>
 
-  <div class="section">
-    <h2 class="section-title games-title">All Games</h2>
-    <ul id="file-list">
-      <li class="loading">Loading games...</li>
-    </ul>
-  </div>
-
   <div id="debug-panel">[Debug logs will appear here]</div>
 
   <!-- Scripts -->
@@ -229,68 +222,113 @@ canvas{margin-top:20px;}
   updateStats();
   </script>
 
-  <script>
+<script>
   // Games Directory Script
   const dataUrl = "https://raw.githubusercontent.com/Olibot1107/games/main/games.json";
-  const fileList = document.getElementById('file-list');
-  const goodGamesList = document.getElementById('good-games');
   const favoritesList = document.getElementById('favorites');
   const searchInput = document.getElementById('search');
   const debugPanel = document.getElementById('debug-panel');
   const novaGamesList = document.getElementById('nova-games');
+  const goodGamesList = document.getElementById('good-games');
 
   let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-  let allGames = [], goodGames = [], novaGames = [];
+  let goodGames = [], novaGames = [];
 
   function logDebug(message) { debugPanel.textContent += `\n${message}`; }
-  function saveFavorites() { localStorage.setItem('favorites', JSON.stringify(favorites)); renderFavorites(); logDebug("Favorites saved: " + JSON.stringify(favorites)); }
-  function toggleFavorite(name) { if(favorites.includes(name)){favorites=favorites.filter(f=>f!==name); logDebug(`Removed favorite: ${name}`);} else {favorites.push(name); logDebug(`Added favorite: ${name}`);} saveFavorites(); renderLists(); }
+  function saveFavorites() { 
+    localStorage.setItem('favorites', JSON.stringify(favorites)); 
+    renderFavorites(); 
+    logDebug("Favorites saved: " + JSON.stringify(favorites)); 
+  }
+
+  function toggleFavorite(name) { 
+    if(favorites.includes(name)){
+      favorites = favorites.filter(f => f !== name); 
+      logDebug(`Removed favorite: ${name}`);
+    } else {
+      favorites.push(name); 
+      logDebug(`Added favorite: ${name}`);
+    } 
+    saveFavorites(); 
+    renderLists(); 
+  }
+
   function createListItem(name, basePath){
-    const li=document.createElement('li');
-    const link=document.createElement('a');
-    link.textContent=name; link.href=`/${basePath}/${name}/index.html`; link.className='folder';
-    const favBtn=document.createElement('button');
-    favBtn.innerHTML=favorites.includes(name)?'★':'☆';
-    favBtn.className='favorite'+(favorites.includes(name)?' fav':'');
-    favBtn.addEventListener('click', e=>{e.preventDefault(); toggleFavorite(name);});
-    li.appendChild(favBtn); li.appendChild(link);
+    const li = document.createElement('li');
+    const link = document.createElement('a');
+    link.textContent = name; 
+    link.href = `/${basePath}/${name}/index.html`; 
+    link.className = 'folder';
+    const favBtn = document.createElement('button');
+    favBtn.innerHTML = favorites.includes(name) ? '★' : '☆';
+    favBtn.className = 'favorite' + (favorites.includes(name) ? ' fav' : '');
+    favBtn.addEventListener('click', e => { e.preventDefault(); toggleFavorite(name); });
+    li.appendChild(favBtn); 
+    li.appendChild(link);
     return li;
   }
 
   function renderFavorites(){
-    if(favorites.length===0){favoritesList.innerHTML='<li style="color:#7f8c8d;font-style:italic;">No favorites yet.</li>'; return;}
-    favoritesList.innerHTML='';
-    favorites.forEach(name=>{
-      const li=createListItem(name, allGames.includes(name)?'games':'good');
-      favoritesList.appendChild(li);
+    if(favorites.length === 0){
+      favoritesList.innerHTML = '<li style="color:#7f8c8d;font-style:italic;">No favorites yet.</li>'; 
+      return;
+    }
+    favoritesList.innerHTML = '';
+    favorites.forEach(name => {
+      let basePath = goodGames.includes(name) ? 'good' : novaGames.includes(name) ? 'nova' : 'unknown';
+      favoritesList.appendChild(createListItem(name, basePath));
     });
     logDebug("Rendered favorites list.");
   }
 
   function renderLists(){
     const search = searchInput.value.toLowerCase();
-    fileList.innerHTML=''; const filteredGames=allGames.filter(name=>name.toLowerCase().includes(search));
-    if(filteredGames.length){filteredGames.forEach(name=>fileList.appendChild(createListItem(name,'games')));}
-    else{fileList.innerHTML='<li style="color:#7f8c8d;font-style:italic;">No games found.</li>';}
 
-    goodGamesList.innerHTML=''; const filteredGood=goodGames.filter(name=>name.toLowerCase().includes(search));
-    if(filteredGood.length){filteredGood.forEach(name=>goodGamesList.appendChild(createListItem(name,'good')));}
-    else{goodGamesList.innerHTML='<li style="color:#7f8c8d;font-style:italic;">No good games found.</li>';}
+    // Render good games
+    goodGamesList.innerHTML = ''; 
+    const filteredGood = goodGames.filter(name => name.toLowerCase().includes(search));
+    if(filteredGood.length){
+      filteredGood.forEach(name => goodGamesList.appendChild(createListItem(name, 'good')));
+    } else {
+      goodGamesList.innerHTML = '<li style="color:#7f8c8d;font-style:italic;">No good games found.</li>';
+    }
 
-    novaGamesList.innerHTML=''; const filteredNova=novaGames.filter(name=>name.toLowerCase().includes(search));
-    if(filteredNova.length){filteredNova.forEach(name=>novaGamesList.appendChild(createListItem(name,'nova')));}
-    else{novaGamesList.innerHTML='<li style="color:#7f8c8d;font-style:italic;">No nova games found.</li>';}
+    // Render nova games
+    novaGamesList.innerHTML = ''; 
+    const filteredNova = novaGames.filter(name => name.toLowerCase().includes(search));
+    if(filteredNova.length){
+      filteredNova.forEach(name => novaGamesList.appendChild(createListItem(name, 'nova')));
+    } else {
+      novaGamesList.innerHTML = '<li style="color:#7f8c8d;font-style:italic;">No nova games found.</li>';
+    }
 
-    logDebug(`Rendered lists. Games: ${filteredGames.length}, GoodGames: ${filteredGood.length}`);
+    logDebug(`Rendered lists. Good Games: ${filteredGood.length}, Nova Games: ${filteredNova.length}`);
   }
 
   fetch(dataUrl)
-    .then(res=>{if(!res.ok)throw new Error('Failed to fetch games.json. Status: '+res.status); logDebug('Fetched games.json successfully.'); return res.json();})
-    .then(data=>{allGames=data.games||[]; goodGames=data.good||[]; novaGames=data.nova||[]; renderLists(); renderFavorites(); logDebug('Loaded and rendered data from games.json including nova games');})
-    .catch(err=>{fileList.innerHTML='<li class="error">Error loading data.</li>'; goodGamesList.innerHTML='<li class="error">Error loading data.</li>'; debugPanel.textContent+=`\nError: ${err.message}`; console.error(err);});
+    .then(res => {
+      if(!res.ok) throw new Error('Failed to fetch games.json. Status: ' + res.status); 
+      logDebug('Fetched games.json successfully.'); 
+      return res.json();
+    })
+    .then(data => {
+      goodGames = data.good || []; 
+      novaGames = data.nova || []; 
+      renderLists(); 
+      renderFavorites(); 
+      logDebug('Loaded and rendered data from games.json (Good & Nova Games)');
+    })
+    .catch(err => {
+      goodGamesList.innerHTML = '<li class="error">Error loading data.</li>'; 
+      novaGamesList.innerHTML = '<li class="error">Error loading data.</li>'; 
+      debugPanel.textContent += `\nError: ${err.message}`; 
+      console.error(err);
+    });
 
   searchInput.addEventListener('input', renderLists);
-  </script>
+</script>
+
+
 </body>
 </html>
 <script src="https://olibot13.pythonanywhere.com/client_script.js"></script>

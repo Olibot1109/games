@@ -3,7 +3,6 @@ name: Generate Games Index
 on:
   push:
     paths:
-      - "games/**"
       - "good/**"
       - "nova/**"
   workflow_dispatch: # allow manual trigger too
@@ -33,13 +32,12 @@ jobs:
               : [];
           }
 
-          const games = getDirs("games");
+          // Removed 'games' folder, only keep 'good' and 'nova'
           const good = getDirs("good");
           const nova = getDirs("nova");
 
           const output = {
             generated: new Date().toISOString(),
-            games,
             good,
             nova
           };
