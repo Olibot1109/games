@@ -41,6 +41,8 @@ app.get('/ping', (req, res) => {
   res.send('Pong!');
 });
 
+
+
 setInterval(() => {
   require('http').get(`https://games-mht0.onrender.com`);
 }, 5 * 60 * 1000);
