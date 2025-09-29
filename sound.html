@@ -99,12 +99,11 @@ function createSoundCard(sound, query) {
     card.appendChild(title);
   }
 
+  // Play button
   const btn = document.createElement('button');
   btn.className = 'play-btn';
   const bgColor = '#' + (sound.color || '007bff');
   btn.style.backgroundColor = bgColor;
-
-  // Set text color for best contrast
   btn.style.color = getContrastYIQ(bgColor);
   btn.textContent = '▶ Play';
 
@@ -115,11 +114,29 @@ function createSoundCard(sound, query) {
   });
 
   btn.addEventListener('click', () => {
-  const audio = new Audio(`/media/sounds/${sound.mp3.split('/').pop()}`);
-  audio.play();
-  audioPlayers.push(audio);
-});
+    const audio = new Audio(`/media/sounds/${sound.mp3.split('/').pop()}`);
+    audio.play();
+    audioPlayers.push(audio);
+  });
   card.appendChild(btn);
+
+  // Download button
+  const downloadBtn = document.createElement('a');
+  downloadBtn.href = `/media/sounds/${sound.mp3.split('/').pop()}`;
+  downloadBtn.download = sound.name || "sound";
+  downloadBtn.textContent = "⬇ Download";
+  downloadBtn.style.display = "inline-block";
+  downloadBtn.style.marginTop = "8px";
+  downloadBtn.style.padding = "8px 12px";
+  downloadBtn.style.backgroundColor = "#28a745";
+  downloadBtn.style.color = "white";
+  downloadBtn.style.borderRadius = "5px";
+  downloadBtn.style.textDecoration = "none";
+  downloadBtn.style.fontWeight = "bold";
+  downloadBtn.style.cursor = "pointer";
+  downloadBtn.onmouseover = () => downloadBtn.style.filter = "brightness(1.2)";
+  downloadBtn.onmouseout = () => downloadBtn.style.filter = "none";
+  card.appendChild(downloadBtn);
 
   if (highlightedDesc) {
     const desc = document.createElement('p');
@@ -131,6 +148,7 @@ function createSoundCard(sound, query) {
 
   return card;
 }
+
 
 // Helper: format seconds into mm:ss
 function formatDuration(seconds) {
