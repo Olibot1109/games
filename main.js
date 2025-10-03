@@ -62,10 +62,25 @@ app.use((req, res, next) => {
   next(); // all other requests handled normally
 });
 
+// Middleware to avoid octet-stream
+app.use((req, res, next) => {
+  const originalSetHeader = res.setHeader.bind(res);
+  res.setHeader = function(name, value) {
+    if (name === 'Content-Type' && value === 'application/octet-stream') {
+      value = 'application/binary';
+    }
+    return originalSetHeader(name, value);
+  };
+  next();
+});
 
 // Serve other static files normally
 app.use(express.static(path.join(__dirname, ''), {
   setHeaders: (res, filePath) => {
+    const contentType = res.getHeader('Content-Type');
+    if (contentType === 'application/octet-stream') {
+      res.setHeader('Content-Type', 'application/binary');
+    }
     if (!res.req.url.startsWith('/ping')) {
       console.log(`📥 ${filePath}`);
     }
