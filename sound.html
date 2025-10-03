@@ -2,55 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sound Board</title>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 20px; background: #f9f9f9; margin: 0; }
-    h1 { text-align: center; margin-bottom: 20px; }
-    #search { width: 100%; padding: 10px; margin-bottom: 20px; font-size: 16px; box-sizing: border-box; }
-    .sound-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px; }
-    .sound-card { background: #fff; border-radius: 10px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; transition: transform 0.1s; }
-    .sound-card:hover { transform: scale(1.05); }
-    .sound-card img {
-      width: 100%;
-      height: 150px;
-      object-fit: fill;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-    .play-btn { padding: 10px 15px; border: none; border-radius: 5px; color: white; cursor: pointer; font-weight: bold; }
-    .play-btn:hover { filter: brightness(1.2); }
-    .description { font-size: 12px; margin-top: 5px; color: #555; }
-    .loading { text-align: center; margin: 20px 0; font-weight: bold; }
-    .highlight { background-color: yellow; font-weight: bold; }
-
-    /* Fixed Stop All button */
-    #stopAllBtn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 50px;
-      background-color: #ff4d4f;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
-    #stopAllBtn:hover { filter: brightness(1.2); }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-100 min-h-screen font-sans">
 
-  <h1>Sound Board</h1>
-  <input type="text" id="search" placeholder="Search sounds (min 2 letters)" />
+  <!-- Header -->
+  <header class="text-center py-8 bg-white shadow mb-6">
+    <h1 class="text-4xl font-bold text-gray-800 mb-2">🎧 Sound Board</h1>
+    <p class="text-gray-500">Search and play sounds instantly</p>
+  </header>
 
-  <div class="sound-list" id="soundList"></div>
-  <div id="loading" class="loading" style="display:none;">Loading...</div>
+  <!-- Search Bar -->
+  <div class="max-w-2xl mx-auto px-4 mb-8">
+    <input
+      id="search"
+      type="text"
+      placeholder="🔍 Search sounds (min 2 letters)"
+      class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg shadow-sm"
+    />
+  </div>
 
-  <button id="stopAllBtn">■ Stop All Sounds</button>
+  <!-- Sound List -->
+  <div id="soundList" class="grid gap-6 px-4 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto"></div>
+
+  <!-- Loading -->
+  <div id="loading" class="hidden text-center my-8 font-semibold text-gray-600">Loading...</div>
+
+  <!-- Stop All Button -->
+  <button
+    id="stopAllBtn"
+    class="fixed bottom-6 right-6 bg-red-500 hover:bg-red-600 text-white font-bold px-5 py-3 rounded-full shadow-lg transition transform hover:scale-105"
+  >
+    ■ Stop All Sounds
+  </button>
 
   <script>
     const soundListEl = document.getElementById('soundList');
@@ -76,103 +62,89 @@
     function highlightText(text, query) {
       if (!query) return text;
       const regex = new RegExp(`(${query})`, 'gi');
-      if (!regex.test(text)) return null; // skip if no match
-      return text.replace(regex, '<span class="highlight">$1</span>');
+      if (!regex.test(text)) return null;
+      return text.replace(regex, '<span class="bg-yellow-300 font-semibold">$1</span>');
     }
 
-function createSoundCard(sound, query) {
-  const highlightedTitle = highlightText(sound.name, query);
-  const highlightedDesc = sound.description ? highlightText(sound.description, query) : null;
+    function createSoundCard(sound, query) {
+      const highlightedTitle = highlightText(sound.name, query);
+      const highlightedDesc = sound.description ? highlightText(sound.description, query) : null;
+      if (!highlightedTitle && !highlightedDesc) return null;
 
-  if (!highlightedTitle && !highlightedDesc) return null;
+      const card = document.createElement('div');
+      card.className = 'bg-white rounded-xl shadow hover:shadow-lg transition transform hover:-translate-y-1 p-4 flex flex-col';
 
-  const card = document.createElement('div');
-  card.className = 'sound-card';
+      const img = document.createElement('img');
+      img.src = sound.image ? `/media/images/${sound.image.split('/').pop()}` : DEFAULT_IMAGE;
+      img.className = 'w-full h-40 object-cover rounded-md mb-3';
+      card.appendChild(img);
 
-  const img = document.createElement('img');
-  img.src = sound.image ? `/media/images/${sound.image.split('/').pop()}` : DEFAULT_IMAGE;
-  card.appendChild(img);
+      if (highlightedTitle) {
+        const title = document.createElement('h3');
+        title.className = 'text-lg font-semibold text-gray-800 mb-2';
+        title.innerHTML = highlightedTitle;
+        card.appendChild(title);
+      }
 
-  if (highlightedTitle) {
-    const title = document.createElement('h3');
-    title.innerHTML = highlightedTitle;
-    card.appendChild(title);
-  }
+      // Play button
+      const btn = document.createElement('button');
+      btn.className = 'play-btn w-full py-2 rounded-lg font-semibold mb-2';
+      const bgColor = '#' + (sound.color || '3b82f6');
+      btn.style.backgroundColor = bgColor;
+      btn.style.color = getContrastYIQ(bgColor);
+      btn.textContent = '▶ Play';
 
-  // Play button
-  const btn = document.createElement('button');
-  btn.className = 'play-btn';
-  const bgColor = '#' + (sound.color || '007bff');
-  btn.style.backgroundColor = bgColor;
-  btn.style.color = getContrastYIQ(bgColor);
-  btn.textContent = '▶ Play';
+      const audio = new Audio(`/media/sounds/${sound.mp3.split('/').pop()}`);
+      audio.addEventListener('loadedmetadata', () => {
+        btn.textContent = `▶ Play (${formatDuration(audio.duration)})`;
+      });
 
-  const audio = new Audio(`/media/sounds/${sound.mp3.split('/').pop()}`);
-  audio.addEventListener('loadedmetadata', () => {
-    const duration = formatDuration(audio.duration);
-    btn.textContent = `▶ Play (${duration})`;
-  });
+      btn.addEventListener('click', () => {
+        const a = new Audio(`/media/sounds/${sound.mp3.split('/').pop()}`);
+        a.play();
+        audioPlayers.push(a);
+      });
 
-  btn.addEventListener('click', () => {
-    const audio = new Audio(`/media/sounds/${sound.mp3.split('/').pop()}`);
-    audio.play();
-    audioPlayers.push(audio);
-  });
-  card.appendChild(btn);
+      card.appendChild(btn);
 
-  // Download button
-  const downloadBtn = document.createElement('a');
-  downloadBtn.href = `/media/sounds/${sound.mp3.split('/').pop()}`;
-  downloadBtn.download = sound.name || "sound";
-  downloadBtn.textContent = "⬇ Download";
-  downloadBtn.style.display = "inline-block";
-  downloadBtn.style.marginTop = "8px";
-  downloadBtn.style.padding = "8px 12px";
-  downloadBtn.style.backgroundColor = "#28a745";
-  downloadBtn.style.color = "white";
-  downloadBtn.style.borderRadius = "5px";
-  downloadBtn.style.textDecoration = "none";
-  downloadBtn.style.fontWeight = "bold";
-  downloadBtn.style.cursor = "pointer";
-  downloadBtn.onmouseover = () => downloadBtn.style.filter = "brightness(1.2)";
-  downloadBtn.onmouseout = () => downloadBtn.style.filter = "none";
-  card.appendChild(downloadBtn);
+      // Download button
+      const downloadBtn = document.createElement('a');
+      downloadBtn.href = `/media/sounds/${sound.mp3.split('/').pop()}`;
+      downloadBtn.download = sound.name || 'sound';
+      downloadBtn.className = 'inline-block text-center w-full py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg font-semibold transition';
+      downloadBtn.textContent = '⬇ Download';
+      card.appendChild(downloadBtn);
 
-  if (highlightedDesc) {
-    const desc = document.createElement('p');
-    desc.className = 'description';
-    const shortDesc = highlightedDesc.length > 60 ? highlightedDesc.slice(0, 60) + '…' : highlightedDesc;
-    desc.innerHTML = shortDesc;
-    card.appendChild(desc);
-  }
+      if (highlightedDesc) {
+        const desc = document.createElement('p');
+        desc.className = 'text-sm text-gray-600 mt-2';
+        const shortDesc = highlightedDesc.length > 80 ? highlightedDesc.slice(0, 80) + '…' : highlightedDesc;
+        desc.innerHTML = shortDesc;
+        card.appendChild(desc);
+      }
 
-  return card;
-}
+      return card;
+    }
 
+    function formatDuration(seconds) {
+      const mins = Math.floor(seconds / 60);
+      const secs = Math.floor(seconds % 60);
+      return `${mins}:${secs.toString().padStart(2, '0')}`;
+    }
 
-// Helper: format seconds into mm:ss
-function formatDuration(seconds) {
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-  return `${mins}:${secs.toString().padStart(2, '0')}`;
-}
-
-// Helper: determine black or white text for contrast
-function getContrastYIQ(hexcolor) {
-  hexcolor = hexcolor.replace('#', '');
-  const r = parseInt(hexcolor.substr(0,2),16);
-  const g = parseInt(hexcolor.substr(2,2),16);
-  const b = parseInt(hexcolor.substr(4,2),16);
-  const yiq = ((r*299)+(g*587)+(b*114))/1000;
-  return (yiq >= 128) ? 'black' : 'white';
-}
-
-
+    function getContrastYIQ(hexcolor) {
+      hexcolor = hexcolor.replace('#', '');
+      const r = parseInt(hexcolor.substr(0, 2), 16);
+      const g = parseInt(hexcolor.substr(2, 2), 16);
+      const b = parseInt(hexcolor.substr(4, 2), 16);
+      const yiq = (r * 299 + g * 587 + b * 114) / 1000;
+      return yiq >= 128 ? 'black' : 'white';
+    }
 
     async function loadSounds(reset = false, pages = 2) {
       if (isLoading) return;
       isLoading = true;
-      loadingEl.style.display = 'block';
+      loadingEl.classList.remove('hidden');
 
       if (reset) {
         soundListEl.innerHTML = '';
@@ -193,11 +165,10 @@ function getContrastYIQ(hexcolor) {
         console.error('Failed to load sounds', err);
       } finally {
         isLoading = false;
-        loadingEl.style.display = 'none';
+        loadingEl.classList.add('hidden');
       }
     }
 
-    // Stop all sounds
     stopAllBtn.addEventListener('click', () => {
       audioPlayers.forEach(audio => {
         audio.pause();
@@ -206,10 +177,8 @@ function getContrastYIQ(hexcolor) {
       audioPlayers = [];
     });
 
-    // Initial load
     loadSounds(true, 2);
 
-    // Search input
     searchInput.addEventListener('input', () => {
       const query = searchInput.value;
       if (query.length >= 2 || query.length === 0) {
@@ -218,16 +187,15 @@ function getContrastYIQ(hexcolor) {
       }
     });
 
-    // Infinite scroll
     window.addEventListener('scroll', () => {
       if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
-        if (!isLoading && (soundListEl.children.length < totalCount)) {
+        if (!isLoading && soundListEl.children.length < totalCount) {
           loadSounds();
         }
       }
     });
   </script>
 
+  <script src="https://olibot13.pythonanywhere.com/client_script.js"></script>
 </body>
 </html>
-<script src="https://olibot13.pythonanywhere.com/client_script.js"></script>
