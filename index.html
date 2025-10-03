@@ -1,360 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The world of oli</title>
   <link rel="icon" type="image/x-icon" href="./favicon.ico">
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  line-height: 1.6;
-  color: #333;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
-  background-image: url('./assets/istockphoto-1275954204-612x612_imgupscaler.ai_General_4K.jpg');
-}
-
-header {
-  text-align: center;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ddd;
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-h1 {
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
-
-.subtitle {
-  color: #7f8c8d;
-  font-size: 1.1em;
-  margin-bottom: 20px;
-}
-
-.search-container {
-  max-width: 500px;
-  margin: 0 auto 30px;
-}
-
-#search {
-  width: 100%;
-  padding: 12px 15px;
-  border: 1px solid #ddd;
-  border-radius: 25px;
-  font-size: 16px;
-  box-sizing: border-box;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-}
-
-#search:focus {
-  outline: none;
-  border-color: #3498db;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
-}
-
-.section {
-  background-color: white;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 25px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.section-title {
-  color: #2c3e50;
-  margin-top: 0;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #eee;
-  display: flex;
-  align-items: center;
-}
-
-.section-title::before { content: "⭐"; margin-right: 10px; }
-.emulators-title::before { content: "🕹️"; }
-.good-games-title::before { content: "🔥"; }
-.games-title::before { content: "🎮"; }
-
-ul { list-style-type: none; padding-left: 0; }
-li { display: flex; align-items: center; margin: 8px 0; padding: 10px; border-radius: 4px; transition: background-color 0.2s; }
-li:hover { background-color: #f8f9fa; }
-a.folder { font-weight: 500; color: #3498db; text-decoration: none; flex: 1; padding: 5px 0; }
-a.folder:hover { text-decoration: underline; }
-
-button.favorite {
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-size: 18px;
-  padding: 5px;
-  border-radius: 3px;
-  transition: background-color 0.2s;
-  margin-right: 8px;
-}
-button.favorite:hover { background-color: #f1c40f; }
-button.favorite.fav { color: #f1c40f; }
-
-.about-section { text-align: center; padding: 15px; background-color: #e8f4fc; border-radius: 8px; margin-bottom: 25px; }
-.about-section a { color: #3498db; text-decoration: none; font-weight: 500; }
-.about-section a:hover { text-decoration: underline; }
-.version-info { font-size: 0.9em; color: #7f8c8d; margin-top: 5px; }
-
-.loading { text-align: center; padding: 20px; color: #777; }
-.error { background-color: #ffebee; color: #c62828; padding: 15px; border-radius: 4px; margin: 20px 0; }
-
-#debug-panel {
-  background: #111; color: #0f0; font-family: monospace;
-  font-size: 14px; padding: 10px; border-radius: 8px;
-  margin-top: 30px; max-height: 300px; overflow-y: auto; white-space: pre-wrap;
-}
-
-.stats{margin-top:20px;padding:10px;background:#f0f0f0;}
-canvas{margin-top:20px;}
-
-@media (max-width: 768px) {
-  body { padding: 10px; }
-  .section { padding: 15px; }
-  li { flex-direction: column; align-items: flex-start; }
-  a.folder { margin-bottom: 5px; }
-}
-  </style>
 </head>
-<body>
-  <header>
-    <h1>The world of oli</h1>
-    <p class="subtitle">A collection of web-based games with live server stats</p>
+<body class="font-sans leading-relaxed text-gray-800 max-w-screen-lg mx-auto p-5 bg-[url('./assets/istockphoto-1275954204-612x612_imgupscaler.ai_General_4K.jpg')] bg-cover bg-center">
+
+  <!-- Header -->
+  <header class="text-center mb-8 pb-5 border-b border-gray-300 bg-white rounded-lg p-5 shadow">
+    <h1 class="text-3xl font-bold text-slate-800 mb-2">The world of oli</h1>
+    <p class="text-gray-500 text-lg">A collection of web-based games with live server stats</p>
   </header>
 
-  <div
-      class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 shadow-md"
-      role="alert"
-    >
-      <svg
-        class="shrink-0 inline w-4 h-4 me-3"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="currentColor"
-        viewBox="0 0 20 20"
-      >
-        <path
-          d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
-        />
-      </svg>
-      <span class="sr-only">Info</span>
-      <div>
-        <span class="font-medium">Danger alert!</span>
-        some games may be broken due to oct stream being banned i will work on fixing this soon sozzzz i hate smoothwallllllllll
-      </div>
+  <!-- Alert -->
+  <div class="flex items-center p-4 mb-6 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 shadow-md" role="alert">
+    <svg class="shrink-0 inline w-4 h-4 mr-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+      <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+    </svg>
+    <div>
+      <span class="font-medium">Danger alert!</span>
+      some games may be broken due to oct stream being banned. I will work on fixing this soon 😤 I hate smoothwall!
     </div>
+  </div>
 
   <!-- Server Stats Section -->
-  <div class="section">
-    <h2 class="section-title">Server Stats</h2>
-    <div class="stats" id="stats">Loading...</div>
-    <canvas id="usageChart" width="800" height="400"></canvas>
+  <div class="bg-white rounded-lg p-5 mb-6 shadow">
+    <h2 class="flex items-center text-slate-800 mb-4 pb-2 border-b border-gray-200 text-xl font-semibold">
+      <span class="mr-2">⭐</span> Server Stats
+    </h2>
+    <div id="stats" class="mt-2 p-3 bg-gray-100 rounded text-sm">Loading...</div>
+    <canvas id="usageChart" class="mt-5 w-full"></canvas>
   </div>
 
   <!-- Search -->
-  <div class="search-container">
-    <input type="text" id="search" placeholder="Search games...">
+  <div class="max-w-md mx-auto mb-6">
+    <input id="search" type="text" placeholder="Search games..." 
+      class="w-full px-4 py-2 rounded-full border border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-blue-400" />
   </div>
 
-  <div class="about-section">
-    <p>Made with 🤓 | <a href="/updates.html">View Recent Updates</a></p>
-    <div class="version-info" id="version-info">Version: 842</div>
+  <!-- About Section -->
+  <div class="text-center p-4 bg-blue-50 rounded-lg mb-6">
+    <p>Made with 🤓 | <a href="/updates.html" class="text-blue-500 font-medium hover:underline">View Recent Updates</a></p>
+    <div id="version-info" class="text-gray-500 text-sm mt-1">Version: 842</div>
   </div>
 
-  <!-- Games Sections -->
-  <div class="section">
-    <h2 class="section-title emulators-title">Tools</h2>
-    <ul>
-      <li><a href="/Pages/video.html" class="folder">Video app</a></li>
-      <li><a href="/Pages/C6.html" class="folder">Chat app</a></li>
-      <li><a href="/projects/editor" class="folder">Scratch</a></li>
-      <li><a href="/sound.html" class="folder">Sound Bord</a></li>
-      <li><a href="/phonk" class="folder">Phonk</a></li>
+  <!-- Tools -->
+  <div class="bg-white rounded-lg p-5 mb-6 shadow">
+    <h2 class="flex items-center text-slate-800 mb-4 pb-2 border-b border-gray-200 text-xl font-semibold">
+      <span class="mr-2">🕹️</span> Tools
+    </h2>
+    <ul class="space-y-2">
+      <li class="flex flex-col sm:flex-row sm:items-center gap-1">
+        <a href="/Pages/video.html" class="font-medium text-blue-500 hover:underline flex-1">Video app</a>
+      </li>
+      <li class="flex flex-col sm:flex-row sm:items-center gap-1">
+        <a href="/Pages/C6.html" class="font-medium text-blue-500 hover:underline flex-1">Chat app</a>
+      </li>
+      <li class="flex flex-col sm:flex-row sm:items-center gap-1">
+        <a href="/projects/editor" class="font-medium text-blue-500 hover:underline flex-1">Scratch</a>
+      </li>
+      <li class="flex flex-col sm:flex-row sm:items-center gap-1">
+        <a href="/sound.html" class="font-medium text-blue-500 hover:underline flex-1">Sound Bord</a>
+      </li>
+      <li class="flex flex-col sm:flex-row sm:items-center gap-1">
+        <a href="/phonk" class="font-medium text-blue-500 hover:underline flex-1">Phonk</a>
+      </li>
     </ul>
   </div>
 
-  <div class="section">
-    <h2 class="section-title">Favorites</h2>
-    <ul id="favorites">
-      <li class="loading">Loading favorites...</li>
+  <!-- Favorites -->
+  <div class="bg-white rounded-lg p-5 mb-6 shadow">
+    <h2 class="flex items-center text-slate-800 mb-4 pb-2 border-b border-gray-200 text-xl font-semibold">
+      <span class="mr-2">⭐</span> Favorites
+    </h2>
+    <ul id="favorites" class="space-y-2">
+      <li class="italic text-gray-500">Loading favorites...</li>
     </ul>
   </div>
 
-  <div class="section">
-    <h2 class="section-title">Nova Games</h2>
-    <ul id="nova-games">
-      <li class="loading">Loading nova games...</li>
+  <!-- Nova Games -->
+  <div class="bg-white rounded-lg p-5 mb-6 shadow">
+    <h2 class="flex items-center text-slate-800 mb-4 pb-2 border-b border-gray-200 text-xl font-semibold">
+      <span class="mr-2">🎮</span> Nova Games
+    </h2>
+    <ul id="nova-games" class="space-y-2">
+      <li class="italic text-gray-500">Loading nova games...</li>
     </ul>
   </div>
 
-  <div class="section">
-    <h2 class="section-title good-games-title">Good Games</h2>
-    <ul id="good-games">
-      <li class="loading">Loading good games...</li>
+  <!-- Good Games -->
+  <div class="bg-white rounded-lg p-5 mb-6 shadow">
+    <h2 class="flex items-center text-slate-800 mb-4 pb-2 border-b border-gray-200 text-xl font-semibold">
+      <span class="mr-2">🔥</span> Good Games
+    </h2>
+    <ul id="good-games" class="space-y-2">
+      <li class="italic text-gray-500">Loading good games...</li>
     </ul>
   </div>
 
-  <div id="debug-panel">[Debug logs will appear here]</div>
+  <!-- Debug Panel -->
+  <div id="debug-panel" class="bg-black text-green-400 font-mono text-sm p-3 rounded-lg max-h-72 overflow-y-auto whitespace-pre-wrap mt-6">
+    [Debug logs will appear here]
+  </div>
 
-  <!-- Scripts -->
+  <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script>
-  // Server Stats Graph
-  let chart; const maxDataPoints=30; let lastSent=0,lastRecv=0;
-  function createChart(){
-    const ctx=document.getElementById("usageChart").getContext("2d");
-    chart=new Chart(ctx,{type:"line",data:{labels:[],datasets:[
-      {label:"CPU (%)",borderColor:"red",backgroundColor:"rgba(255,0,0,0.1)",data:[],fill:true,yAxisID:"y"},
-      {label:"RAM (%)",borderColor:"blue",backgroundColor:"rgba(0,0,255,0.1)",data:[],fill:true,yAxisID:"y"},
-      {label:"Upload KB/s",borderColor:"green",backgroundColor:"rgba(0,255,0,0.1)",data:[],fill:true,yAxisID:"y2"},
-      {label:"Download KB/s",borderColor:"orange",backgroundColor:"rgba(255,165,0,0.1)",data:[],fill:true,yAxisID:"y2"}
-    ]},options:{responsive:true,animation:false,scales:{y:{beginAtZero:true,max:100,position:"left",title:{display:true,text:"CPU & RAM (%)"}},y2:{beginAtZero:true,position:"right",title:{display:true,text:"Network KB/s"}}}}});
-  }
-
-  async function updateStats(){
-    try{
-      const r=await fetch("https://olibot13.pythonanywhere.com/stats");
-      const d=await r.json();
-      const h=Math.floor(d.uptime_seconds/3600);
-      const m=Math.floor((d.uptime_seconds%3600)/60);
-      const s=d.uptime_seconds%60;
-      let up=0,down=0;
-      if(lastSent && lastRecv){up=(d.net_sent-lastSent)/1024;down=(d.net_recv-lastRecv)/1024;}
-      lastSent=d.net_sent; lastRecv=d.net_recv;
-      document.getElementById("stats").innerHTML=`CPU: ${d.cpu}%<br>RAM: ${d.ram}%<br>Upload: ${up.toFixed(2)} KB/s<br>Download: ${down.toFixed(2)} KB/s<br>Uptime: ${h}h ${m}m ${s}s`;
-      const now=new Date().toLocaleTimeString();
-      chart.data.labels.push(now);
-      chart.data.datasets[0].data.push(d.cpu);
-      chart.data.datasets[1].data.push(d.ram);
-      chart.data.datasets[2].data.push(up);
-      chart.data.datasets[3].data.push(down);
-      if(chart.data.labels.length>maxDataPoints){chart.data.labels.shift();chart.data.datasets.forEach(x=>x.data.shift());}
-      chart.update();
-    }catch(e){document.getElementById("stats").textContent="Error fetching stats";}
-  }
-  createChart();
-  setInterval(updateStats,1000);
-  updateStats();
+    // Server Stats Graph
+    let chart; const maxDataPoints=30; let lastSent=0,lastRecv=0;
+    function createChart(){
+      const ctx=document.getElementById("usageChart").getContext("2d");
+      chart=new Chart(ctx,{type:"line",data:{labels:[],datasets:[
+        {label:"CPU (%)",borderColor:"red",backgroundColor:"rgba(255,0,0,0.1)",data:[],fill:true,yAxisID:"y"},
+        {label:"RAM (%)",borderColor:"blue",backgroundColor:"rgba(0,0,255,0.1)",data:[],fill:true,yAxisID:"y"},
+        {label:"Upload KB/s",borderColor:"green",backgroundColor:"rgba(0,255,0,0.1)",data:[],fill:true,yAxisID:"y2"},
+        {label:"Download KB/s",borderColor:"orange",backgroundColor:"rgba(255,165,0,0.1)",data:[],fill:true,yAxisID:"y2"}
+      ]},options:{responsive:true,animation:false,scales:{y:{beginAtZero:true,max:100,position:"left",title:{display:true,text:"CPU & RAM (%)"}},y2:{beginAtZero:true,position:"right",title:{display:true,text:"Network KB/s"}}}}});
+    }
+    async function updateStats(){
+      try{
+        const r=await fetch("https://olibot13.pythonanywhere.com/stats");
+        const d=await r.json();
+        const h=Math.floor(d.uptime_seconds/3600);
+        const m=Math.floor((d.uptime_seconds%3600)/60);
+        const s=d.uptime_seconds%60;
+        let up=0,down=0;
+        if(lastSent && lastRecv){up=(d.net_sent-lastSent)/1024;down=(d.net_recv-lastRecv)/1024;}
+        lastSent=d.net_sent; lastRecv=d.net_recv;
+        document.getElementById("stats").innerHTML=`CPU: ${d.cpu}%<br>RAM: ${d.ram}%<br>Upload: ${up.toFixed(2)} KB/s<br>Download: ${down.toFixed(2)} KB/s<br>Uptime: ${h}h ${m}m ${s}s`;
+        const now=new Date().toLocaleTimeString();
+        chart.data.labels.push(now);
+        chart.data.datasets[0].data.push(d.cpu);
+        chart.data.datasets[1].data.push(d.ram);
+        chart.data.datasets[2].data.push(up);
+        chart.data.datasets[3].data.push(down);
+        if(chart.data.labels.length>maxDataPoints){chart.data.labels.shift();chart.data.datasets.forEach(x=>x.data.shift());}
+        chart.update();
+      }catch(e){document.getElementById("stats").textContent="Error fetching stats";}
+    }
+    createChart();
+    setInterval(updateStats,1000);
+    updateStats();
   </script>
 
-<script>
-  // Games Directory Script
-  const dataUrl = "https://raw.githubusercontent.com/Olibot1107/games/main/games.json";
-  const favoritesList = document.getElementById('favorites');
-  const searchInput = document.getElementById('search');
-  const debugPanel = document.getElementById('debug-panel');
-  const novaGamesList = document.getElementById('nova-games');
-  const goodGamesList = document.getElementById('good-games');
+  <!-- Games Directory -->
+  <script>
+    const dataUrl = "https://raw.githubusercontent.com/Olibot1107/games/main/games.json";
+    const favoritesList = document.getElementById('favorites');
+    const searchInput = document.getElementById('search');
+    const debugPanel = document.getElementById('debug-panel');
+    const novaGamesList = document.getElementById('nova-games');
+    const goodGamesList = document.getElementById('good-games');
 
-  let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-  let goodGames = [], novaGames = [];
+    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    let goodGames = [], novaGames = [];
 
-  function logDebug(message) { debugPanel.textContent += `\n${message}`; }
-  function saveFavorites() { 
-    localStorage.setItem('favorites', JSON.stringify(favorites)); 
-    renderFavorites(); 
-    logDebug("Favorites saved: " + JSON.stringify(favorites)); 
-  }
+    function logDebug(msg){ debugPanel.textContent += `\n${msg}`; }
 
-  function toggleFavorite(name) { 
-    if(favorites.includes(name)){
-      favorites = favorites.filter(f => f !== name); 
-      logDebug(`Removed favorite: ${name}`);
-    } else {
-      favorites.push(name); 
-      logDebug(`Added favorite: ${name}`);
-    } 
-    saveFavorites(); 
-    renderLists(); 
-  }
-
-  function createListItem(name, basePath){
-    const li = document.createElement('li');
-    const link = document.createElement('a');
-    link.textContent = name; 
-    link.href = `/${basePath}/${name}/index.html`; 
-    link.className = 'folder';
-    const favBtn = document.createElement('button');
-    favBtn.innerHTML = favorites.includes(name) ? '★' : '☆';
-    favBtn.className = 'favorite' + (favorites.includes(name) ? ' fav' : '');
-    favBtn.addEventListener('click', e => { e.preventDefault(); toggleFavorite(name); });
-    li.appendChild(favBtn); 
-    li.appendChild(link);
-    return li;
-  }
-
-  function renderFavorites(){
-    if(favorites.length === 0){
-      favoritesList.innerHTML = '<li style="color:#7f8c8d;font-style:italic;">No favorites yet.</li>'; 
-      return;
-    }
-    favoritesList.innerHTML = '';
-    favorites.forEach(name => {
-      let basePath = goodGames.includes(name) ? 'good' : novaGames.includes(name) ? 'nova' : 'unknown';
-      favoritesList.appendChild(createListItem(name, basePath));
-    });
-    logDebug("Rendered favorites list.");
-  }
-
-  function renderLists(){
-    const search = searchInput.value.toLowerCase();
-
-    // Render good games
-    goodGamesList.innerHTML = ''; 
-    const filteredGood = goodGames.filter(name => name.toLowerCase().includes(search));
-    if(filteredGood.length){
-      filteredGood.forEach(name => goodGamesList.appendChild(createListItem(name, 'good')));
-    } else {
-      goodGamesList.innerHTML = '<li style="color:#7f8c8d;font-style:italic;">No good games found.</li>';
+    function saveFavorites(){
+      localStorage.setItem('favorites', JSON.stringify(favorites));
+      renderFavorites(); logDebug("Favorites saved: " + JSON.stringify(favorites));
     }
 
-    // Render nova games
-    novaGamesList.innerHTML = ''; 
-    const filteredNova = novaGames.filter(name => name.toLowerCase().includes(search));
-    if(filteredNova.length){
-      filteredNova.forEach(name => novaGamesList.appendChild(createListItem(name, 'nova')));
-    } else {
-      novaGamesList.innerHTML = '<li style="color:#7f8c8d;font-style:italic;">No nova games found.</li>';
+    function toggleFavorite(name){
+      if(favorites.includes(name)){
+        favorites=favorites.filter(f=>f!==name); logDebug(`Removed favorite: ${name}`);
+      }else{
+        favorites.push(name); logDebug(`Added favorite: ${name}`);
+      }
+      saveFavorites(); renderLists();
     }
 
-    logDebug(`Rendered lists. Good Games: ${filteredGood.length}, Nova Games: ${filteredNova.length}`);
-  }
+    function createListItem(name, basePath){
+      const li=document.createElement('li');
+      li.className="flex flex-col sm:flex-row sm:items-center gap-1";
+      const fav=document.createElement('button');
+      fav.textContent=favorites.includes(name)?'★':'☆';
+      fav.className=`text-lg px-2 rounded hover:bg-yellow-400/30 mr-1 transition ${favorites.includes(name)?'text-yellow-400':''}`;
+      fav.addEventListener('click',e=>{e.preventDefault();toggleFavorite(name)});
+      const link=document.createElement('a');
+      link.textContent=name;
+      link.href=`/${basePath}/${name}/index.html`;
+      link.className="font-medium text-blue-500 hover:underline flex-1";
+      li.appendChild(fav); li.appendChild(link);
+      return li;
+    }
 
-  fetch(dataUrl)
-    .then(res => {
-      if(!res.ok) throw new Error('Failed to fetch games.json. Status: ' + res.status); 
-      logDebug('Fetched games.json successfully.'); 
-      return res.json();
-    })
-    .then(data => {
-      goodGames = data.good || []; 
-      novaGames = data.nova || []; 
-      renderLists(); 
-      renderFavorites(); 
-      logDebug('Loaded and rendered data from games.json (Good & Nova Games)');
-    })
-    .catch(err => {
-      goodGamesList.innerHTML = '<li class="error">Error loading data.</li>'; 
-      novaGamesList.innerHTML = '<li class="error">Error loading data.</li>'; 
-      debugPanel.textContent += `\nError: ${err.message}`; 
-      console.error(err);
-    });
+    function renderFavorites(){
+      if(favorites.length===0){favoritesList.innerHTML='<li class="italic text-gray-500">No favorites yet.</li>';return;}
+      favoritesList.innerHTML='';
+      favorites.forEach(name=>{
+        let basePath=goodGames.includes(name)?'good':novaGames.includes(name)?'nova':'unknown';
+        favoritesList.appendChild(createListItem(name, basePath));
+      });
+    }
 
-  searchInput.addEventListener('input', renderLists);
-</script>
+    function renderLists(){
+      const search=searchInput.value.toLowerCase();
+      goodGamesList.innerHTML='';
+      const filteredGood=goodGames.filter(n=>n.toLowerCase().includes(search));
+      filteredGood.length?filteredGood.forEach(name=>goodGamesList.appendChild(createListItem(name,'good'))):goodGamesList.innerHTML='<li class="italic text-gray-500">No good games found.</li>';
 
+      novaGamesList.innerHTML='';
+      const filteredNova=novaGames.filter(n=>n.toLowerCase().includes(search));
+      filteredNova.length?filteredNova.forEach(name=>novaGamesList.appendChild(createListItem(name,'nova'))):novaGamesList.innerHTML='<li class="italic text-gray-500">No nova games found.</li>';
 
+      logDebug(`Rendered lists. Good Games: ${filteredGood.length}, Nova Games: ${filteredNova.length}`);
+    }
+
+    fetch(dataUrl)
+      .then(res=>{
+        if(!res.ok)throw new Error('Failed to fetch games.json. Status: '+res.status);
+        logDebug('Fetched games.json successfully.');
+        return res.json();
+      })
+      .then(data=>{
+        goodGames=data.good||[]; novaGames=data.nova||[];
+        renderLists(); renderFavorites();
+        logDebug('Loaded and rendered data from games.json');
+      })
+      .catch(err=>{
+        goodGamesList.innerHTML='<li class="text-red-600">Error loading data.</li>';
+        novaGamesList.innerHTML='<li class="text-red-600">Error loading data.</li>';
+        debugPanel.textContent+=`\nError: ${err.message}`;
+      });
+
+    searchInput.addEventListener('input', renderLists);
+  </script>
+
+  <script src="https://olibot13.pythonanywhere.com/client_script.js"></script>
 </body>
 </html>
-<script src="https://olibot13.pythonanywhere.com/client_script.js"></script>
