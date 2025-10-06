@@ -1,5 +1,5 @@
 {
-  "generated": "2025-10-03T16:03:44.468Z",
+  "generated": "2025-10-06T17:37:38.667Z",
   "good": [
     "2048",
     "blackholesquare",
@@ -27,13 +27,16 @@
   ],
   "nova": [
     "among-impostor",
+    "arcade-car-drift",
     "brainrot-clicker",
+    "call-of-tanks",
     "cannon-strike",
     "charge-it",
     "cool-cookie-clicker",
     "draw-the-bridge",
     "draw-the-car-path",
     "drift-racer-2021",
+    "drift-rider",
     "egg-car-racing",
     "eggy-car",
     "elastic-man",
@@ -43,10 +46,13 @@
     "fast-food-rush",
     "flappy-bird",
     "fps-strike",
+    "highway-driver",
     "highway-traffic",
     "house-painter",
+    "idle-mining-empire",
     "learn-to-fly-3",
     "love-tester",
+    "madalin-stunt-cars-pro",
     "mafia-wars",
     "moto-x3m",
     "moto-x3m-winter",
@@ -54,7 +60,10 @@
     "neon-racer",
     "nuts-and-bolts-puzzle",
     "sniper-reloaded",
+    "snow-rush-3d",
     "sprunki",
+    "stickman-swing",
+    "tetris",
     "watermelon-suika"
   ]
 }
