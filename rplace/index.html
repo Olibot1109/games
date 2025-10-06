@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Advanced Pixel Canvas</title>
+<style>
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Sidebar for colors */
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  background: #f0f0f0;
+  padding: 4px;
+  overflow-y: auto;
+  border-right: 1px solid #ccc;
+}
+
+.color {
+  width: 30px;
+  height: 30px;
+  margin: 2px 0;
+  cursor: pointer;
+  border: 2px solid #000;
+}
+
+.color.selected {
+  outline: 2px solid black;
+}
+
+/* Main area */
+#main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top bar for tools */
+#top-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 4px;
+  background: #eee;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  min-height: 40px;
+}
+
+#top-bar button, #top-bar input[type="color"] {
+  margin: 0 4px;
+  padding: 2px 6px;
+  font-size: 14px;
+}
+
+#canvas-container {
+  flex: 1;
+  display: flex;
+}
+
+#canvas {
+  flex: 1;
+  border: 1px solid #000;
+}
+
+#status {
+  padding: 4px;
+  background: #eee;
+  border-top: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
+
+<!-- Sidebar for colors -->
+<div id="sidebar">
+  <div id="colorPalette"></div>
+  <input type="color" id="customColor" title="Custom color" style="margin-top:8px;">
+</div>
+
+<!-- Main area -->
+<div id="main">
+  <!-- Top bar for tools -->
+  <div id="top-bar">
+    <span>Brush size:</span>
+    <button data-size="1">1</button>
+    <button data-size="2">2</button>
+    <button data-size="5">5</button>
+    <button data-size="10">10</button>
+    <button id="fillToolBtn">Fill Tool</button>
+    <button id="clearBtn">Clear</button>
+    <button id="saveBtn">Save PNG</button>
+  </div>
+
+  <div id="canvas-container">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div id="status">Ready</div>
+</div>
+
+<script type="module" src="./game.js"></script>
+</body>
+</html>
