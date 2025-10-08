@@ -142,9 +142,8 @@ function addMessage(msgKey, msg){
   let contentHTML = '';
   if(msg.text) contentHTML=`<div class="text">${msg.text}</div>`;
   else if(msg.image) contentHTML=`<div class="text"><img src="${msg.image}" style="max-width:200px;border-radius:10px;"></div>`;
-
   div.innerHTML=`
-    <div class="avatar"><img src="${msg.pfp||'https://placehold.co/40x40'}" alt="pfp"></div>
+    <div class="avatar"><img src="${msg.pfp||'http://math.voidium.uk/assets/IMG_0910.png'}" alt="pfp"></div>
     <div class="msg-content">
       <div><span class="name">${msg.name}</span><span class="time">${msg.time}</span></div>
       ${contentHTML}
