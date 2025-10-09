@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Game Idea Upvoter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: #f8f9fa;
+    }
+    h1 {
+      text-align: center;
+    }
+    form {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    input[type="text"] {
+      flex: 1;
+      padding: 0.5rem;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    .idea {
+      background: white;
+      border-radius: 8px;
+      padding: 0.75rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .votes {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+    .vote-btn {
+      border: none;
+      background: transparent;
+      font-size: 1.2rem;
+    }
+    .vote-btn:hover {
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎮 Game Idea Board</h1>
+
+  <form id="ideaForm">
+    <input type="text" id="ideaInput" placeholder="Enter your game idea..." required />
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="ideasList"></div>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+
+  <script>
+    // 1. Paste your Firebase config here 👇
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    // 2. Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const ideaForm = document.getElementById('ideaForm');
+    const ideaInput = document.getElementById('ideaInput');
+    const ideasList = document.getElementById('ideasList');
+
+    // Add a new idea
+    ideaForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const text = ideaInput.value.trim();
+      if (!text) return;
+      await db.collection('ideas').add({
+        text: text,
+        votes: 0,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      ideaInput.value = '';
+    });
+
+    // Real-time listener
+    db.collection('ideas')
+      .orderBy('votes', 'desc')
+      .orderBy('createdAt', 'desc')
+      .onSnapshot(snapshot => {
+        ideasList.innerHTML = '';
+        snapshot.forEach(doc => {
+          const idea = doc.data();
+          const ideaDiv = document.createElement('div');
+          ideaDiv.className = 'idea';
+
+          const textSpan = document.createElement('span');
+          textSpan.textContent = idea.text;
+
+          const votesDiv = document.createElement('div');
+          votesDiv.className = 'votes';
+
+          const upBtn = document.createElement('button');
+          upBtn.className = 'vote-btn';
+          upBtn.textContent = '👍';
+          upBtn.onclick = () => {
+            db.collection('ideas').doc(doc.id).update({
+              votes: firebase.firestore.FieldValue.increment(1)
+            });
+          };
+
+          const downBtn = document.createElement('button');
+          downBtn.className = 'vote-btn';
+          downBtn.textContent = '👎';
+          downBtn.onclick = () => {
+            db.collection('ideas').doc(doc.id).update({
+              votes: firebase.firestore.FieldValue.increment(-1)
+            });
+          };
+
+          const voteCount = document.createElement('span');
+          voteCount.textContent = idea.votes ?? 0;
+
+          votesDiv.appendChild(upBtn);
+          votesDiv.appendChild(voteCount);
+          votesDiv.appendChild(downBtn);
+
+          ideaDiv.appendChild(textSpan);
+          ideaDiv.appendChild(votesDiv);
+          ideasList.appendChild(ideaDiv);
+        });
+      });
+  </script>
+</body>
+</html>
