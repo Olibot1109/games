@@ -1,8 +1,10 @@
 name: Generate Games Index
 
 on:
-  push:          # triggers on any push
-  workflow_dispatch: # allow manual trigger too
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -20,7 +22,6 @@ jobs:
         run: |
           node <<'EOF'
           const fs = require("fs");
-
           function getDirs(base) {
             return fs.existsSync(base)
               ? fs.readdirSync(base, { withFileTypes: true })
@@ -28,17 +29,9 @@ jobs:
                   .map(d => d.name)
               : [];
           }
-
-          // Only keep 'good' and 'nova'
           const good = getDirs("good");
           const nova = getDirs("nova");
-
-          const output = {
-            generated: new Date().toISOString(),
-            good,
-            nova
-          };
-
+          const output = { generated: new Date().toISOString(), good, nova };
           fs.writeFileSync("games.json", JSON.stringify(output, null, 2));
           console.log("✅ games.json generated:", output);
           EOF
