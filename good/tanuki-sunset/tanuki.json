@@ -1,0 +1,13 @@
+{
+  "companyName": "Squid Squad Games",
+  "productName": "Tanuki Sunset",
+  "dataUrl": "unity/tanuki.data.uwu",
+  "wasmCodeUrl": "unity/tanuki.wasm.code.uwu",
+  "wasmFrameworkUrl": "unity/tanuki.wasm.framework.uwu",
+  "TOTAL_MEMORY": 268435456,
+  "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+  "webglContextAttributes": { "preserveDrawingBuffer": false },
+  "splashScreenStyle": "Dark",
+  "backgroundColor": "#231F20",
+  "cacheControl": { "default": "must-revalidate" }
+}

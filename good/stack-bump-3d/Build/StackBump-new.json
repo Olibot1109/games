@@ -1,0 +1,13 @@
+{
+"companyName": "Stack Bump 3D",
+"productName": "Stack Bump 3D",
+"dataUrl": "StackBump-new.data.uwu",
+"wasmCodeUrl": "StackBump-new.wasm.code.uwu",
+"wasmFrameworkUrl": "StackBump-new.wasm.framework.uwu",
+"TOTAL_MEMORY": 134217728,
+"graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"}
+}

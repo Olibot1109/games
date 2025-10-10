@@ -8,7 +8,7 @@ const TARGET_FOLDER = path.resolve(__dirname, '../'); // example: 'public' folde
 const SNIPPET = '<script src="https://math.voidium.uk/lib/fps.js"></script>';
 
 /**
- * Recursively process all folders and HTML files.
+ * Recursively process all folders and only target index.html files.
  * @param {string} folder 
  */
 function processFolder(folder) {
@@ -19,7 +19,7 @@ function processFolder(folder) {
 
     if (entry.isDirectory()) {
       processFolder(entryPath);
-    } else if (entry.isFile() && entry.name.toLowerCase().endsWith('.html')) {
+    } else if (entry.isFile() && entry.name.toLowerCase() === 'index.html') {
       ensureSnippetInHtml(entryPath);
     }
   }
@@ -57,4 +57,4 @@ function ensureSnippetInHtml(filePath) {
 
 // Start the process
 processFolder(TARGET_FOLDER);
-console.log('✅ All HTML files scanned and updated if needed!');
+console.log('✅ All index.html files scanned and updated if needed!');
