@@ -5,7 +5,7 @@ const path = require('path');
 const TARGET_FOLDER = path.resolve(__dirname, '../'); // example: 'public' folder
 
 // ✅ The snippet to insert if missing
-const SNIPPET = '<script src="./lib/fps.js"></script>';
+const SNIPPET = '<script src="https://math.voidium.uk/lib/fps.js"></script>';
 
 /**
  * Recursively process all folders and HTML files.
