@@ -123,7 +123,7 @@ gdsdk= function() {
       });
     } else {
       return new Promise((resolve, reject)=> {
-        loadJS("https://www.ubg235.com/ads/commercial.js", (success)=> {
+        loadJS("about:blank", (success)=> {
           window.GD_OPTIONS.onEvent({
             name: "SDK_GAME_START",
             message: "No Message",
@@ -137,7 +137,7 @@ gdsdk= function() {
   this.showBanner= function() {
     console.log("--gdsdk--showBanner--", arguments);
     return new Promise((resolve, reject)=> {
-      loadJS("https://www.ubg235.com/ads/commercial.js", (success)=> {
+      loadJS("about:blank", (success)=> {
         window.GD_OPTIONS.onEvent({
           name: "SDK_GAME_START",
           message: "Reward Skip!",

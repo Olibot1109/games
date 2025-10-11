@@ -134,7 +134,7 @@ YYGGames= function () {
     
   this.showInterstitial= function(func) {
     consoleLog("--fx--showInterstitial--", arguments);
-    loadJS("https://www.ubg235.com/ads/commercial.js", (success)=> {
+    loadJS("about:blank", (success)=> {
       if (success) {
         console.log("--fx--showInterstitial--Done--");        
       } else {
