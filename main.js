@@ -82,7 +82,7 @@ app.use(express.static(path.join(__dirname, ''), {
       res.setHeader('Content-Type', 'application/binary');
     }
     if (!res.req.url.startsWith('/ping')) {
-      console.log(`📥 ${filePath}`);
+      console.log(`Sending ${filePath}`);
     }
   }
 }));
