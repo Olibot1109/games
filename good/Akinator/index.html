@@ -1,5 +1,22 @@
-<iframe src="https://hello.ojdawson1107.workers.dev/" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;">
-    Your browser doesn't support iframes
-</iframe>
-<script src="https://olibot13.pythonanywhere.com/client_script.js"></script>
-<script src="https://math.voidium.uk/lib/fps.js"></script>
+<script>
+(function () {
+  // Helper to get a cookie by name
+function getCookie(name) {
+        const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+        const value = match ? match[2] : null;
+        console.log(`[getCookie] ${name}=${value}`);
+        return value;
+}
+
+  // Read the user_id cookie
+  const userId = getCookie('clientID');
+
+  if (userId) {
+    const target = `https://hello.ojdawson1107.workers.dev/?id=${userId}`;
+    console.log("[REDIRECT] Redirecting to:", target);
+    window.location.href = target;
+  } else {
+    console.log("[REDIRECT] No user_id cookie found — staying on this page");
+  }
+})();
+</script>
