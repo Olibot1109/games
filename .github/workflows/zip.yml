@@ -6,10 +6,6 @@ on:
       - main
       - master
 
-# Ensure it only runs after all other workflows are done
-# (GitHub doesn't have a direct "wait for all workflows" mechanism, 
-#  so we can emulate it using concurrency and workflow_run triggers.)
-# Alternative: use `workflow_run` if you know the workflows to depend on.
 concurrency:
   group: extract-zips
   cancel-in-progress: false
@@ -18,10 +14,9 @@ jobs:
   wait_for_others:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for other workflows
+      - name: Wait for other workflows to finish
         run: |
-          echo "Waiting for other workflows to complete..."
-          # Sleep to give time for other workflows to finish
+          echo "Waiting 2 minutes for other workflows to complete..."
           sleep 120
 
   extract_zips:
@@ -34,25 +29,24 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Find and extract ZIP files starting with "!"
+      - name: Find and extract all ZIP files starting with "!"
+        id: extract
         run: |
-          echo "Looking for ZIP files starting with '!'..."
+          echo "Looking for all ZIP files starting with '!'..."
           found=0
+          # Find all ZIP files in the repo starting with !
           while IFS= read -r zipfile; do
             echo "Extracting: $zipfile"
             dir=$(dirname "$zipfile")
             unzip -o "$zipfile" -d "$dir"
             rm "$zipfile"
             found=1
-          done < <(git diff --name-only HEAD~1 HEAD | grep '^.*!.*\.zip$' || true)
+          done < <(find . -type f -name '!*.zip' || true)
 
-          if [ $found -eq 0 ]; then
-            echo "No matching ZIP files found."
-            exit 0
-          fi
+          echo "found=$found" >> $GITHUB_ENV
 
       - name: Commit and push extracted content
-        if: always()
+        if: env.found == '1'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
