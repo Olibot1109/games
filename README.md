@@ -47,9 +47,9 @@ cd games
 ```
 
 3. run
-   ```bash
-   npm i && node main.js
-   ```
+```bash
+npm i && node main.js
+```
    
 ## Contributing
 
