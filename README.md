@@ -81,10 +81,6 @@ Contributions are welcome! Feel free to:
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-## Contact
-
-Project Link: [https://github.com/Olibot1107/games](https://github.com/Olibot1107/games)
-
 ---
 
 <div align="center">
