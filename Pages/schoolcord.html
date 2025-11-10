@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>School cord</title>
+<title>Discord Clone</title>
 <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-database-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
@@ -856,7 +856,8 @@ function addMessage(key, msg) {
   if(msg.text) content = `<div class="message-text">${escapeHtml(msg.text)}</div>`;
   else if(msg.image) content = `<img src="${msg.image}" class="message-image">`;
 
-  const deleteBtn = msg.uid === currentUser.uid ? `<button class="delete-btn" onclick="deleteMessage('${key}')">Delete</button>` : '';
+  const canDelete = msg.uid === currentUser.uid || userProfile.role === 'Admin' || userProfile.role === 'Moderator';
+  const deleteBtn = canDelete ? `<button class="delete-btn" onclick="deleteMessage('${key}')">Delete</button>` : '';
 
   div.innerHTML = `
     <div class="message-avatar">${msg.avatar ? `<img src="${msg.avatar}">` : msg.author[0]}</div>
