@@ -664,6 +664,14 @@ auth.signInAnonymously().then(user => {
     userProfile.uid = currentUser.uid;
     saveCookie('userProfile', JSON.stringify(userProfile), 365);
   }
+  db.ref(`users/${currentUser.uid}`).once('value', snap => {
+    if(snap.exists()) {
+      userProfile.username = snap.val();
+      saveCookie('userProfile', JSON.stringify(userProfile), 365);
+      document.getElementById('userName').textContent = userProfile.username;
+      document.getElementById('usernameInput').value = userProfile.username;
+    }
+  });
   if(userServers.length === 0) {
     showModal('welcome');
   } else {
@@ -976,6 +984,8 @@ function createServer() {
       joinedAt: Date.now()
     });
 
+    db.ref(`users/${currentUser.uid}`).set(userProfile.username);
+
     userServers.push(serverId);
     saveCookie('userServers', JSON.stringify(userServers), 365);
     loadUserServers();
@@ -996,10 +1006,21 @@ function createServer() {
 
 function saveSettings() {
   const username = document.getElementById('usernameInput').value.trim();
-  if(username) {
-    userProfile.username = username;
-    document.getElementById('userName').textContent = username;
-    document.getElementById('userAvatar').textContent = username[0].toUpperCase();
+  if(username && username !== userProfile.username) {
+    db.ref('users').once('value', snap => {
+      const users = snap.val() || {};
+      const existing = Object.entries(users).find(([uid, uname]) => uname === username && uid !== currentUser.uid);
+      if(existing) {
+        alert('Username already taken');
+        return;
+      }
+      userProfile.username = username;
+      db.ref(`users/${currentUser.uid}`).set(username);
+      document.getElementById('userName').textContent = username;
+      document.getElementById('userAvatar').textContent = username[0].toUpperCase();
+      updateMemberProfile();
+      saveUserProfile();
+    });
   }
 
   const file = document.getElementById('avatarInput').files[0];
@@ -1013,8 +1034,10 @@ function saveSettings() {
     };
     reader.readAsDataURL(file);
   } else {
-    saveUserProfile();
-    updateMemberProfile();
+    if(!username || username === userProfile.username) {
+      saveUserProfile();
+      updateMemberProfile();
+    }
   }
 
   hideModal('settings');
@@ -1079,6 +1102,7 @@ function showMemberList() {
             </div>
             <div class="member-name">${member.username || 'Unknown'}</div>
           `;
+          // Removed kick functionality
           categoryDiv.appendChild(memberDiv);
         });
 
@@ -1193,6 +1217,8 @@ function joinServer() {
         joinedAt: Date.now()
       });
 
+      db.ref(`users/${currentUser.uid}`).set(userProfile.username);
+
       // Send join message
       db.ref(`servers/${foundServer}/channels_data/general/messages`).push({
         author: 'System',
@@ -1249,6 +1275,23 @@ function manageRoles() {
       }
     });
   });
+}
+
+function kickMember(uid, username) {
+  if(confirm(`Are you sure you want to kick ${username}?`)) {
+    db.ref(`servers/${currentServer}/members/${uid}`).remove();
+    // Send kick message
+    db.ref(`servers/${currentServer}/channels_data/general/messages`).push({
+      author: 'System',
+      text: `${username} was kicked from the server.`,
+      time: new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}),
+      avatar: null,
+      role: 'System',
+      roleColor: '#99aab5',
+      uid: 'system'
+    });
+    showMemberList(); // refresh
+  }
 }
 
 function leaveServer() {
