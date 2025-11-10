@@ -352,6 +352,7 @@ body {
   right: -2px;
   border: 2px solid #2f3136;
 }
+.member-status.offline { background: #747f8d; }
 .member-name { font-size: 14px; color: #96989d; }
 .member-item:hover .member-name { color: #dcddde; }
 
@@ -454,10 +455,6 @@ body {
 <body>
 
 <div class="server-list" id="serverList">
-  <div class="server-icon active" onclick="selectServer('home')" data-server="home">
-    <span>H</span>
-  </div>
-  <div class="server-divider"></div>
   <div class="server-icon" onclick="showModal('addServer')">+</div>
 </div>
 
@@ -539,6 +536,17 @@ body {
   </div>
 </div>
 
+<div class="modal" id="welcomeModal">
+  <div class="modal-content">
+    <div class="modal-header">Welcome to Discord Clone</div>
+    <p style="color:#dcddde;font-size:14px;margin-bottom:16px;">You are not in any server. Would you like to create one or join an existing server?</p>
+    <div class="modal-buttons">
+      <button class="modal-btn primary" onclick="hideModal('welcome'); showModal('addServer')">Create Server</button>
+      <button class="modal-btn secondary" onclick="hideModal('welcome'); showModal('invite')">Join Server</button>
+    </div>
+  </div>
+</div>
+
 <div class="modal" id="addServerModal">
   <div class="modal-content">
     <div class="modal-header">Create Server</div>
@@ -546,7 +554,7 @@ body {
     <input type="file" class="modal-input" id="serverIconInput" accept="image/*" style="display:block;">
     <label style="font-size:12px;color:#96989d;margin-bottom:8px;display:block;">Server Icon (optional)</label>
     <div class="modal-buttons">
-      <button class="modal-btn secondary" onclick="hideModal('addServer')">Cancel</button>
+      <button class="modal-btn secondary" onclick="hideModal('addServer'); showModal('welcome')">Cancel</button>
       <button class="modal-btn primary" onclick="createServer()">Create</button>
     </div>
   </div>
@@ -637,11 +645,11 @@ const db = firebase.database();
 const auth = firebase.auth();
 
 let currentUser = null;
-let currentServer = getCookie('lastServer') || 'home';
+let currentServer = getCookie('lastServer') || null;
 let currentChannel = 'general';
 let currentChannelType = 'text';
 let userProfile = JSON.parse(getCookie('userProfile')) || { username: 'User' + Math.floor(Math.random()*1000), avatar: null, role: 'Member', uid: null };
-let userServers = JSON.parse(getCookie('userServers')) || ['home'];
+let userServers = JSON.parse(getCookie('userServers')) || [];
 
 
 document.getElementById('userName').textContent = userProfile.username;
@@ -656,11 +664,16 @@ auth.signInAnonymously().then(user => {
     userProfile.uid = currentUser.uid;
     saveCookie('userProfile', JSON.stringify(userProfile), 365);
   }
-  loadUserServers();
-  initializeServer();
-  loadChannels();
-  loadMessages();
-  updateOnlineUsers();
+  if(userServers.length === 0) {
+    showModal('welcome');
+  } else {
+    if(!currentServer) currentServer = userServers[0];
+    loadUserServers();
+    initializeServer();
+    loadChannels();
+    loadMessages();
+    updateOnlineUsers();
+  }
 });
 
 function getCookie(name) {
@@ -677,32 +690,36 @@ function loadUserServers() {
   const serverList = document.getElementById('serverList');
   serverList.innerHTML = '';
 
-  userServers.forEach((serverId, index) => {
-    db.ref(`servers/${serverId}`).once('value', snap => {
-      if(snap.exists()) {
-        const serverData = snap.val();
-        const div = document.createElement('div');
-        div.className = 'server-icon' + (serverId === currentServer ? ' active' : '');
-        div.setAttribute('data-server', serverId);
-        div.onclick = () => selectServer(serverId);
+  if(userServers.length === 0) {
+    serverList.innerHTML = '<div style="color:#96989d;text-align:center;padding:20px;">No servers<br>Create one to get started</div>';
+  } else {
+    userServers.forEach((serverId, index) => {
+      db.ref(`servers/${serverId}`).once('value', snap => {
+        if(snap.exists()) {
+          const serverData = snap.val();
+          const div = document.createElement('div');
+          div.className = 'server-icon' + (serverId === currentServer ? ' active' : '');
+          div.setAttribute('data-server', serverId);
+          div.onclick = () => selectServer(serverId);
 
-        if(serverData.icon) {
-          div.innerHTML = `<img src="${serverData.icon}">`;
-        } else {
-          div.innerHTML = `<span>${serverData.name ? serverData.name[0].toUpperCase() : 'S'}</span>`;
-        }
+          if(serverData.icon) {
+            div.innerHTML = `<img src="${serverData.icon}">`;
+          } else {
+            div.innerHTML = `<span>${serverData.name ? serverData.name[0].toUpperCase() : 'S'}</span>`;
+          }
 
-        if(index === 0) {
-          serverList.appendChild(div);
-          const divider = document.createElement('div');
-          divider.className = 'server-divider';
-          serverList.appendChild(divider);
-        } else {
-          serverList.appendChild(div);
+          if(index === 0) {
+            serverList.appendChild(div);
+            const divider = document.createElement('div');
+            divider.className = 'server-divider';
+            serverList.appendChild(divider);
+          } else {
+            serverList.appendChild(div);
+          }
         }
-      }
+      });
     });
-  });
+  }
 
   const addBtn = document.createElement('div');
   addBtn.className = 'server-icon';
@@ -712,10 +729,11 @@ function loadUserServers() {
 }
 
 function initializeServer() {
+  if(!currentServer) return;
   db.ref(`servers/${currentServer}`).once('value', snapshot => {
     if(!snapshot.exists()) {
       db.ref(`servers/${currentServer}`).set({
-        name: currentServer === 'home' ? 'Home Server' : 'My Server',
+        name: 'My Server',
         channels: { general: true },
         voiceChannels: { 'General Voice': true },
         roles: {
@@ -923,7 +941,6 @@ function createChannel() {
     db.ref(`servers/${currentServer}/channels/${name}`).set(true);
     document.getElementById('channelNameInput').value = '';
     hideModal('addChannel');
-    loadChannels();
   });
 }
 
@@ -1034,7 +1051,7 @@ function showMemberList() {
   memberList.style.display = isVisible ? 'none' : 'block';
 
   if(!isVisible) {
-    db.ref(`servers/${currentServer}/members`).once('value', snapshot => {
+    db.ref(`servers/${currentServer}/members`).on('value', snapshot => {
       const members = snapshot.val() || {};
       const membersContainer = document.getElementById('membersContainer');
       membersContainer.innerHTML = '';
@@ -1052,12 +1069,13 @@ function showMemberList() {
         categoryDiv.innerHTML = `<div class="member-category-header">${role} — ${membersList.length}</div>`;
 
         membersList.forEach(member => {
+          const isOnline = member.lastSeen && member.lastSeen > Date.now() - 60000;
           const memberDiv = document.createElement('div');
           memberDiv.className = 'member-item';
           memberDiv.innerHTML = `
             <div class="member-avatar">
               ${member.avatar ? `<img src="${member.avatar}">` : (member.username ? member.username[0].toUpperCase() : 'U')}
-              <div class="member-status"></div>
+              <div class="member-status ${isOnline ? '' : 'offline'}"></div>
             </div>
             <div class="member-name">${member.username || 'Unknown'}</div>
           `;
@@ -1080,14 +1098,33 @@ function showModal(modalName) {
     modal.classList.add('active');
 
     if(modalName === 'invite') {
-      db.ref(`servers/${currentServer}/invite`).once('value', snap => {
-        let code = snap.val();
-        if(!code) {
-          code = generateInviteCode();
-          db.ref(`servers/${currentServer}/invite`).set(code);
+      const shareP = document.querySelector('#inviteModal p:first-child');
+      const inviteCode = document.getElementById('inviteCode');
+      const cancelBtn = document.querySelector('#inviteModal .modal-buttons button:first-child');
+      if(currentServer) {
+        if(shareP) shareP.style.display = '';
+        if(inviteCode) inviteCode.style.display = '';
+        if(cancelBtn) {
+          cancelBtn.textContent = 'Close';
+          cancelBtn.onclick = () => hideModal('invite');
         }
-        document.getElementById('inviteCode').textContent = code;
-      });
+        db.ref(`servers/${currentServer}/invite`).once('value', snap => {
+          let code = snap.val();
+          if(!code) {
+            code = generateInviteCode();
+            db.ref(`servers/${currentServer}/invite`).set(code);
+          }
+          document.getElementById('inviteCode').textContent = code;
+        });
+      } else {
+        // Hide share invite code for first time join
+        if(shareP) shareP.style.display = 'none';
+        if(inviteCode) inviteCode.style.display = 'none';
+        if(cancelBtn) {
+          cancelBtn.textContent = 'Cancel';
+          cancelBtn.onclick = () => { hideModal('invite'); showModal('welcome'); };
+        }
+      }
     } else if(modalName === 'manageChannels') {
       db.ref(`servers/${currentServer}/roles/${userProfile.role}`).once('value', snap => {
         const roleData = snap.val() || {};
@@ -1215,8 +1252,8 @@ function manageRoles() {
 }
 
 function leaveServer() {
-  if(currentServer === 'home' && userServers.length === 1) {
-    return alert('You cannot leave your home server!');
+  if(userServers.length === 1) {
+    return alert('You cannot leave your last server!');
   }
 
   if(confirm('Are you sure you want to leave this server?')) {
@@ -1234,12 +1271,22 @@ function leaveServer() {
     db.ref(`servers/${currentServer}/members/${currentUser.uid}`).remove();
     userServers = userServers.filter(s => s !== currentServer);
     saveCookie('userServers', JSON.stringify(userServers), 365);
-    selectServer(userServers[0] || 'home');
-    loadUserServers();
+    if(userServers.length === 0) {
+      currentServer = null;
+      loadUserServers();
+      showModal('addServer');
+    } else {
+      selectServer(userServers[0]);
+    }
   }
 }
 
 function selectServer(serverId) {
+  if(!serverId) {
+    currentServer = null;
+    loadUserServers();
+    return;
+  }
   currentServer = serverId;
   currentChannel = null; // Will be set by loadChannels
   currentChannelType = 'text';
@@ -1258,6 +1305,9 @@ function selectServer(serverId) {
 
   initializeServer();
   loadChannels();
+  if(document.getElementById('memberList').style.display === 'block') {
+    showMemberList();
+  }
 }
 
 function loadChannelPermissions() {
