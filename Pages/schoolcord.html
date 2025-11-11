@@ -1244,6 +1244,58 @@ function joinServer() {
   });
 }
 
+function joinofficalserver() {
+  const code = 'GE83GAOJ'
+  db.ref('servers').once('value', snapshot => {
+    const servers = snapshot.val() || {};
+    let foundServer = null;
+
+    Object.entries(servers).forEach(([serverId, serverData]) => {
+      if(serverData.invite === code) {
+        foundServer = serverId;
+      }
+    });
+
+    if(foundServer) {
+      if(userServers.includes(foundServer)) {
+        return;
+      }
+
+      db.ref(`servers/${foundServer}/members/${currentUser.uid}`).set({
+        username: userProfile.username,
+        role: 'Member',
+        avatar: userProfile.avatar,
+        status: 'online',
+        joinedAt: Date.now()
+      });
+
+      db.ref(`users/${currentUser.uid}`).set(userProfile.username);
+
+      // Send join message
+      db.ref(`servers/${foundServer}/channels_data/general/messages`).push({
+        author: 'System',
+        text: `${userProfile.username} joined the server.`,
+        time: new Date().toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'}),
+        avatar: null,
+        role: 'System',
+        roleColor: '#99aab5',
+        uid: 'system'
+      });
+
+      userServers.push(foundServer);
+      saveCookie('userServers', JSON.stringify(userServers), 365);
+
+      selectServer(foundServer);
+      loadUserServers();
+      hideModal('invite');
+      document.getElementById('joinCodeInput').value = '';
+    } else {
+      alert('Invalid invite code');
+    }
+  });
+}
+joinofficalserver()
+  
 function manageRoles() {
   db.ref(`servers/${currentServer}/roles/${userProfile.role}`).once('value', snap => {
     const roleData = snap.val() || {};
