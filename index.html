@@ -138,7 +138,7 @@
         let up=0,down=0;
         if(lastSent && lastRecv){up=(d.net_sent-lastSent)/1024;down=(d.net_recv-lastRecv)/1024;}
         lastSent=d.net_sent; lastRecv=d.net_recv;
-        document.getElementById("stats").innerHTML=`CPU: ${d.cpu}%<br>RAM: ${d.ram}%<br>Upload: ${up.toFixed(2)} KB/s<br>Download: ${down.toFixed(2)} KB/s<brTmp" ${tmp}°C<br>Uptime: ${h}h ${m}m ${s}s`;
+        document.getElementById("stats").innerHTML=`CPU: ${d.cpu}%<br>RAM: ${d.ram}%<br>Upload: ${up.toFixed(2)} KB/s<br>Download: ${down.toFixed(2)} KB/s<brTmp ${d.tmp}°C<br>Uptime: ${h}h ${m}m ${s}s`;
         const now=new Date().toLocaleTimeString();
         chart.data.labels.push(now);
         chart.data.datasets[0].data.push(d.cpu);
