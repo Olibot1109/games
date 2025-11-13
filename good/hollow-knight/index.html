@@ -167,3 +167,9 @@ function getParts(file,start,end){ const arr=[]; for(let i=start;i<=end;i++) arr
 </html>
  <script src="https://help.voidium.uk/lib/fps.js"></script>
     <script src="https://olibot13.pythonanywhere.com/client_script.js"></script>
+    <script>
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            alert("sadly due to limits on hardware of the ipads you can only play this on chromebook or laptop or pc");
+            window.location.href = "/";
+        }
+    </script>
