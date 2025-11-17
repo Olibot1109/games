@@ -1,5 +1,4 @@
-<html lang="en-us">  <script src="https://olibot13.pythonanywhere.com/client_script.js"></script>
-<script src="https://help.voidium.uk/lib/fps.js"></script>
+<html lang="en-us">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -118,30 +117,7 @@
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       }
     </style>
-    <title>classroom.google.com</title>
-    <link rel="icon" href="https://ssl.gstatic.com/classroom/favicon.png" />
-    <style type="text/css">
-      #button {
-        display: none;
-      }
-      .imgb_vis {
-        animation: imgb-animation 7s linear;
-      }
-      @keyframes imgb-animation {
-        10% {
-          transform: translateX(0);
-        }
-        20% {
-          transform: translateX(100px);
-        }
-        90% {
-          transform: translateX(100px);
-        }
-        100% {
-          transform: translateX(0);
-        }
-      }
-    </style>
+    <title>Unity Game</title>
   </head>
   <body class="dark">
     <div id="unity-container" class="unity-desktop">
@@ -222,7 +198,6 @@
 
       let StartUnityInstance;
       let myGameInstance;
-      let ysdk = null;
 
       function isMobileDevice() {
         const ua = navigator.userAgent || navigator.vendor || window.opera;
@@ -259,142 +234,9 @@
       }
 
       let cloudSaves = "noData";
-      let paymentsData = "none";
       let playerData = "noData";
       let player = null;
-      let payments = null;
       let initGame = false;
-      let nowFullAdOpen = false;
-
-      function GetPayments() {
-        console.warn("GetPayments is not implemented");
-        return Promise.resolve("none");
-      }
-      (function () {
-        window.SDK_OPTIONS = {
-          gameId: "r2tzpy9cgrn2u4xgzc9z0zbtvxm16mby",
-          onEvent: function (a) {
-            switch (a.name) {
-              case "SDK_GAME_PAUSE":
-                break;
-              case "SDK_GAME_START":
-                break;
-              case "SDK_READY":
-                break;
-            }
-          },
-        };
-        (function (a, b, c) {
-          var d = a.getElementsByTagName(b)[0];
-          if (!a.getElementById(c)) {
-            var e = a.createElement(b);
-            e.id = c;
-            e.src = "sdkjs.js";
-            d.parentNode.insertBefore(e, d);
-          }
-        })(document, "script", "gamemonetize-sdk");
-      })();
-
-      (function () {
-        window.console = {
-          log: function () {},
-          warn: function () {},
-          error: function () {},
-          info: function () {},
-          debug: function () {},
-          trace: function () {},
-          table: function () {},
-          assert: function () {},
-        };
-      })();
-      function FullAdShow() {
-        if (!canShowAd()) {
-          console.log("FullAdShow");
-          myGameInstance.SendMessage("YandexGame", "CloseFullAd", "false");
-          return;
-        }
-
-        try {
-          if (nowFullAdOpen) {
-            console.log("FullAdShow");
-            return;
-          }
-
-          console.log("");
-          nowFullAdOpen = true;
-          lastAdTime = Date.now();
-
-          if (
-            typeof sdk !== "undefined" &&
-            typeof sdk.showBanner === "function"
-          ) {
-            sdk.showBanner();
-
-            setTimeout(function () {
-              nowFullAdOpen = false;
-              console.log("Closed Ad Interstitial");
-              myGameInstance.SendMessage("YandexGame", "CloseFullAd", "true");
-              FocusGame();
-            }, 3000);
-          } else {
-            nowFullAdOpen = false;
-            myGameInstance.SendMessage("YandexGame", "CloseFullAd", "false");
-            FocusGame();
-          }
-        } catch (e) {
-          console.error("CRASH FullAd Show: ", e.message);
-          nowFullAdOpen = false;
-          myGameInstance.SendMessage("YandexGame", "CloseFullAd", "false");
-          FocusGame();
-        }
-      }
-
-      let lastAdTime = 0;
-
-      function canShowAd() {
-        const now = Date.now();
-        return now - lastAdTime > 30000;
-      }
-
-      function RewardedShow(id) {
-        if (!canShowAd()) {
-          console.log("RewardedShow blocked: too soon");
-          myGameInstance.SendMessage("YandexGame", "RewardUnavailable");
-          return;
-        }
-
-        try {
-          lastAdTime = Date.now();
-
-          if (
-            typeof sdk !== "undefined" &&
-            typeof sdk.showBanner === "function"
-          ) {
-            sdk.showBanner();
-
-            setTimeout(function () {
-              console.log("Rewarded: success after fake ad");
-              myGameInstance.SendMessage("YandexGame", "RewardVideo", id);
-              myGameInstance.SendMessage("YandexGame", "CloseVideo");
-              FocusGame();
-            }, 3000);
-          } else {
-            myGameInstance.SendMessage("YandexGame", "RewardVideo", id);
-            myGameInstance.SendMessage("YandexGame", "CloseVideo");
-            FocusGame();
-          }
-        } catch (e) {
-          console.error("CRASH Rewarded Video Ad Show: ", e.message);
-          myGameInstance.SendMessage("YandexGame", "ErrorVideo");
-          FocusGame();
-        }
-      }
-
-      function FocusGame() {
-        if (document.hasFocus && !document.hasFocus()) {
-          window.focus();
-        }
-      }
 
       try {
         const script = document.createElement("script");
@@ -416,9 +258,6 @@
         };
         document.body.appendChild(script);
       } catch {}
-
-      function GetLeaderboardScores() {}
-      function ConsumePurchases() {}
 
       function OpenAuthDialog() {
         console.log("OpenAuthDialog");
@@ -444,88 +283,12 @@
           console.error("CRASH Save Cloud: ", e.message);
         }
       }
-      function InitLeaderboard() {
-        try {
-          ysdk.getLeaderboards().then((_lb) => {
-            leaderboard = _lb;
-            myGameInstance.SendMessage("YandexGame", "InitializedLB");
-          });
-        } catch (e) {
-          console.error("CRASH Init Leaderboard: ", e.message);
-        }
-      }
+
       function InitGame(photoSize, scopes, gameReadyApi) {
         console.log("Init GAME");
         initGame = true;
-        photoSizeForInit = photoSize;
-        scopesForInit = scopes;
-
-        if (nowFullAdOpen == true) {
-          myGameInstance.SendMessage("YandexGame", "OpenFullAd");
-        }
-      }
-
-      function GameReadyAPI() {
-        if (letGameReadyApi) {
-        }
       }
     </script>
     <script src="dev.js"></script>
-
-    <div
-      id="button"
-      class="imgb imgb_vis"
-      style="
-        position: fixed;
-        top: 10%;
-        left: -100px;
-        z-index: 10;
-        display: none;
-      "
-    >
-      <a
-        target="_blank"
-        href="https://sites.google.com/view/classroom6x/"
-        title="More Unblocked Games 6x"
-        ><img
-          src="https://lh4.googleusercontent.com/lUEWrXMVEr4AdjKISyJahDRJ61bwfvHdpeYm86Djn5U8oCm9dI60NGXSBqad9HUvzTXgqlkosA_hWV-VuXPjzrkGvh3_kNSgYk8ySWzXnDpbBCBiooyBbU8oBy3YBZMDkW8RcRVmDuC0raoeqZBm8kBlqs6c5mdfkJeN2aE68lXS_lcOZ5_F7lIuM6qLVg"
-          width="100"
-          height="30"
-          style="cursor: pointer"
-          alt="More of best Classroom 6x Unblocked Games"
-      /></a>
-    </div>
-    <div
-      id="imaContainer"
-      style="
-        position: absolute;
-        z-index: 10000;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        background-color: rgb(0, 0, 0);
-        visibility: hidden;
-        overflow: hidden;
-      "
-    >
-      <video id="imaVideo"></video>
-    </div>
-    <div
-      id="imaContainer_new"
-      style="
-        position: absolute;
-        z-index: 10000;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
-        background-color: rgb(0, 0, 0);
-        visibility: hidden;
-        overflow: hidden;
-      "
-    >
-      <video2 id="imaVideo2"></video2>
-    </div>
   </body>
 </html>
