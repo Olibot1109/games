@@ -38,43 +38,37 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-  if (!req.url.startsWith('/good/gun_spin/')) return next();
+  if (!req.url.startsWith("/good/gun_spin/")) return next();
+
   if (req.url.endsWith(".uwu")) {
-    if (req.url.includes(".wasm")) {
-      const filePath = path.join(__dirname, ".", req.url);
-      try {
-        const data = fs.readFileSync(filePath);
-        let finalData = data;
-        if (data.length > 0 && data.readUIntBE(0, 2) === 0x1f8b) {
-          // It's gzipped, decompress
-          finalData = zlib.gunzipSync(data);
-        }
-        // Check if it's WASM by magic bytes
-        if (finalData.length >= 4 && finalData.readUIntBE(0, 4) === 0x0061736d) {
-          res.type("application/wasm");
-        } else {
-          res.type("application/javascript");
-        }
-        res.send(finalData);
-      } catch (error) {
-        console.error("Error processing WASM file:", error);
-        res.status(500).send("Error loading file");
+    const filePath = path.join(__dirname, ".", req.url);
+
+    try {
+      const data = fs.readFileSync(filePath);
+
+      // Set MIME types without using octet-stream
+      if (req.url.includes(".wasm")) {
+        res.type("application/wasm");
+      } else if (req.url.includes(".js")) {
+        res.type("application/javascript");
+      } else {
+        // For .data and any other files
+        res.type("application/binary");
       }
-      return;
+
+      // If the file is gzipped, tell browser
+      if (data.length >= 2 && data.readUInt16BE(0) === 0x1f8b) {
+        res.setHeader("Content-Encoding", "gzip");
+      }
+
+      res.send(data);
+    } catch (err) {
+      console.error("Error serving file:", err);
+      res.status(404).send("File not found");
     }
-    else if (req.url.includes(".js")) {
-      res.type("application/javascript");
-      res.setHeader("Content-Encoding", "gzip");
-    }
-    else if (req.url.includes(".data")) {
-      res.type("application/octet-stream");
-      res.setHeader("Content-Encoding", "gzip");
-    }
-    else {
-      res.type("application/binary");
-      res.setHeader("Content-Encoding", "gzip");
-    }
+    return;
   }
+
   next();
 });
 
