@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const https = require('https');
+const { url } = require('inspector');
+const zlib = require('zlib');
 
 const app = express();
 const PORT = 3000;
@@ -32,6 +34,47 @@ app.use((req, res, next) => {
     console.log(`${req.method} ${req.url} ${colorStatus(res.statusCode)} ${duration}ms`);
   });
 
+  next();
+});
+
+app.use((req, res, next) => {
+  if (!req.url.startsWith('/good/gun_spin/')) return next();
+  if (req.url.endsWith(".uwu")) {
+    if (req.url.includes(".wasm")) {
+      const filePath = path.join(__dirname, ".", req.url);
+      try {
+        const data = fs.readFileSync(filePath);
+        let finalData = data;
+        if (data.length > 0 && data.readUIntBE(0, 2) === 0x1f8b) {
+          // It's gzipped, decompress
+          finalData = zlib.gunzipSync(data);
+        }
+        // Check if it's WASM by magic bytes
+        if (finalData.length >= 4 && finalData.readUIntBE(0, 4) === 0x0061736d) {
+          res.type("application/wasm");
+        } else {
+          res.type("application/javascript");
+        }
+        res.send(finalData);
+      } catch (error) {
+        console.error("Error processing WASM file:", error);
+        res.status(500).send("Error loading file");
+      }
+      return;
+    }
+    else if (req.url.includes(".js")) {
+      res.type("application/javascript");
+      res.setHeader("Content-Encoding", "gzip");
+    }
+    else if (req.url.includes(".data")) {
+      res.type("application/octet-stream");
+      res.setHeader("Content-Encoding", "gzip");
+    }
+    else {
+      res.type("application/binary");
+      res.setHeader("Content-Encoding", "gzip");
+    }
+  }
   next();
 });
 
