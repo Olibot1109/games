@@ -1,3 +1,5 @@
+## this project wont be contiuned and is now ended
+
 <div align="center">
   
   ![GitHub repo size](https://img.shields.io/github/repo-size/Olibot1107/games)
