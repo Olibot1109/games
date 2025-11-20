@@ -166,7 +166,7 @@
 
   async function ensureLocalStream(){
     if(localStream) return localStream;
-    localStream=await navigator.mediaDevices.getUserMedia({video:{width:320,height:180,frameRate:60},audio:true});
+    localStream=await navigator.mediaDevices.getUserMedia({video:{width:640,height:360,frameRate:30},audio:true});
     const v=document.createElement('video'); v.autoplay=true; v.muted=true; v.playsInline=true; v.id=`local-${uid}`; v.srcObject=localStream; v.addEventListener('click', () => v.requestFullscreen()); videosContainer.prepend(v);
     setupSpeechDetection(v, localStream.getAudioTracks()[0]);
     log('Local media started');
@@ -315,6 +315,7 @@
 
   // screen share toggle
   document.getElementById('btn-screen').addEventListener('click',async ()=>{
+    if(!navigator.userAgent.includes('Windows')){ log('Screen sharing is only available on Windows PCs.'); return; }
     if(screenSharing){
       // stop
       if(screenStream && currentRoom){
