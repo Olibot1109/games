@@ -82,6 +82,27 @@ html, body {
 	background: url(https://i.imgur.com/zoKOaEY.png) no-repeat;
 }
 
+.profile {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 50px;
+    line-height: 50px;
+    float: right;
+    cursor: pointer;
+}
+.profileavatar {
+    color: #fff;
+	width: 49px;
+	height: 49px;
+    text-decoration: none;
+    margin-right: 20px;
+    line-height: 50px;
+    float: right;
+    cursor: pointer;
+	outline: 1px #25793B solid;
+	
+}
+
 .about {
 	color: #fff;
 	text-decoration: none;
@@ -126,7 +147,7 @@ html, body {
 .aboutDev {
 	width: 350px;
 	float: left;
-}
+} 
 
 .aboutDevName {
 	display: block;
@@ -160,6 +181,16 @@ html, body {
 }
 
 .unboxing {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 1;
+}
+
+.unboxing2 {
 	display: block;
 	position: absolute;
 	top: 0;
@@ -229,7 +260,7 @@ html, body {
 }
 
 .caseDisplay:active {
-	padding-top: 0;
+	padding-top: 0px;
 }
 
 .caseInfoContainer {
@@ -304,7 +335,7 @@ html, body {
 	position: absolute;
 	right: 0;
 	left: 0;
-	bottom: 75px;
+	bottom: 150px;
 }
 
 .jackpotCurrentWorth {
@@ -344,7 +375,7 @@ html, body {
 	width: 100%;
 	background: #101619;
 	border-bottom: 1px #186144 solid;
-	background: linear-gradient(rgba(16, 22, 25, .5), rgba(16, 22, 25, 1)), url(http://i.imgur.com/vakyLA5.png);
+	background: linear-gradient(rgba(16, 22, 25, .5), rgba(16, 22, 25, 1)), url(https://i.imgur.com/vakyLA5.png);
 	background-size: cover;
 }
 
@@ -352,6 +383,20 @@ html, body {
 	text-align: center;
 	color: #fff;
 	font-size: 25px;
+}
+.winneravatar {
+	height: 70px;
+	width: 70px;
+	float: center;
+	margin: auto;
+	outline: 1px #25793B solid;
+}
+
+.tableCanner {
+	height: 70px;
+	width: 70px;
+	margin-left: 50px;
+	outline: 1px #25793B solid;
 }
 
 .jackpotCountDownLabel {
@@ -403,14 +448,13 @@ html, body {
 
 .jackpotRightToBet {
 	position: absolute;
-	display: flex;
-	justify-content: center;
 	bottom: 80px;
-	width: 100%;
+	width: 600px;
 	left: 0;
 	right: 0;
-	height: 85px;
+	height: 95px;
 	background: #101619;
+	overflow-x: scroll;
 }
 
 .jackpotRightPlayer {
@@ -444,15 +488,16 @@ html, body {
 
 .jackpotRightSTBTag {
 	position: absolute;
-  bottom: 165px;
+	bottom: 186px;
 	font-family: 'Rajdhani', sans-serif;
 	color: #273135;
 	float: left;
-	height: 20px;
+	height: 23px;
 	line-height: 24px;
 	padding-left: 6px;
 	width: 100%;
 	margin-top: 1px;
+	outline: 1px #186144 solid;
 }
 
 .inventorySwapItem {
@@ -460,7 +505,7 @@ html, body {
 	width: 70px;
 	height: 70px;
 	border: 1px #1B2329 solid;
-	margin: 6.5px 0 0 6.5px;
+	margin: 6.5px 0px 0px 6.5px;
 	float: left;
 	cursor: pointer;
 }
@@ -503,7 +548,7 @@ html, body {
 	width: 70px;
 	height: 70px;
 	border: 1px #1B2329 solid;
-	margin: 5px 0 0 7px;
+	margin: 5px 0px 0px 7px;
 	float: left;
 	cursor: pointer;
 }
@@ -538,7 +583,7 @@ html, body {
 
 .jackpotDepositor {
 	height: 80px;
-	margin: 5px 5px 0;
+	margin: 5px 5px 0px 5px;
 	background: #0E0E0E;
 	overflow: hidden;
 }
@@ -577,22 +622,22 @@ html, body {
 }
 
 .depositorSkinContainer {
-	height: 80px;
-	float: right;
+	height: 100%;
+	overflow-x: scroll;
 }
 
 .depositorSkin {
 	position: relative;
-	width: 70px;
-	height: 70px;
+	width: 55px;
+	height: 55px;
 	border: 1px #1B2329 solid;
 	margin: 4px;
-	float: right;
+	float: left;
 }
 
 .depositorSkin img {
-	height: 70px;
-	width: 70px;
+	height: 55px;
+	width: 55px;
 }
 
 .modalWindow {
@@ -747,7 +792,7 @@ html, body {
 	right: 0;
 	top: 0;
 	bottom: 0;
-	width: 575px;
+	width: 580px;
 	background: #090D10;
 	border-left: 1px #186144 solid;
 }
@@ -894,9 +939,10 @@ html, body {
 
 .tradeButtonContainer {
 	height: 135px;
-	position: absolute;
+	position: relative;
 	width: 100%;
-	bottom: 0;
+    bottom: 0;
+    left: 0;
 	border-top: 1px #186144 solid;
 }
 
@@ -969,6 +1015,34 @@ html, body {
 	overflow-x: hidden;
 }
 
+
+.coinContainer {
+	display: none;
+	height: 100%;
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	
+}
+
+#btnFlip {
+    border: none;
+    background: none;
+}
+
+
+.newsContainer {
+	display: none;
+	height: 100%;
+	width: 100%;
+	overflow-y: auto;
+	overflow-x: hidden;
+	font-family: 'Rajdhani', sans-serif;
+	color: #354146;
+	line-height: 30px;
+	margin-top: 1px;
+}
+
 .case {
 	position: relative;
 	color: #fff;
@@ -1018,7 +1092,7 @@ html, body {
 
 .mainInfoLabel {
 	color: #186144;
-	margin: 0 10px;
+	margin: 0px 10px;
 	height: 100%;
 	line-height: 30px;
 }
@@ -1086,7 +1160,7 @@ html, body {
 	width: 70px;
 	height: 70px;
 	border: 1px #1B2329 solid;
-	margin: 6.5px 0 0 6.5px;
+	margin: 6.5px 0px 0px 6.5px;
 	float: left;
 	cursor: pointer;
 }
@@ -1120,6 +1194,10 @@ div.covert {
 	border: 1px #C12222 solid;
 }
 
+div.stattrak {
+	border: 1px #F89406 solid;
+}
+
 div.knife {
 	border: 1px #FFD700 solid;
 }
@@ -1134,7 +1212,7 @@ div.knife {
 	right: 0;
 	top: 7px;
 	width: 800px;
-	height: 35px;
+	height: 39px;
 	line-height: 35px;
 	text-align: center;
 	background: #186144;
@@ -1144,6 +1222,11 @@ div.knife {
 	border-radius: 3px;
 	cursor: pointer;
 	transition: .5s;
+}
+
+.notification a {
+	text-decoration: none;
+	color: gold;
 }
 
 .settings {
@@ -1162,17 +1245,53 @@ div.knife {
 	background-color: #1A2929;
 }
 
+.sg {
+    width:450px;
+    height:20px;
+}
+
+.be {
+    width:450px;
+    height:20px;
+}
+.won {
+    width:450px;
+    height:20px;
+}
+.a {
+    width:450px;
+    height:20px;
+}
+.mc {
+    width:450px;
+    height:20px;
+}
+.ub {
+    width:450px;
+    height:20px;
+}
+
+.pop {
+    width:450px;
+    height:20px;
+}
+
 .settingsList {
 	color: #fff;
 	position: absolute;
 	right: 0;
-	top: 50px;
-	width: 575px;
+	top: 49px;
+	width: 580px;
 	background: #1A2929;
 	border-bottom: 1px #186144 solid;
 	z-index: 1;
 	transition: .5s;
 }
+
+.Player{
+	color: #186144 !important;
+}
+
 
 .settingsList li {
 	list-style: none;
@@ -1185,7 +1304,7 @@ div.knife {
 }
 
 .settingsList.hidden {
-	top: -155px;
+	top: -400px;
 }
 
 #canvas {
@@ -1296,7 +1415,7 @@ div.knife {
 	text-align: center;
 	line-height: 40px;
 	color: #fff;
-	margin: 50px 0 25px 20px;
+	margin: 50px 0px 25px 20px;
 	width: 150px;
 	height: 40px;
 	background: linear-gradient(#1d7751, #0e382c);
