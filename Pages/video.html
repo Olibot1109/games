@@ -167,7 +167,7 @@
   async function ensureLocalStream(){
     if(localStream) return localStream;
     localStream=await navigator.mediaDevices.getUserMedia({video:{width:320,height:180,frameRate:60},audio:true});
-    const v=document.createElement('video'); v.autoplay=true; v.muted=true; v.playsInline=true; v.id=`local-${uid}`; v.srcObject=localStream; videosContainer.prepend(v);
+    const v=document.createElement('video'); v.autoplay=true; v.muted=true; v.playsInline=true; v.id=`local-${uid}`; v.srcObject=localStream; v.addEventListener('click', () => v.requestFullscreen()); videosContainer.prepend(v);
     setupSpeechDetection(v, localStream.getAudioTracks()[0]);
     log('Local media started');
     document.body.classList.add('streaming'); return localStream;
@@ -218,7 +218,10 @@
 
     const remoteVid=document.createElement('video'); remoteVid.autoplay=true; remoteVid.playsInline=true; remoteVid.id=`remote-${otherId}`;
     let remoteAppended=false;
-    pc.ontrack=e=>{ setupSpeechDetection(remoteVid, e.streams[0].getAudioTracks()[0]); remoteVid.srcObject=e.streams[0]; if(!remoteAppended){ remoteVid.style.position='relative'; const muteBtn=document.createElement('button'); muteBtn.textContent='🔇'; muteBtn.className='mute-btn'; muteBtn.style.position='absolute'; muteBtn.style.top='5px'; muteBtn.style.right='5px'; muteBtn.style.background='rgba(0,0,0,0.7)'; muteBtn.style.color='white'; muteBtn.style.border='none'; muteBtn.style.borderRadius='50%'; muteBtn.style.width='30px'; muteBtn.style.height='30px'; muteBtn.style.cursor='pointer'; muteBtn.addEventListener('click',()=> db.ref('chat/'+currentRoom).push({from:uid,type:'mute',target:otherId,ts:Date.now()})); videosContainer.appendChild(remoteVid); videosContainer.appendChild(muteBtn); remoteAppended=true; } };
+    let iceCandidatesQueue = [];
+    let remoteDescriptionSet = false;
+
+    pc.ontrack=e=>{ setupSpeechDetection(remoteVid, e.streams[0].getAudioTracks()[0]); remoteVid.srcObject=e.streams[0]; if(!remoteAppended){ remoteVid.style.position='relative'; const muteBtn=document.createElement('button'); muteBtn.textContent='🔇'; muteBtn.className='mute-btn'; muteBtn.style.position='absolute'; muteBtn.style.top='5px'; muteBtn.style.right='5px'; muteBtn.style.background='rgba(0,0,0,0.7)'; muteBtn.style.color='white'; muteBtn.style.border='none'; muteBtn.style.borderRadius='50%'; muteBtn.style.width='30px'; muteBtn.style.height='30px'; muteBtn.style.cursor='pointer'; muteBtn.addEventListener('click',()=> db.ref('chat/'+currentRoom).push({from:uid,type:'mute',target:otherId,ts:Date.now()})); remoteVid.addEventListener('click', () => remoteVid.requestFullscreen()); videosContainer.appendChild(remoteVid); videosContainer.appendChild(muteBtn); remoteAppended=true; } };
 
     pc.onicecandidate=e=>{
       if(e.candidate){ db.ref(`signals/${currentRoom}/candidates/${uid}`).push(e.candidate.toJSON()); }
@@ -229,6 +232,12 @@
       const data=snap.val(); if(!data) return;
       try{
         await pc.setRemoteDescription(new RTCSessionDescription(data));
+        remoteDescriptionSet = true;
+        // Add queued ICE candidates
+        while(iceCandidatesQueue.length > 0){
+          const candidate = iceCandidatesQueue.shift();
+          await pc.addIceCandidate(new RTCIceCandidate(candidate));
+        }
         if(data.type==='offer'){ const answer=await pc.createAnswer(); await pc.setLocalDescription(answer); await db.ref(`signals/${currentRoom}/sdp/${uid}/${otherId}`).set(answer); }
         sdpRef.remove();
       }catch(e){ log('Error handling remote SDP: '+(e?.message||e),'error'); }
@@ -236,7 +245,14 @@
 
     const candRef=db.ref(`signals/${currentRoom}/candidates/${otherId}`);
     const candCallback=candRef.on('child_added',snap=>{
-      const c=snap.val(); if(c) pc.addIceCandidate(new RTCIceCandidate(c)).catch(err=>log('ICE error: '+err,'error'));
+      const c=snap.val();
+      if(c){
+        if(remoteDescriptionSet){
+          pc.addIceCandidate(new RTCIceCandidate(c)).catch(err=>log('ICE error: '+err,'error'));
+        }else{
+          iceCandidatesQueue.push(c);
+        }
+      }
     });
 
     peers[otherId]={pc,sdpRef,sdpCallback,candRef,candCallback};
