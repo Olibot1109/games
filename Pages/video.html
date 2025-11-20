@@ -190,7 +190,7 @@
       roomRef.on('value',snap=>{
         const data=snap.val()||{}; const now=Date.now();
         Object.keys(data).forEach(id=>{
-          if(now-(data[id].lastSeen||0)>15000){ log('Pruning stale user: '+id); roomRef.child(id).remove(); }
+          if(now-(data[id].lastSeen||0)>30000){ log('Pruning stale user: '+id); roomRef.child(id).remove(); }
         });
         // Auto-delete private empty rooms
         if(!isPublic && Object.keys(data).length===0){ log('Deleting empty private room: '+roomName); db.ref('vcRooms/'+roomName).remove(); }
@@ -315,7 +315,6 @@
 
   // screen share toggle
   document.getElementById('btn-screen').addEventListener('click',async ()=>{
-    if(!navigator.userAgent.includes('Windows')){ log('Screen sharing is only available on Windows PCs.'); return; }
     if(screenSharing){
       // stop
       if(screenStream && currentRoom){
