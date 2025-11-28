@@ -1,0 +1,3882 @@
+[
+    {
+        "name": "NormalBoard1_1",
+        "position": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_2",
+        "position": [
+            0.0,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_3",
+        "position": [
+            0.0,
+            0.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_4",
+        "position": [
+            0.0,
+            0.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_5",
+        "position": [
+            1.0,
+            0.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_6",
+        "position": [
+            1.0,
+            0.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_7",
+        "position": [
+            1.0,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_8",
+        "position": [
+            -1.0,
+            0.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_9",
+        "position": [
+            -1.0,
+            0.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_10",
+        "position": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "Berry1_1",
+        "position": [
+            1.0,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Berry2"
+    },
+    {
+        "name": "Berry1_2",
+        "position": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Berry2"
+    },
+    {
+        "name": "Box1_1",
+        "position": [
+            1.0,
+            0.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Box3"
+    },
+    {
+        "name": "Box1_2",
+        "position": [
+            -1.0,
+            0.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            180.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Box3"
+    },
+    {
+        "name": "Wall1_1",
+        "position": [
+            0.0,
+            -0.1,
+            -2.439
+        ],
+        "rotation": [
+            0.0,
+            90.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Wall2"
+    },
+    {
+        "name": "Wall1_2",
+        "position": [
+            -1.5,
+            -0.1,
+            0.999
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Wall3"
+    },
+    {
+        "name": "Wall1_3",
+        "position": [
+            0.0,
+            -0.1,
+            3.43
+        ],
+        "rotation": [
+            0.0,
+            90.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Wall2"
+    },
+    {
+        "name": "Wall1_4",
+        "position": [
+            1.5,
+            -0.1,
+            0.999
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Wall3"
+    },
+    {
+        "name": "Bucket1_1",
+        "position": [
+            -1.0,
+            0.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            90.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Bucket"
+    },
+    {
+        "name": "Lv2Stove1_1",
+        "position": [
+            0.0,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            90.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Lv2Stove"
+    },
+    {
+        "name": "Lv1Stove1_1",
+        "position": [
+            0.0,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            90.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Lv1Stove"
+    },
+    {
+        "name": "IceMining1_1",
+        "position": [
+            1.0,
+            0.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            270.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_IceMining"
+    },
+    {
+        "name": "Ladder1_1",
+        "position": [
+            0.0,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Ladder"
+    },
+    {
+        "name": "NormalBoard1_11",
+        "position": [
+            1.0,
+            0.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_12",
+        "position": [
+            -1.0,
+            0.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_13",
+        "position": [
+            0.0,
+            0.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_14",
+        "position": [
+            0.0,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_15",
+        "position": [
+            1.0,
+            0.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_16",
+        "position": [
+            1.0,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_17",
+        "position": [
+            -1.0,
+            0.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard1_18",
+        "position": [
+            -1.0,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "Berry2_1",
+        "position": [
+            1.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Berry2"
+    },
+    {
+        "name": "Berry2_2",
+        "position": [
+            -1.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Berry2"
+    },
+    {
+        "name": "Ladder2_1",
+        "position": [
+            0.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Ladder"
+    },
+    {
+        "name": "ArmorRack2_1",
+        "position": [
+            -2.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            90.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_ArmorRack"
+    },
+    {
+        "name": "DeerHorn2_1",
+        "position": [
+            1.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_DeerHorn"
+    },
+    {
+        "name": "DeerHorn2_2",
+        "position": [
+            -1.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_DeerHorn"
+    },
+    {
+        "name": "Catapult2_1",
+        "position": [
+            2.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Catapult"
+    },
+    {
+        "name": "NormalColumn2_1",
+        "position": [
+            2.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_NormalColumn"
+    },
+    {
+        "name": "NormalColumn2_2",
+        "position": [
+            -2.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_NormalColumn"
+    },
+    {
+        "name": "LongPaddleLeft2_1",
+        "position": [
+            -2.66,
+            1.98,
+            2.15
+        ],
+        "rotation": [
+            30.0,
+            130.0,
+            50.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "LongPaddleLeft"
+    },
+    {
+        "name": "LongPaddleLeft2_2",
+        "position": [
+            -2.66,
+            1.98,
+            1.0
+        ],
+        "rotation": [
+            30.0,
+            130.0,
+            50.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "LongPaddleLeft"
+    },
+    {
+        "name": "LongPaddleLeft2_3",
+        "position": [
+            -2.66,
+            1.98,
+            0.0
+        ],
+        "rotation": [
+            30.0,
+            130.0,
+            50.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "LongPaddleLeft"
+    },
+    {
+        "name": "LongPaddleLeft2_4",
+        "position": [
+            -2.66,
+            1.98,
+            -1.0
+        ],
+        "rotation": [
+            30.0,
+            130.0,
+            50.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "LongPaddleLeft"
+    },
+    {
+        "name": "LongPaddleRight2_1",
+        "position": [
+            2.66,
+            1.98,
+            2.15
+        ],
+        "rotation": [
+            30.0,
+            0.0,
+            50.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "LongPaddleRight"
+    },
+    {
+        "name": "LongPaddleRight2_2",
+        "position": [
+            2.66,
+            1.98,
+            1.0
+        ],
+        "rotation": [
+            30.0,
+            0.0,
+            50.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "LongPaddleRight"
+    },
+    {
+        "name": "LongPaddleRight2_3",
+        "position": [
+            2.66,
+            1.98,
+            0.0
+        ],
+        "rotation": [
+            30.0,
+            0.0,
+            50.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "LongPaddleRight"
+    },
+    {
+        "name": "LongPaddleRight2_4",
+        "position": [
+            2.66,
+            1.98,
+            -1.0
+        ],
+        "rotation": [
+            30.0,
+            0.0,
+            50.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "LongPaddleRight"
+    },
+    {
+        "name": "LabrysColumn2_1",
+        "position": [
+            0.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_LabrysColumn"
+    },
+    {
+        "name": "Lv1FinlandBath2_1",
+        "position": [
+            0.0,
+            2.0,
+            -2.5
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Lv1FinlandBath"
+    },
+    {
+        "name": "Lv2FinlandBath2_1",
+        "position": [
+            0.0,
+            2.0,
+            -2.5
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Lv2FinlandBath"
+    },
+    {
+        "name": "Lv3FinlandBath2_1",
+        "position": [
+            0.0,
+            2.0,
+            -2.5
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Lv3FinlandBath"
+    },
+    {
+        "name": "PaddlePosition2_1",
+        "position": [
+            1.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_PaddlePosition"
+    },
+    {
+        "name": "PaddlePosition2_4",
+        "position": [
+            1.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_PaddlePosition"
+    },
+    {
+        "name": "PaddlePosition2_5",
+        "position": [
+            1.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_PaddlePosition"
+    },
+    {
+        "name": "PaddlePosition2_7",
+        "position": [
+            1.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_PaddlePosition"
+    },
+    {
+        "name": "PaddlePosition2_2",
+        "position": [
+            -1.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            -1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_PaddlePosition"
+    },
+    {
+        "name": "PaddlePosition2_3",
+        "position": [
+            -1.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            -1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_PaddlePosition"
+    },
+    {
+        "name": "PaddlePosition2_6",
+        "position": [
+            -1.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            -1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_PaddlePosition"
+    },
+    {
+        "name": "PaddlePosition2_8",
+        "position": [
+            -1.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            -1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_PaddlePosition"
+    },
+    {
+        "name": "NormalBoard2_1",
+        "position": [
+            0.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_2",
+        "position": [
+            -1.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_3",
+        "position": [
+            1.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_4",
+        "position": [
+            0.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_5",
+        "position": [
+            1.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_6",
+        "position": [
+            -1.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_7",
+        "position": [
+            1.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_8",
+        "position": [
+            -1.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_9",
+        "position": [
+            0.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_10",
+        "position": [
+            1.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_11",
+        "position": [
+            -1.0,
+            2.0,
+            -1.99
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_12",
+        "position": [
+            0.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_13",
+        "position": [
+            1.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_14",
+        "position": [
+            -1.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_15",
+        "position": [
+            0.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_16",
+        "position": [
+            1.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_17",
+        "position": [
+            -1.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_18",
+        "position": [
+            0.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_19",
+        "position": [
+            1.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_20",
+        "position": [
+            -1.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_21",
+        "position": [
+            0.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_22",
+        "position": [
+            1.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_23",
+        "position": [
+            -1.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_24",
+        "position": [
+            0.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_25",
+        "position": [
+            1.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_26",
+        "position": [
+            -1.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_27",
+        "position": [
+            2.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_28",
+        "position": [
+            -2.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_29",
+        "position": [
+            2.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_30",
+        "position": [
+            -2.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_31",
+        "position": [
+            2.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_32",
+        "position": [
+            -2.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_33",
+        "position": [
+            2.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_34",
+        "position": [
+            -2.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_35",
+        "position": [
+            2.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_36",
+        "position": [
+            -2.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_37",
+        "position": [
+            2.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_38",
+        "position": [
+            -2.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_39",
+        "position": [
+            2.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard2_40",
+        "position": [
+            -2.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "Lv1Room3_1",
+        "position": [
+            0.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            270.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Lv1Room"
+    },
+    {
+        "name": "Lv2Room3_1",
+        "position": [
+            0.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            270.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Lv2Room"
+    },
+    {
+        "name": "Lv3Room3_1",
+        "position": [
+            0.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            270.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Lv3Room"
+    },
+    {
+        "name": "Lv1Table3_1",
+        "position": [
+            1.0,
+            4.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv1Table"
+    },
+    {
+        "name": "Lv1Table3_2",
+        "position": [
+            -2.0,
+            4.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv1Table"
+    },
+    {
+        "name": "Lv2Table3_1",
+        "position": [
+            1.0,
+            4.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv2Table"
+    },
+    {
+        "name": "Lv2Table3_2",
+        "position": [
+            -2.0,
+            4.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv2Table"
+    },
+    {
+        "name": "Lv3Table3_1",
+        "position": [
+            1.5,
+            4.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv3Table"
+    },
+    {
+        "name": "Lv3Table3_2",
+        "position": [
+            -2.0,
+            4.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv3Table"
+    },
+    {
+        "name": "VinkinStatue3_1",
+        "position": [
+            0.0,
+            4.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_VinkinStatue"
+    },
+    {
+        "name": "Rail3_1",
+        "position": [
+            -2.0,
+            4.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    },
+    {
+        "name": "Rail3_2",
+        "position": [
+            2.0,
+            4.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    },
+    {
+        "name": "Rail3_3",
+        "position": [
+            -3.0,
+            4.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    },
+    {
+        "name": "Rail3_4",
+        "position": [
+            3.0,
+            4.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    },
+    {
+        "name": "Rail3_5",
+        "position": [
+            -3.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    },
+    {
+        "name": "Rail3_6",
+        "position": [
+            3.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    },
+    {
+        "name": "Shield3_2",
+        "position": [
+            -3.0,
+            4.0,
+            0.36
+        ],
+        "rotation": [
+            0.0,
+            180.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Shield"
+    },
+    {
+        "name": "Shield3_1",
+        "position": [
+            3.0,
+            4.0,
+            0.36
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Shield"
+    },
+    {
+        "name": "Berry3_1",
+        "position": [
+            1.0,
+            4.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Berry2"
+    },
+    {
+        "name": "DragonBow3_1",
+        "position": [
+            0.0,
+            4.0,
+            6.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_DragonBow"
+    },
+    {
+        "name": "DranTail3_1",
+        "position": [
+            0.0,
+            4.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_DranTail"
+    },
+    {
+        "name": "Berry3_2",
+        "position": [
+            -1.0,
+            4.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Berry2"
+    },
+    {
+        "name": "Pinaceae3_1",
+        "position": [
+            2.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Pinaceae"
+    },
+    {
+        "name": "Pinaceae3_2",
+        "position": [
+            -2.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Pinaceae"
+    },
+    {
+        "name": "Lv1Barbecue3_1",
+        "position": [
+            2.0,
+            4.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv1Barbecue"
+    },
+    {
+        "name": "Lv1Barbecue3_2",
+        "position": [
+            -2.0,
+            4.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv1Barbecue"
+    },
+    {
+        "name": "Lv2Barbecue3_1",
+        "position": [
+            -1.89,
+            4.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv2Barbecue"
+    },
+    {
+        "name": "Lv2Barbecue3_2",
+        "position": [
+            2.0,
+            4.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv2Barbecue"
+    },
+    {
+        "name": "Lv3Barbecue3_1",
+        "position": [
+            2.0,
+            4.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv3Barbecue"
+    },
+    {
+        "name": "Lv3Barbecue3_2",
+        "position": [
+            -2.0,
+            4.0,
+            -0.018
+        ],
+        "rotation": [
+            0.0,
+            180.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv3Barbecue"
+    },
+    {
+        "name": "Lv1MainMast3_1",
+        "position": [
+            0.0,
+            4.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Lv1MainMast"
+    },
+    {
+        "name": "Lv2MainMast3_1",
+        "position": [
+            0.0,
+            4.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Lv2MainMast"
+    },
+    {
+        "name": "Lv3MainMast3_1",
+        "position": [
+            0.0,
+            4.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "spr_Lv3MainMast"
+    },
+    {
+        "name": "NormalBoard3_1",
+        "position": [
+            0.0,
+            4.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_2",
+        "position": [
+            1.0,
+            4.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_3",
+        "position": [
+            -1.0,
+            4.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_4",
+        "position": [
+            0.0,
+            4.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_5",
+        "position": [
+            1.0,
+            4.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_6",
+        "position": [
+            -1.0,
+            4.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_7",
+        "position": [
+            0.0,
+            4.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_8",
+        "position": [
+            1.0,
+            4.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_9",
+        "position": [
+            -1.0,
+            4.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_10",
+        "position": [
+            0.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_11",
+        "position": [
+            1.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_12",
+        "position": [
+            -1.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_13",
+        "position": [
+            1.0,
+            4.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_14",
+        "position": [
+            -1.0,
+            4.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_15",
+        "position": [
+            1.0,
+            4.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_16",
+        "position": [
+            -1.0,
+            4.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_17",
+        "position": [
+            0.0,
+            4.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_18",
+        "position": [
+            1.0,
+            4.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_19",
+        "position": [
+            -1.0,
+            4.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_20",
+        "position": [
+            2.0,
+            4.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_21",
+        "position": [
+            -2.0,
+            4.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_22",
+        "position": [
+            2.0,
+            4.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_23",
+        "position": [
+            -2.0,
+            4.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_24",
+        "position": [
+            2.0,
+            4.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_25",
+        "position": [
+            -2.0,
+            4.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_26",
+        "position": [
+            2.0,
+            4.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_27",
+        "position": [
+            -2.0,
+            4.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_28",
+        "position": [
+            2.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_29",
+        "position": [
+            -2.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_30",
+        "position": [
+            0.0,
+            4.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_31",
+        "position": [
+            0.0,
+            4.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_32",
+        "position": [
+            1.0,
+            4.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_33",
+        "position": [
+            -1.0,
+            4.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_34",
+        "position": [
+            2.0,
+            4.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_35",
+        "position": [
+            -2.0,
+            4.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_36",
+        "position": [
+            2.0,
+            4.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_37",
+        "position": [
+            2.0,
+            4.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_38",
+        "position": [
+            -2.0,
+            4.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_39",
+        "position": [
+            -2.0,
+            4.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_40",
+        "position": [
+            1.0,
+            4.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_41",
+        "position": [
+            1.0,
+            4.0,
+            5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_42",
+        "position": [
+            -1.0,
+            4.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_43",
+        "position": [
+            -1.0,
+            4.0,
+            5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_44",
+        "position": [
+            0.0,
+            4.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_45",
+        "position": [
+            0.0,
+            4.0,
+            5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_46",
+        "position": [
+            0.0,
+            4.0,
+            6.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_47",
+        "position": [
+            0.0,
+            4.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_48",
+        "position": [
+            -3.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_49",
+        "position": [
+            -3.0,
+            4.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_50",
+        "position": [
+            -3.0,
+            4.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_51",
+        "position": [
+            -3.0,
+            4.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_52",
+        "position": [
+            -3.0,
+            4.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_53",
+        "position": [
+            -3.0,
+            4.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_54",
+        "position": [
+            3.0,
+            4.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_55",
+        "position": [
+            3.0,
+            4.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_56",
+        "position": [
+            3.0,
+            4.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_57",
+        "position": [
+            3.0,
+            4.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_58",
+        "position": [
+            3.0,
+            4.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "NormalBoard3_59",
+        "position": [
+            3.0,
+            4.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Spr_Board"
+    },
+    {
+        "name": "BoardLadder2_1",
+        "position": [
+            0.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    },
+    {
+        "name": "BoardLadder2_2",
+        "position": [
+            0.0,
+            4.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    }
+]

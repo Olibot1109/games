@@ -1,0 +1,145 @@
+{
+    "type": "Image",
+    "props": {
+        "y": 0,
+        "x": 0,
+        "width": 330,
+        "skin": "game/ad_chestbar2.png",
+        "sizeGrid": "14,12,12,11,1",
+        "presetID": 1,
+        "name": "vediochestboxobj",
+        "isPresetRoot": true,
+        "anchorY": 1,
+        "anchorX": 0.5
+    },
+    "compId": 235,
+    "child": [
+        {
+            "type": "Image",
+            "props": {
+                "y": 49,
+                "x": 0,
+                "width": 272,
+                "skin": "game/adchest_tipsbg.png",
+                "sizeGrid": "9,15,13,13,1",
+                "presetID": 2,
+                "name": "textbg",
+                "height": 39
+            },
+            "compId": 236,
+            "child": [
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 2,
+                        "x": -1,
+                        "width": 269,
+                        "valign": "middle",
+                        "text": " 累计5次视频获得200钻石 ",
+                        "strokeColor": "#584f4e",
+                        "stroke": 1,
+                        "presetID": 3,
+                        "height": 38,
+                        "fontSize": 22,
+                        "font": "Microsoft YaHei",
+                        "color": "#ffffff",
+                        "bold": true,
+                        "align": "left",
+                        "runtime": "Laya.Text"
+                    },
+                    "compId": 237
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 3,
+                "x": 3,
+                "width": 324,
+                "skin": "game/ad_chestbar1.png",
+                "sizeGrid": "8,84,14,54,1",
+                "presetID": 4,
+                "name": "vediochestboxbar"
+            },
+            "compId": 241
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 0,
+                "x": 0,
+                "width": 330,
+                "skin": "game/ad_chestbar2_mask.png",
+                "sizeGrid": "8,84,14,54,1",
+                "presetID": 5,
+                "name": "lightbg"
+            },
+            "compId": 238,
+            "child": [
+                {
+                    "type": "Image",
+                    "props": {
+                        "y": 5,
+                        "x": -161,
+                        "width": 164,
+                        "skin": "game/ad_chest_barlight.png",
+                        "presetID": 6,
+                        "name": "hlight",
+                        "height": 40
+                    },
+                    "compId": 239
+                },
+                {
+                    "type": "Image",
+                    "props": {
+                        "y": 3,
+                        "x": 3,
+                        "width": 324,
+                        "skin": "game/ad_chestbar1.png",
+                        "renderType": "mask",
+                        "presetID": 7,
+                        "height": 42
+                    },
+                    "compId": 240
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 24,
+                "skin": "game/ad_chest_light.png",
+                "right": -161,
+                "presetID": 8,
+                "name": "vediochestboxlight",
+                "anchorY": 0.5,
+                "anchorX": 0.5
+            },
+            "compId": 242
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 28.5,
+                "skin": "game/adchest_2.png",
+                "right": -91,
+                "presetID": 9,
+                "name": "vediochestboxbtn",
+                "anchorY": 0.5,
+                "anchorX": 0.5
+            },
+            "compId": 243
+        }
+    ],
+    "loadList": [
+        "game/ad_chestbar2.png",
+        "game/adchest_tipsbg.png",
+        "game/ad_chestbar1.png",
+        "game/ad_chestbar2_mask.png",
+        "game/ad_chest_barlight.png",
+        "game/ad_chest_light.png",
+        "game/adchest_2.png"
+    ],
+    "loadList3D": []
+}

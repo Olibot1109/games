@@ -1,0 +1,5582 @@
+[
+    {
+        "name": "Block1_1",
+        "position": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_2",
+        "position": [
+            1.0,
+            0.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_3",
+        "position": [
+            1.0,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_4",
+        "position": [
+            0.0,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_6",
+        "position": [
+            -1.0,
+            0.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_5",
+        "position": [
+            -1.0,
+            0.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_7",
+        "position": [
+            1.0,
+            0.0,
+            -0.99
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_8",
+        "position": [
+            0.0,
+            0.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_9",
+        "position": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_10",
+        "position": [
+            1.0,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_11",
+        "position": [
+            0.0,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_12",
+        "position": [
+            -1.0,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_13",
+        "position": [
+            1.0,
+            0.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_14",
+        "position": [
+            0.0,
+            0.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_15",
+        "position": [
+            -1.0,
+            0.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_16",
+        "position": [
+            0.0,
+            0.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_17",
+        "position": [
+            -1.0,
+            0.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_18",
+        "position": [
+            -2.0,
+            0.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_19",
+        "position": [
+            -2.0,
+            0.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_20",
+        "position": [
+            1.0,
+            0.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_21",
+        "position": [
+            2.0,
+            0.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_22",
+        "position": [
+            2.0,
+            0.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_23",
+        "position": [
+            2.0,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_24",
+        "position": [
+            -2.0,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_25",
+        "position": [
+            2.0,
+            0.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_26",
+        "position": [
+            -2.0,
+            0.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_27",
+        "position": [
+            2.0,
+            0.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_28",
+        "position": [
+            -2.0,
+            0.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_29",
+        "position": [
+            2.0,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block1_30",
+        "position": [
+            -2.0,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Wall1_1",
+        "position": [
+            0.0,
+            0.0,
+            1.5
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_2",
+        "position": [
+            1.0,
+            0.0,
+            1.5
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_3",
+        "position": [
+            -2.0,
+            0.0,
+            -4.5
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_4",
+        "position": [
+            -1.0,
+            0.0,
+            -4.5
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_5",
+        "position": [
+            -2.5,
+            0.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            90.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_6",
+        "position": [
+            1.0,
+            0.0,
+            -4.5
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_7",
+        "position": [
+            0.0,
+            0.0,
+            -4.5
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_8",
+        "position": [
+            2.0,
+            0.0,
+            -4.5
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_9",
+        "position": [
+            2.5,
+            0.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            270.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_10",
+        "position": [
+            2.5,
+            0.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            270.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_11",
+        "position": [
+            2.5,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            270.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_12",
+        "position": [
+            2.5,
+            0.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            270.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_13",
+        "position": [
+            -2.5,
+            0.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            90.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_14",
+        "position": [
+            -2.5,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            90.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_15",
+        "position": [
+            -2.5,
+            0.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            90.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_16",
+        "position": [
+            -2.5,
+            0.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            90.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_17",
+        "position": [
+            2.5,
+            0.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            270.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_18",
+        "position": [
+            2.5,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            270.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_19",
+        "position": [
+            2.0,
+            0.0,
+            1.5
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_20",
+        "position": [
+            -1.0,
+            0.0,
+            1.5
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_21",
+        "position": [
+            -2.0,
+            0.0,
+            1.5
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Wall1_22",
+        "position": [
+            -2.5,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            90.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Wall"
+    },
+    {
+        "name": "Lv1Mine1_1",
+        "position": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv1Mine"
+    },
+    {
+        "name": "Lv2Mine1_1",
+        "position": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv2Mine"
+    },
+    {
+        "name": "Ladder1_1",
+        "position": [
+            0.0,
+            0.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Ladder"
+    },
+    {
+        "name": "Lv1Tree3Pot1_1",
+        "position": [
+            -1.0,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Tree6"
+    },
+    {
+        "name": "Lv1Tree3Pot1_2",
+        "position": [
+            1.0,
+            0.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Tree6"
+    },
+    {
+        "name": "Lv1Coffin1_1",
+        "position": [
+            0.0,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv1Coffin"
+    },
+    {
+        "name": "Lv2Coffin1_1",
+        "position": [
+            0.0,
+            0.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv2Coffin"
+    },
+    {
+        "name": "Torch1_1",
+        "position": [
+            1.0,
+            0.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Torch"
+    },
+    {
+        "name": "Torch1_2",
+        "position": [
+            -1.0,
+            0.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Torch"
+    },
+    {
+        "name": "Torch1_3",
+        "position": [
+            1.0,
+            0.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Torch"
+    },
+    {
+        "name": "Torch1_4",
+        "position": [
+            -1.0,
+            0.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Torch"
+    },
+    {
+        "name": "Lv1Tree3Pot2_1",
+        "position": [
+            -2.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Tree6"
+    },
+    {
+        "name": "Lv1Tree3Pot2_2",
+        "position": [
+            2.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Tree6"
+    },
+    {
+        "name": "OarsBoard_Right2_1",
+        "position": [
+            -4.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    },
+    {
+        "name": "OarsBoard_Right2_2",
+        "position": [
+            -4.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    },
+    {
+        "name": "OarsBoard_Left2_1",
+        "position": [
+            4.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    },
+    {
+        "name": "OarsBoard_Left2_2",
+        "position": [
+            4.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    },
+    {
+        "name": "Ushabti2_1",
+        "position": [
+            1.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            180.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Ushabti"
+    },
+    {
+        "name": "Ushabti2_2",
+        "position": [
+            -1.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            180.0,
+            359.0917
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Ushabti"
+    },
+    {
+        "name": "Pillar2_1",
+        "position": [
+            3.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pillar"
+    },
+    {
+        "name": "Pillar2_2",
+        "position": [
+            -3.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pillar"
+    },
+    {
+        "name": "Pillar2_3",
+        "position": [
+            3.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pillar"
+    },
+    {
+        "name": "Pillar2_4",
+        "position": [
+            -3.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pillar"
+    },
+    {
+        "name": "Pillar2_5",
+        "position": [
+            3.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pillar"
+    },
+    {
+        "name": "Pillar2_6",
+        "position": [
+            -3.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pillar"
+    },
+    {
+        "name": "Pillar2_7",
+        "position": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pillar"
+    },
+    {
+        "name": "Pillar2_8",
+        "position": [
+            -3.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pillar"
+    },
+    {
+        "name": "Ladder2_1",
+        "position": [
+            0.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Ladder3"
+    },
+    {
+        "name": "Anubis2_1",
+        "position": [
+            2.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            -1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Anubis"
+    },
+    {
+        "name": "Anubis2_2",
+        "position": [
+            -2.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Anubis"
+    },
+    {
+        "name": "Altar2_1",
+        "position": [
+            0.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Altar"
+    },
+    {
+        "name": "Torch2_1",
+        "position": [
+            -2.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Torch"
+    },
+    {
+        "name": "Torch2_2",
+        "position": [
+            2.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Torch"
+    },
+    {
+        "name": "Torch2_3",
+        "position": [
+            2.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Torch"
+    },
+    {
+        "name": "Torch2_4",
+        "position": [
+            -2.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Torch"
+    },
+    {
+        "name": "Sphinx2_1",
+        "position": [
+            0.0,
+            2.0,
+            5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Sphinx"
+    },
+    {
+        "name": "Quarrying2_1",
+        "position": [
+            -3.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Quarrying"
+    },
+    {
+        "name": "Quarrying2_2",
+        "position": [
+            3.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            180.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Quarrying"
+    },
+    {
+        "name": "Block2_1",
+        "position": [
+            0.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_2",
+        "position": [
+            -1.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_3",
+        "position": [
+            -2.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_4",
+        "position": [
+            1.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_5",
+        "position": [
+            2.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_6",
+        "position": [
+            2.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_7",
+        "position": [
+            1.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_8",
+        "position": [
+            -2.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_9",
+        "position": [
+            -1.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_10",
+        "position": [
+            -2.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_11",
+        "position": [
+            -1.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_12",
+        "position": [
+            0.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_13",
+        "position": [
+            1.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_14",
+        "position": [
+            2.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_15",
+        "position": [
+            0.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_16",
+        "position": [
+            1.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_17",
+        "position": [
+            2.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_18",
+        "position": [
+            -1.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_19",
+        "position": [
+            -2.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_20",
+        "position": [
+            0.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_21",
+        "position": [
+            1.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_22",
+        "position": [
+            2.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_23",
+        "position": [
+            -1.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_24",
+        "position": [
+            -2.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_25",
+        "position": [
+            0.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_26",
+        "position": [
+            1.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_27",
+        "position": [
+            2.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_28",
+        "position": [
+            -1.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_29",
+        "position": [
+            -2.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_30",
+        "position": [
+            3.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_31",
+        "position": [
+            3.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_32",
+        "position": [
+            3.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_33",
+        "position": [
+            4.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_34",
+        "position": [
+            4.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_35",
+        "position": [
+            -3.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_36",
+        "position": [
+            -3.0,
+            2.0,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_37",
+        "position": [
+            -3.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_38",
+        "position": [
+            -4.0,
+            2.0,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_39",
+        "position": [
+            -4.0,
+            2.0,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_40",
+        "position": [
+            3.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_41",
+        "position": [
+            3.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_42",
+        "position": [
+            -3.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_43",
+        "position": [
+            -3.0,
+            2.0,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_44",
+        "position": [
+            0.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_45",
+        "position": [
+            1.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_46",
+        "position": [
+            2.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_47",
+        "position": [
+            3.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_48",
+        "position": [
+            -1.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_49",
+        "position": [
+            -2.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_50",
+        "position": [
+            -3.0,
+            2.0,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_51",
+        "position": [
+            3.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_52",
+        "position": [
+            -3.0,
+            2.0,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_53",
+        "position": [
+            3.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_54",
+        "position": [
+            3.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_55",
+        "position": [
+            2.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_56",
+        "position": [
+            1.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_57",
+        "position": [
+            0.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_58",
+        "position": [
+            -1.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_59",
+        "position": [
+            -2.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_60",
+        "position": [
+            -3.0,
+            2.0,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_61",
+        "position": [
+            -3.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_62",
+        "position": [
+            -2.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_63",
+        "position": [
+            -1.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_64",
+        "position": [
+            0.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_65",
+        "position": [
+            1.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_66",
+        "position": [
+            2.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_67",
+        "position": [
+            3.0,
+            2.0,
+            3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_68",
+        "position": [
+            3.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_69",
+        "position": [
+            2.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_70",
+        "position": [
+            1.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_71",
+        "position": [
+            0.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_72",
+        "position": [
+            -1.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_73",
+        "position": [
+            -2.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_74",
+        "position": [
+            -3.0,
+            2.0,
+            4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_75",
+        "position": [
+            1.0,
+            2.0,
+            5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_76",
+        "position": [
+            0.0,
+            2.0,
+            5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_77",
+        "position": [
+            -1.0,
+            2.0,
+            5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_78",
+        "position": [
+            -1.0,
+            2.0,
+            6.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_79",
+        "position": [
+            0.0,
+            2.0,
+            6.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block2_80",
+        "position": [
+            1.0,
+            2.0,
+            6.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Pillar3_1",
+        "position": [
+            -1.0,
+            4.2,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pillar"
+    },
+    {
+        "name": "Pillar3_2",
+        "position": [
+            -3.0,
+            4.2,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pillar"
+    },
+    {
+        "name": "Pillar3_3",
+        "position": [
+            2.97,
+            4.2,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pillar"
+    },
+    {
+        "name": "Ladder3_1",
+        "position": [
+            1.0,
+            4.2,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Ladder3"
+    },
+    {
+        "name": "Pillar3_4",
+        "position": [
+            3.0,
+            4.2,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pillar"
+    },
+    {
+        "name": "Pillar3_5",
+        "position": [
+            -3.0,
+            4.2,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pillar"
+    },
+    {
+        "name": "Throne3_1",
+        "position": [
+            0.0,
+            4.2,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            180.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Throne"
+    },
+    {
+        "name": "WaterClock3_1",
+        "position": [
+            2.0,
+            4.2,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "WaterClock"
+    },
+    {
+        "name": "WaterClock3_2",
+        "position": [
+            -2.0,
+            4.2,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            180.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "WaterClock"
+    },
+    {
+        "name": "Ushabti3_1",
+        "position": [
+            2.0,
+            4.2,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            180.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Ushabti"
+    },
+    {
+        "name": "Ushabti3_2",
+        "position": [
+            -2.0,
+            4.2,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            180.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Ushabti"
+    },
+    {
+        "name": "TomatoPot3_1",
+        "position": [
+            -2.0,
+            4.2,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pot"
+    },
+    {
+        "name": "WatermelonPot3_1",
+        "position": [
+            -3.02,
+            4.2,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pot"
+    },
+    {
+        "name": "Lv1RainContainer3_2",
+        "position": [
+            3.0,
+            4.2,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv1RainContainer"
+    },
+    {
+        "name": "Lv1RainContainer3_1",
+        "position": [
+            -3.0,
+            4.2,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Lv1RainContainer"
+    },
+    {
+        "name": "WaterTank3_1",
+        "position": [
+            3.0,
+            4.2,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "WaterTank"
+    },
+    {
+        "name": "WaterTank3_2",
+        "position": [
+            -3.0,
+            4.2,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "WaterTank"
+    },
+    {
+        "name": "GiantSail3_1",
+        "position": [
+            0.0,
+            4.2,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "GiantSail"
+    },
+    {
+        "name": "PumpkinPot3_1",
+        "position": [
+            2.0,
+            4.2,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pot"
+    },
+    {
+        "name": "BerryPot3_1",
+        "position": [
+            3.0,
+            4.2,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Pot"
+    },
+    {
+        "name": "Block3_1",
+        "position": [
+            -1.0,
+            4.2,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_2",
+        "position": [
+            1.0,
+            4.2,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_3",
+        "position": [
+            0.0,
+            4.2,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_4",
+        "position": [
+            1.0,
+            4.2,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_5",
+        "position": [
+            -1.016,
+            4.2,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_6",
+        "position": [
+            0.0,
+            4.2,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_7",
+        "position": [
+            -2.0,
+            4.2,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_8",
+        "position": [
+            -3.0,
+            4.2,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_9",
+        "position": [
+            2.0,
+            4.2,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_10",
+        "position": [
+            3.0,
+            4.2,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_11",
+        "position": [
+            2.0,
+            4.2,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_12",
+        "position": [
+            3.0,
+            4.2,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_13",
+        "position": [
+            3.0,
+            4.2,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_14",
+        "position": [
+            -2.0,
+            4.2,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_15",
+        "position": [
+            -3.0,
+            4.2,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_16",
+        "position": [
+            -3.0,
+            4.2,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_17",
+        "position": [
+            -1.0,
+            4.2,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_18",
+        "position": [
+            1.0,
+            4.2,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_19",
+        "position": [
+            2.0,
+            4.2,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_20",
+        "position": [
+            -2.0,
+            4.2,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_21",
+        "position": [
+            0.0,
+            4.2,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_22",
+        "position": [
+            1.0,
+            4.2,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_23",
+        "position": [
+            2.0,
+            4.2,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_24",
+        "position": [
+            3.0,
+            4.2,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_25",
+        "position": [
+            3.0,
+            4.2,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_26",
+        "position": [
+            2.0,
+            4.2,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_27",
+        "position": [
+            1.0,
+            4.2,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_28",
+        "position": [
+            0.0,
+            4.2,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_29",
+        "position": [
+            -1.0,
+            4.2,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_30",
+        "position": [
+            -1.0,
+            4.2,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_31",
+        "position": [
+            -2.0,
+            4.2,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_32",
+        "position": [
+            -2.0,
+            4.2,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_33",
+        "position": [
+            -3.0,
+            4.2,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_34",
+        "position": [
+            -3.0,
+            4.2,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_35",
+        "position": [
+            -3.0,
+            4.2,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_36",
+        "position": [
+            -3.0,
+            4.2,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_37",
+        "position": [
+            -2.0,
+            4.2,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_38",
+        "position": [
+            -2.0,
+            4.2,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_39",
+        "position": [
+            -1.0,
+            4.2,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_40",
+        "position": [
+            -1.0,
+            4.2,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_41",
+        "position": [
+            0.0,
+            4.2,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_42",
+        "position": [
+            0.0,
+            4.2,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_43",
+        "position": [
+            0.0,
+            4.2,
+            2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_44",
+        "position": [
+            1.0,
+            4.2,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_45",
+        "position": [
+            1.0,
+            4.2,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_46",
+        "position": [
+            2.0,
+            4.2,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_47",
+        "position": [
+            2.0,
+            4.2,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_48",
+        "position": [
+            3.0,
+            4.2,
+            0.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block3_49",
+        "position": [
+            3.0,
+            4.2,
+            1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_1",
+        "position": [
+            0.0,
+            6.4,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_2",
+        "position": [
+            1.0,
+            6.4,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_3",
+        "position": [
+            2.0,
+            6.4,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_4",
+        "position": [
+            -1.0,
+            6.4,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_5",
+        "position": [
+            0.0,
+            6.4,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_6",
+        "position": [
+            1.0,
+            6.4,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_7",
+        "position": [
+            2.0,
+            6.4,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_8",
+        "position": [
+            3.0,
+            6.4,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Torch4_1",
+        "position": [
+            0.0,
+            6.4,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Torch"
+    },
+    {
+        "name": "Torch4_2",
+        "position": [
+            2.0,
+            6.4,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Torch"
+    },
+    {
+        "name": "Torch4_3",
+        "position": [
+            -2.0,
+            6.4,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Torch"
+    },
+    {
+        "name": "Torch4_4",
+        "position": [
+            0.0,
+            6.4,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Torch"
+    },
+    {
+        "name": "WindVane4_1",
+        "position": [
+            -3.0,
+            6.4,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "WindVane"
+    },
+    {
+        "name": "WindVane4_2",
+        "position": [
+            3.0,
+            6.4,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "WindVane"
+    },
+    {
+        "name": "Obelisk4_1",
+        "position": [
+            0.0,
+            6.4,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Obelisk"
+    },
+    {
+        "name": "Setekh4_1",
+        "position": [
+            1.0,
+            6.4,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            330.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Setekh"
+    },
+    {
+        "name": "Setekh4_2",
+        "position": [
+            -1.0,
+            6.4,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            30.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Setekh"
+    },
+    {
+        "name": "Setekh4_3",
+        "position": [
+            -1.0,
+            6.4,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            150.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Setekh"
+    },
+    {
+        "name": "Setekh4_4",
+        "position": [
+            1.0,
+            6.4,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            210.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Setekh"
+    },
+    {
+        "name": "Block4_9",
+        "position": [
+            -2.0,
+            6.4,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_10",
+        "position": [
+            -1.0,
+            6.4,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_11",
+        "position": [
+            0.0,
+            6.4,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_12",
+        "position": [
+            2.0,
+            6.4,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_13",
+        "position": [
+            3.0,
+            6.4,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_14",
+        "position": [
+            -3.0,
+            6.4,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_15",
+        "position": [
+            -2.0,
+            6.4,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_16",
+        "position": [
+            -1.0,
+            6.4,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_17",
+        "position": [
+            0.0,
+            6.4,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_18",
+        "position": [
+            1.0,
+            6.4,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_19",
+        "position": [
+            2.0,
+            6.4,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_20",
+        "position": [
+            3.0,
+            6.4,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_21",
+        "position": [
+            -3.0,
+            6.4,
+            -4.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_22",
+        "position": [
+            -2.0,
+            6.4,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_23",
+        "position": [
+            -1.0,
+            6.4,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_24",
+        "position": [
+            -2.0,
+            6.4,
+            -2.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_25",
+        "position": [
+            -3.0,
+            6.4,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "Block4_26",
+        "position": [
+            0.0,
+            6.4,
+            -1.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": true,
+        "meshName": "Block"
+    },
+    {
+        "name": "BlockLadder2_1",
+        "position": [
+            0.0,
+            2.0,
+            -3.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    },
+    {
+        "name": "BlockLadder3_1",
+        "position": [
+            0.0,
+            4.2,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    },
+    {
+        "name": "BlockLadder4_1",
+        "position": [
+            1.0,
+            6.4,
+            -5.0
+        ],
+        "rotation": [
+            0.0,
+            0.0,
+            0.0
+        ],
+        "scale": [
+            1.0,
+            1.0,
+            1.0
+        ],
+        "isMeshObj": false,
+        "meshName": ""
+    }
+]

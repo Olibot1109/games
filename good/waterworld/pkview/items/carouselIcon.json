@@ -1,0 +1,89 @@
+{
+    "type": "Box",
+    "props": {
+        "width": 142,
+        "presetID": 1,
+        "isPresetRoot": true,
+        "height": 182
+    },
+    "compId": 162,
+    "child": [
+        {
+            "type": "Image",
+            "props": {
+                "top": 0,
+                "skin": "game/ad_iconbg.png",
+                "sizeGrid": "20,24,28,20,1",
+                "right": 0,
+                "presetID": 6,
+                "name": "bg",
+                "left": 0,
+                "bottom": 0
+            },
+            "compId": 167
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 11,
+                "x": 11,
+                "width": 119,
+                "presetID": 3,
+                "name": "icon",
+                "height": 119
+            },
+            "compId": 157
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 141,
+                "x": -1,
+                "width": 143,
+                "valign": "middle",
+                "text": "第一关卡当前是第一关卡当前是",
+                "presetID": 4,
+                "overflow": "hidden",
+                "name": "name",
+                "height": 33,
+                "fontSize": 18,
+                "font": "Microsoft YaHei",
+                "color": "#000000",
+                "bold": false,
+                "align": "center",
+                "runtime": "Laya.Text"
+            },
+            "compId": 163
+        },
+        {
+            "type": "Image",
+            "props": {
+                "top": 0,
+                "skin": "game/ADhot.png",
+                "presetID": 5,
+                "name": "flag",
+                "left": 0
+            },
+            "compId": 166
+        },
+        {
+            "type": "Image",
+            "props": {
+                "top": -35,
+                "skin": "game/ad_icon_close.png",
+                "presetID": 7,
+                "name": "btnclose",
+                "left": 0,
+                "width": 87,
+                "height": 33
+            },
+            "compId": 168
+        }
+    ],
+    "loadList": [
+        "game/ad_iconbg.png",
+        "game/ADhot.png",
+        "game/ad_icon_close.png"
+    ],
+    "loadList3D": []
+}

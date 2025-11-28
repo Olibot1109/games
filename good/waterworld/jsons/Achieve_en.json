@@ -1,0 +1,68 @@
+[
+    {
+        "Id": 1,
+        "Desc": "play time（x hour）",
+        "Value": "2,4,6,8",
+        "Reward": "15,15,15,20"
+    },
+    {
+        "Id": 2,
+        "Desc": "collect floodwood Xx",
+        "Value": "50,100,150,200",
+        "Reward": "15,15,15,20"
+    },
+    {
+        "Id": 3,
+        "Desc": "collect wood Xx",
+        "Value": "10000,100000,1000000,10000000",
+        "Reward": "15,15,15,20"
+    },
+    {
+        "Id": 4,
+        "Desc": "recruit sailor Xx",
+        "Value": "2,4,6,8",
+        "Reward": "15,15,15,20"
+    },
+    {
+        "Id": 5,
+        "Desc": "collect animal Xx",
+        "Value": "1,2,3,4",
+        "Reward": "15,15,15,20"
+    },
+    {
+        "Id": 6,
+        "Desc": "pick up the chest Xx",
+        "Value": "30,50,100,200",
+        "Reward": "15,15,15,20"
+    },
+    {
+        "Id": 7,
+        "Desc": "skip the night Xx",
+        "Value": "30,50,100,200",
+        "Reward": "15,15,15,20"
+    },
+    {
+        "Id": 8,
+        "Desc": "speed up Xx",
+        "Value": "30,50,100,200",
+        "Reward": "15,15,15,20"
+    },
+    {
+        "Id": 9,
+        "Desc": "build boat Xx",
+        "Value": "300,600,900,1200",
+        "Reward": "15,15,15,20"
+    },
+    {
+        "Id": 10,
+        "Desc": "set saile Xx",
+        "Value": "4,6,8,10",
+        "Reward": "15,15,15,20"
+    },
+    {
+        "Id": 11,
+        "Desc": "watch AD. Xx",
+        "Value": "5,20,50,200",
+        "Reward": "15,15,15,20"
+    }
+]

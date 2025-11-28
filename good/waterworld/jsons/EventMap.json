@@ -1,0 +1,11 @@
+[
+    {
+        "Id": 1,
+        "SceneRes": "3dscenes/Conventional/Event_Scene1.ls",
+        "SceneData": "Event_Ship1Data",
+        "MapRes": "game/map_charpter1.png",
+        "Islands": 23,
+        "Reward": "26,27",
+        "Name": "Happy new year"
+    }
+]

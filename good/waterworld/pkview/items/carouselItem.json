@@ -1,0 +1,63 @@
+{
+    "type": "Box",
+    "props": {
+        "y": 0,
+        "x": 0,
+        "width": 167,
+        "presetID": 1,
+        "isPresetRoot": true,
+        "height": 191
+    },
+    "compId": 162,
+    "child": [
+        {
+            "type": "Image",
+            "props": {
+                "y": 0,
+                "x": 2,
+                "width": 162,
+                "presetID": 3,
+                "name": "icon",
+                "height": 162
+            },
+            "compId": 157
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 168,
+                "x": -34,
+                "width": 235,
+                "valign": "middle",
+                "text": "全民枪手传奇奇",
+                "presetID": 5,
+                "name": "name",
+                "height": 24,
+                "fontSize": 24,
+                "font": "Microsoft YaHei",
+                "color": "#f33330",
+                "align": "center",
+                "wordWrap": true,
+                "runtime": "Laya.Text"
+            },
+            "compId": 164
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": -6,
+                "x": 107,
+                "skin": "game/ADnew.png",
+                "presetID": 6,
+                "name": "flag",
+                "top": 0,
+                "left": 0
+            },
+            "compId": 165
+        }
+    ],
+    "loadList": [
+        "game/ADnew.png"
+    ],
+    "loadList3D": []
+}

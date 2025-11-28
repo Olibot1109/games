@@ -1,0 +1,69 @@
+{
+    "type": "Box",
+    "props": {
+        "y": 0,
+        "x": 0,
+        "width": 750,
+        "top": 0,
+        "right": 0,
+        "presetID": 1,
+        "left": 0,
+        "isPresetRoot": true,
+        "height": 1334,
+        "bottom": 0
+    },
+    "compId": 127,
+    "child": [
+        {
+            "type": "Image",
+            "props": {
+                "y": 0,
+                "x": -375,
+                "skin": "game/newyear_ani_bg1.jpg",
+                "radius": 50,
+                "presetID": 3,
+                "name": "doorleft",
+                "lineWidth": 1,
+                "fillColor": "#ff0000",
+                "cacheAs": "bitmap"
+            },
+            "compId": 129
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 0,
+                "x": 750,
+                "skin": "game/newyear_ani_bg1.jpg",
+                "scaleX": -1,
+                "radius": 50,
+                "presetID": 4,
+                "name": "doorright",
+                "lineWidth": 1,
+                "fillColor": "#ff0000",
+                "cacheAs": "bitmap",
+                "anchorX": 1
+            },
+            "compId": 130
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 667,
+                "x": 375,
+                "width": 362,
+                "texture": "",
+                "presetID": 5,
+                "pivotY": 259,
+                "pivotX": 181,
+                "name": "aniicon",
+                "height": 518
+            },
+            "compId": 132
+        }
+    ],
+    "loadList": [
+        "game/newyear_ani_bg1.jpg"
+    ],
+    "loadList3D": []
+}

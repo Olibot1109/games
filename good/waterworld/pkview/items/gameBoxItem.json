@@ -1,0 +1,82 @@
+{
+    "type": "Box",
+    "props": {
+        "y": 0,
+        "x": 0,
+        "width": 135,
+        "presetID": 1,
+        "isPresetRoot": true,
+        "height": 161
+    },
+    "compId": 11,
+    "child": [
+        {
+            "type": "Image",
+            "props": {
+                "y": 0,
+                "x": 0,
+                "width": 135,
+                "skin": "game/ad_iconbg.png",
+                "sizeGrid": "22,35,28,27",
+                "presetID": 6,
+                "name": "bg",
+                "height": 161
+            },
+            "compId": 18
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 6,
+                "x": 6,
+                "width": 123,
+                "presetID": 3,
+                "name": "icon",
+                "height": 123
+            },
+            "compId": 12
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 132,
+                "x": 4,
+                "wordWrap": true,
+                "width": 127,
+                "valign": "bottom",
+                "text": "全民枪手传奇",
+                "strokeColor": "#afafaf",
+                "stroke": 1,
+                "presetID": 4,
+                "name": "name",
+                "leading": 7,
+                "height": 28,
+                "fontSize": 14,
+                "font": "Microsoft YaHei",
+                "color": "#000000",
+                "bold": true,
+                "align": "center",
+                "runtime": "Laya.Text"
+            },
+            "compId": 13
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": -2.5,
+                "x": 73,
+                "skin": "game/ADnew.png",
+                "presetID": 5,
+                "name": "flag",
+                "top": 0,
+                "left": 0
+            },
+            "compId": 16
+        }
+    ],
+    "loadList": [
+        "game/ad_iconbg.png",
+        "game/ADnew.png"
+    ],
+    "loadList3D": []
+}

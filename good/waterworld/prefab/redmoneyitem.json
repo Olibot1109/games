@@ -1,0 +1,76 @@
+{
+    "type": "Box",
+    "props": {
+        "y": 0,
+        "x": 0,
+        "width": 114,
+        "presetID": 1,
+        "isPresetRoot": true,
+        "height": 150
+    },
+    "compId": 22,
+    "child": [
+        {
+            "type": "Sprite",
+            "props": {
+                "texture": "game/red_pocket.png",
+                "presetID": 2
+            },
+            "compId": 21
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 22,
+                "x": 31,
+                "texture": "game/red_pocket_taken.png",
+                "presetID": 3,
+                "name": "receive"
+            },
+            "compId": 23
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 84,
+                "x": 5,
+                "width": 103,
+                "valign": "middle",
+                "text": "0.01~20元",
+                "presetID": 4,
+                "name": "money",
+                "height": 30,
+                "fontSize": 18,
+                "font": "Microsoft YaHei",
+                "color": "#ffffff",
+                "align": "center",
+                "runtime": "Laya.Text"
+            },
+            "compId": 24
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 118,
+                "x": 5,
+                "width": 103,
+                "valign": "middle",
+                "text": "Day 1",
+                "presetID": 5,
+                "name": "day",
+                "height": 24,
+                "fontSize": 18,
+                "font": "Microsoft YaHei",
+                "color": "#ffffff",
+                "align": "center",
+                "runtime": "Laya.Text"
+            },
+            "compId": 25
+        }
+    ],
+    "loadList": [
+        "game/red_pocket.png",
+        "game/red_pocket_taken.png"
+    ],
+    "loadList3D": []
+}

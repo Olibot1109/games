@@ -1,0 +1,163 @@
+{
+    "type": "Box",
+    "props": {
+        "y": 0,
+        "x": 0,
+        "width": 802,
+        "presetID": 1,
+        "isPresetRoot": true,
+        "height": 120
+    },
+    "compId": 171,
+    "child": [
+        {
+            "type": "Image",
+            "props": {
+                "y": 0,
+                "skin": "game/black.png",
+                "sizeGrid": "16,25,24,22,1",
+                "right": 0,
+                "presetID": 2,
+                "name": "adicon",
+                "left": 0,
+                "height": 120,
+                "alpha": 0.8
+            },
+            "compId": 170
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 0,
+                "x": 687,
+                "top": 0,
+                "skin": "game/ad.png",
+                "scaleY": 0.8,
+                "scaleX": 0.8,
+                "right": 0,
+                "presetID": 10
+            },
+            "compId": 181
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 31,
+                "width": 157,
+                "skin": "game/b_btn_invite_green.png",
+                "sizeGrid": "0,37,0,35",
+                "right": 89,
+                "presetID": 4,
+                "name": "clickbtn",
+                "mouseThrough": true,
+                "height": 50
+            },
+            "compId": 173,
+            "child": [
+                {
+                    "type": "Text",
+                    "props": {
+                        "y": 4,
+                        "x": 6,
+                        "width": 145,
+                        "valign": "middle",
+                        "text": "Click",
+                        "presetID": 5,
+                        "name": "clickTxt",
+                        "height": 47,
+                        "fontSize": 26,
+                        "font": "Microsoft YaHei",
+                        "color": "#4a4949",
+                        "align": "center",
+                        "runtime": "Laya.Text"
+                    },
+                    "compId": 174
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "props": {
+                "y": 56,
+                "x": 128,
+                "width": 80,
+                "presetID": 6,
+                "name": "icon",
+                "height": 80,
+                "anchorY": 0.5,
+                "anchorX": 0.5
+            },
+            "compId": 177
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 9,
+                "x": 327,
+                "width": 145,
+                "valign": "middle",
+                "text": "title",
+                "presetID": 7,
+                "name": "title",
+                "height": 47,
+                "fontSize": 24,
+                "font": "Microsoft YaHei",
+                "color": "#ffffff",
+                "align": "center",
+                "runtime": "Laya.Text"
+            },
+            "compId": 178
+        },
+        {
+            "type": "Text",
+            "props": {
+                "y": 65,
+                "x": 0,
+                "width": 792,
+                "valign": "middle",
+                "text": "title",
+                "presetID": 8,
+                "name": "desc",
+                "height": 47,
+                "fontSize": 24,
+                "font": "Microsoft YaHei",
+                "color": "#ffffff",
+                "align": "center",
+                "runtime": "Laya.Text"
+            },
+            "compId": 179
+        },
+        {
+            "type": "Box",
+            "props": {
+                "top": 0,
+                "right": 0,
+                "presetID": 9,
+                "name": "adbtn",
+                "left": 0,
+                "bottom": 0
+            },
+            "compId": 180
+        },
+        {
+            "type": "Sprite",
+            "props": {
+                "y": 39,
+                "x": 45,
+                "texture": "game/adclose.png",
+                "scaleY": 0.7,
+                "scaleX": 0.7,
+                "presetID": 3,
+                "name": "closebtn"
+            },
+            "compId": 172
+        }
+    ],
+    "loadList": [
+        "game/black.png",
+        "game/ad.png",
+        "game/b_btn_invite_green.png",
+        "game/adclose.png"
+    ],
+    "loadList3D": []
+}
