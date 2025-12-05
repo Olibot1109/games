@@ -10,7 +10,7 @@
   
   A modern browser-based gaming platform featuring a collection of fun and engaging games.
   
-  <a href="https://help.voidium.uk"><strong>Visit Site »</strong></a>
+  <a href="https://3004.voidium.uk"><strong>Visit Site »</strong></a>
   
   <br />
   <br />
@@ -32,7 +32,7 @@ LP2 is a web-based gaming platform that brings together a variety of browser gam
 
 ### Visit Online
 
-Simply visit [help.voidium.uk](https://help.voidium.uk) to play
+Simply visit [help.voidium.uk](https://3004.voidium.uk) to play
 
 ## Built in and use
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
