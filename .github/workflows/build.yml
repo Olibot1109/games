@@ -1,0 +1,287 @@
+# .github/workflows/bundle-site.yml
+#
+# Bundles your static website into a single self-contained HTML file
+# and uploads it as an artifact (and optionally commits it back to the repo).
+#
+# Triggers:
+#   - Push to main/master
+#   - Pull requests
+#   - Manual dispatch (Actions tab → Run workflow)
+
+name: Bundle Website
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+    inputs:
+      site_dir:
+        description: "Path to site root (default: .)"
+        required: false
+        default: "."
+      output_file:
+        description: "Output filename (default: bundled.html)"
+        required: false
+        default: "bundled.html"
+      commit_output:
+        description: "Commit output back to repo?"
+        type: boolean
+        required: false
+        default: false
+
+jobs:
+  bundle:
+    name: Crawl & Bundle
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── 1. Checkout ──────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── 2. Node setup ────────────────────────────────────────────────────────
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+          cache-dependency-path: .github/bundler/package.json
+
+      # ── 3. Write bundler script & package.json ───────────────────────────────
+      - name: Write bundler files
+        shell: bash
+        run: |
+          mkdir -p .github/bundler
+          cat > .github/bundler/package.json << 'EOF'
+          {
+            "name": "site-bundler",
+            "version": "1.0.0",
+            "dependencies": {
+              "cheerio": "^1.0.0",
+              "mime-types": "^2.1.35"
+            }
+          }
+          EOF
+
+          cat > .github/bundler/bundle.js << 'BUNDLER_EOF'
+          #!/usr/bin/env node
+          const fs   = require("fs");
+          const path = require("path");
+          const cheerio   = require("cheerio");
+          const mime      = require("mime-types");
+
+          const ROOT_DIR   = path.resolve(process.argv[2] || ".");
+          const OUTPUT     = path.resolve(process.argv[3] || "bundled.html");
+          const ENTRY      = path.join(ROOT_DIR, "index.html");
+
+          const visitedPages   = new Set();
+          const embeddedAssets = new Map();
+
+          function toDataURI(absPath) {
+            if (embeddedAssets.has(absPath)) return embeddedAssets.get(absPath);
+            if (!fs.existsSync(absPath)) return null;
+            const type = mime.lookup(absPath) || "application/octet-stream";
+            const b64  = fs.readFileSync(absPath).toString("base64");
+            const uri  = `data:${type};base64,${b64}`;
+            embeddedAssets.set(absPath, uri);
+            return uri;
+          }
+
+          function resolveAsset(pageDir, href) {
+            if (!href || href.startsWith("data:") || href.startsWith("http") || href.startsWith("//")) return null;
+            const stripped = href.split("?")[0].split("#")[0];
+            const abs = path.resolve(pageDir, stripped);
+            if (!abs.startsWith(ROOT_DIR)) return null;
+            return abs;
+          }
+
+          function inlineCSS(css, cssDir) {
+            return css.replace(/url\(\s*(['"]?)([^'")]+)\1\s*\)/g, (match, quote, url) => {
+              const abs = resolveAsset(cssDir, url);
+              if (!abs) return match;
+              const uri = toDataURI(abs);
+              return uri ? `url("${uri}")` : match;
+            });
+          }
+
+          function inlineAssets($, pageDir) {
+            $("img[src], source[src], video[src], audio[src], track[src]").each((_, el) => {
+              const abs = resolveAsset(pageDir, $(el).attr("src"));
+              if (abs) { const uri = toDataURI(abs); if (uri) $(el).attr("src", uri); }
+            });
+            $("[srcset]").each((_, el) => {
+              const parts = $(el).attr("srcset").split(",").map(s => {
+                const [url, descriptor] = s.trim().split(/\s+/);
+                const abs = resolveAsset(pageDir, url);
+                const uri = abs ? toDataURI(abs) : null;
+                return uri ? (descriptor ? `${uri} ${descriptor}` : uri) : s.trim();
+              });
+              $(el).attr("srcset", parts.join(", "));
+            });
+            $('link[rel="stylesheet"][href]').each((_, el) => {
+              const abs = resolveAsset(pageDir, $(el).attr("href"));
+              if (!abs || !fs.existsSync(abs)) return;
+              let css = fs.readFileSync(abs, "utf8");
+              css = inlineCSS(css, path.dirname(abs));
+              $(el).replaceWith($("<style>").text(css));
+            });
+            $('link[href]:not([rel="stylesheet"])').each((_, el) => {
+              const abs = resolveAsset(pageDir, $(el).attr("href"));
+              if (abs) { const uri = toDataURI(abs); if (uri) $(el).attr("href", uri); }
+            });
+            $("script[src]").each((_, el) => {
+              const abs = resolveAsset(pageDir, $(el).attr("src"));
+              if (!abs || !fs.existsSync(abs)) return;
+              const code = fs.readFileSync(abs, "utf8");
+              const $s = $("<script>").text(code);
+              Object.entries(el.attribs).forEach(([k, v]) => { if (k !== "src") $s.attr(k, v); });
+              $(el).replaceWith($s);
+            });
+            $("style").each((_, el) => { $(el).text(inlineCSS($(el).html(), pageDir)); });
+            $("[style]").each((_, el) => { $(el).attr("style", inlineCSS($(el).attr("style"), pageDir)); });
+          }
+
+          const pages = [];
+
+          function processPage(absPath) {
+            if (visitedPages.has(absPath)) return;
+            visitedPages.add(absPath);
+            if (!fs.existsSync(absPath)) { console.warn(`  ⚠ Not found: ${path.relative(ROOT_DIR, absPath)}`); return; }
+            console.log(`  📄 ${path.relative(ROOT_DIR, absPath)}`);
+            const pageDir = path.dirname(absPath);
+            const $ = cheerio.load(fs.readFileSync(absPath, "utf8"));
+            const linkedPages = [];
+            $("a[href]").each((_, el) => {
+              const abs = resolveAsset(pageDir, $(el).attr("href"));
+              if (abs && /\.html?$/i.test(abs) && !visitedPages.has(abs)) linkedPages.push(abs);
+            });
+            inlineAssets($, pageDir);
+            const pageId = "page-" + Buffer.from(path.relative(ROOT_DIR, absPath)).toString("base64").replace(/[^a-z0-9]/gi, "_");
+            $("a[href]").each((_, el) => {
+              const href = $(el).attr("href");
+              if (!href || href.startsWith("#") || href.startsWith("javascript")) return;
+              const abs = resolveAsset(pageDir, href);
+              if (abs && /\.html?$/i.test(abs)) {
+                const tid = "page-" + Buffer.from(path.relative(ROOT_DIR, abs)).toString("base64").replace(/[^a-z0-9]/gi, "_");
+                $(el).attr("href", "javascript:void(0)").attr("onclick", `__navigate('${tid}')`);
+              }
+            });
+            pages.push({ id: pageId, title: $("title").text() || path.relative(ROOT_DIR, absPath), bodyHTML: $("body").html(), path: path.relative(ROOT_DIR, absPath) });
+            linkedPages.forEach(processPage);
+          }
+
+          console.log(`\n🌐 Bundling: ${ROOT_DIR} → ${OUTPUT}\n`);
+          if (!fs.existsSync(ENTRY)) { console.error("❌ index.html not found."); process.exit(1); }
+
+          processPage(ENTRY);
+          fs.readdirSync(ROOT_DIR).forEach(f => {
+            if (/\.html?$/i.test(f)) { const abs = path.join(ROOT_DIR, f); if (!visitedPages.has(abs)) processPage(abs); }
+          });
+
+          const pagesJSON = JSON.stringify(pages.map(p => ({ id: p.id, title: p.title, path: p.path, bodyHTML: p.bodyHTML })));
+
+          fs.writeFileSync(OUTPUT, `<!DOCTYPE html>
+          <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+          <title>${pages[0]?.title || "Bundled Site"}</title>
+          <style>
+            #__page-root{min-height:100vh}
+            #__nav-bar{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1e1e2e;color:#cdd6f4;display:flex;align-items:center;gap:8px;padding:6px 12px;font-family:monospace;font-size:13px;flex-wrap:wrap;border-top:1px solid #45475a}
+            #__nav-bar span{opacity:.5}
+            #__nav-bar button{background:#313244;border:1px solid #45475a;color:#cdd6f4;border-radius:4px;padding:2px 8px;cursor:pointer;font-size:12px}
+            #__nav-bar button:hover{background:#45475a}
+            #__nav-bar button.active{background:#89b4fa;color:#1e1e2e;border-color:#89b4fa}
+            body{margin-bottom:40px}
+          </style></head><body>
+          <div id="__page-root"></div>
+          <div id="__nav-bar"><span>📦 Bundled Site</span><span id="__nav-links"></span></div>
+          <script>
+          (function(){
+            var PAGES=${pagesJSON};
+            var pageMap={};PAGES.forEach(function(p){pageMap[p.id]=p;});
+            window.__navigate=function(id){
+              var page=pageMap[id];if(!page)return;
+              document.getElementById('__page-root').innerHTML=page.bodyHTML;
+              document.title=page.title;
+              history.pushState({id:id},page.title,'#'+page.path);
+              updateNav(id);window.scrollTo(0,0);rerunScripts();
+            };
+            function updateNav(activeId){
+              var nav=document.getElementById('__nav-links');nav.innerHTML='';
+              PAGES.forEach(function(p){
+                var b=document.createElement('button');b.textContent=p.title||p.path;
+                b.onclick=function(){window.__navigate(p.id);};
+                if(p.id===activeId)b.className='active';
+                nav.appendChild(b);
+              });
+            }
+            function rerunScripts(){
+              document.getElementById('__page-root').querySelectorAll('script').forEach(function(old){
+                var s=document.createElement('script');
+                Array.from(old.attributes).forEach(function(a){s.setAttribute(a.name,a.value);});
+                s.textContent=old.textContent;old.parentNode.replaceChild(s,old);
+              });
+            }
+            window.addEventListener('popstate',function(e){if(e.state&&e.state.id)window.__navigate(e.state.id);});
+            window.__navigate(PAGES[0].id);
+          })();
+          </script></body></html>`, "utf8");
+
+          const kb = (fs.statSync(OUTPUT).size / 1024).toFixed(1);
+          console.log(`\n✅ ${pages.length} page(s), ${embeddedAssets.size} asset(s) → ${OUTPUT} (${kb} KB)`);
+          BUNDLER_EOF
+
+      # ── 4. Install deps ──────────────────────────────────────────────────────
+      - name: Install bundler dependencies
+        working-directory: .github/bundler
+        run: npm install --prefer-offline
+
+      # ── 5. Resolve inputs (push/PR use defaults; workflow_dispatch uses inputs)
+      - name: Resolve inputs
+        id: cfg
+        run: |
+          SITE_DIR="${{ github.event.inputs.site_dir || '.' }}"
+          OUTPUT_FILE="${{ github.event.inputs.output_file || 'bundled.html' }}"
+          echo "site_dir=$SITE_DIR"     >> $GITHUB_OUTPUT
+          echo "output_file=$OUTPUT_FILE" >> $GITHUB_OUTPUT
+
+      # ── 6. Run bundler ───────────────────────────────────────────────────────
+      - name: Bundle website
+        run: |
+          node .github/bundler/bundle.js \
+            "${{ steps.cfg.outputs.site_dir }}" \
+            "${{ steps.cfg.outputs.output_file }}"
+
+      # ── 7. Print summary ─────────────────────────────────────────────────────
+      - name: Write job summary
+        run: |
+          SIZE=$(du -sh "${{ steps.cfg.outputs.output_file }}" | cut -f1)
+          echo "## 📦 Bundle complete" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Field | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Output file | \`${{ steps.cfg.outputs.output_file }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| File size   | $SIZE |" >> $GITHUB_STEP_SUMMARY
+          echo "| Site root   | \`${{ steps.cfg.outputs.site_dir }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| Triggered by | ${{ github.event_name }} |" >> $GITHUB_STEP_SUMMARY
+
+      # ── 8. Upload as Actions artifact ────────────────────────────────────────
+      - name: Upload bundled HTML
+        uses: actions/upload-artifact@v4
+        with:
+          name: bundled-site
+          path: ${{ steps.cfg.outputs.output_file }}
+          retention-days: 30
+
+      # ── 9. (Optional) Commit output back to repo ─────────────────────────────
+      - name: Commit bundled file to repo
+        if: |
+          github.event_name == 'push' &&
+          (github.event.inputs.commit_output == 'true' || github.event_name != 'workflow_dispatch')
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add "${{ steps.cfg.outputs.output_file }}"
+          git diff --cached --quiet || git commit -m "ci: update bundled site [skip ci]"
+          git push
